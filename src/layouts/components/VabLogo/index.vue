@@ -53,7 +53,7 @@
   @mixin title {
     display: inline-block;
     overflow: hidden;
-    font-size: 22px;
+    font-size: 26px;
     line-height: 55px;
     color: $base-title-color;
     text-overflow: ellipsis;

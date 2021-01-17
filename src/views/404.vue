@@ -33,7 +33,7 @@
               <div class="bullshit-oops">{{ oops }}</div>
               <div class="bullshit-headline">{{ headline }}</div>
               <div class="bullshit-info">{{ info }}</div>
-              <a class="bullshit-return-home" href="#/index">
+              <a class="bullshit-return-home" @click="backToIndex">
                 {{ jumpTime }}s&nbsp;{{ btn }}
               </a>
             </div>
@@ -110,6 +110,10 @@
             clearInterval(this.timer)
           }
         }, 1000)
+      },
+      backToIndex() {
+        this.$router.push({ path: '/' })
+        this.handleTabRemove(this.tabActive)
       },
     },
   }

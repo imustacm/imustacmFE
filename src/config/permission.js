@@ -7,6 +7,7 @@ import store from '@/store'
 import VabProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import getPageTitle from '@/utils/pageTitle'
+import { getAccessToken } from '@/utils/accessToken'
 import {
   authentication,
   loginInterception,
@@ -39,14 +40,23 @@ router.beforeResolve(async (to, from, next) => {
         next()
       } else {
         try {
-          let permissions
-          if (!loginInterception) {
-            //settings.js loginInterception为false时，创建虚拟权限
-            await store.dispatch('user/setPermissions', ['admin'])
-            permissions = ['admin']
+          let permissions = ['']
+          // if (!loginInterception) {
+          //   //settings.js loginInterception为false时，创建虚拟权限
+          //   await store.dispatch('user/setPermissions', ['adminak'])
+          //   permissions = ['adminak']
+          // } else {
+          let accessToken = getAccessToken()
+          if (
+            accessToken == null ||
+            accessToken == '' ||
+            accessToken == undefined
+          ) {
+            await store.dispatch('user/setPermissions', [''])
           } else {
             permissions = await store.dispatch('user/getUserInfo')
           }
+          // }
 
           let accessRoutes = []
           if (authentication === 'intelligence') {

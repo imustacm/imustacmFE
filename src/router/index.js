@@ -70,7 +70,6 @@ export const asyncRoutes = [
     redirect: 'noRedirect',
     alwaysShow: true,
     meta: { title: 'IMUSTOJ', icon: 'flag' },
-    permissions: ['visitor'],
     children: [
       {
         path: 'problems',
@@ -121,12 +120,12 @@ export const asyncRoutes = [
         component: () => import('@/views/project/admin/interface/index'),
         meta: { title: '实验平台' },
       },
-      {
-        path: 'bbs',
-        name: 'Bbs',
-        component: () => import('@/views/project/admin/interface/index'),
-        meta: { title: '博客论坛' },
-      },
+      // {
+      //   path: 'bbs',
+      //   name: 'Bbs',
+      //   component: () => import('@/views/project/admin/interface/index'),
+      //   meta: { title: '博客论坛' },
+      // },
       {
         path: 'group',
         name: 'Group',
@@ -141,89 +140,89 @@ export const asyncRoutes = [
       },
     ],
   },
-  {
-    path: '/imustcpc',
-    name: 'Imustcpc',
-    component: Layout,
-    redirect: 'noRedirect',
-    alwaysShow: true,
-    meta: { title: 'IMUSTCPC', icon: 'chess-queen' },
-    permissions: ['visitor'],
-    children: [
-      {
-        path: 'currentcpc',
-        name: 'Currentcpc',
-        component: () => import('@/views/project/admin/interface/index'),
-        meta: { title: '本届大赛' },
-      },
-      {
-        path: 'system',
-        name: 'System',
-        component: () => import('@/App'),
-        meta: { title: '历届大赛' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'interface',
-            name: 'Interface',
-            component: () => import('@/views/project/admin/interface/index'),
-            meta: { title: '2019 IMUSTCPC 1' },
-          },
-        ],
-      },
-    ],
-  },
-  {
-    path: '/news',
-    component: Layout,
-    redirect: '/news',
-    children: [
-      {
-        path: '/news',
-        name: 'News',
-        component: () => import('@/views/project/admin/interface/index'),
-        meta: {
-          title: '新闻中心',
-          icon: 'list-alt',
-          noKeepAlive: true,
-        },
-      },
-    ],
-  },
-  {
-    path: '/notice',
-    component: Layout,
-    redirect: '/notice',
-    children: [
-      {
-        path: '/notice',
-        name: 'Notice',
-        component: () => import('@/views/project/admin/interface/index'),
-        meta: {
-          title: '通知公告',
-          icon: 'map-signs',
-          noKeepAlive: true,
-        },
-      },
-    ],
-  },
-  {
-    path: '/downloads',
-    component: Layout,
-    redirect: '/downloads',
-    children: [
-      {
-        path: '/downloads',
-        name: 'Downloads',
-        component: () => import('@/views/project/admin/interface/index'),
-        meta: {
-          title: '文件下载',
-          icon: 'download',
-          noKeepAlive: true,
-        },
-      },
-    ],
-  },
+  // {
+  //   path: '/imustcpc',
+  //   name: 'Imustcpc',
+  //   component: Layout,
+  //   redirect: 'noRedirect',
+  //   alwaysShow: true,
+  //   meta: { title: 'IMUSTCPC', icon: 'chess-queen' },
+  //   permissions: ['visitor'],
+  //   children: [
+  //     {
+  //       path: 'currentcpc',
+  //       name: 'Currentcpc',
+  //       component: () => import('@/views/project/admin/interface/index'),
+  //       meta: { title: '本届大赛' },
+  //     },
+  //     {
+  //       path: 'system',
+  //       name: 'System',
+  //       component: () => import('@/App'),
+  //       meta: { title: '历届大赛' },
+  //       alwaysShow: true,
+  //       children: [
+  //         {
+  //           path: 'interface',
+  //           name: 'Interface',
+  //           component: () => import('@/views/project/admin/interface/index'),
+  //           meta: { title: '2019 IMUSTCPC 1' },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '/news',
+  //   component: Layout,
+  //   redirect: '/news',
+  //   children: [
+  //     {
+  //       path: '/news',
+  //       name: 'News',
+  //       component: () => import('@/views/project/admin/interface/index'),
+  //       meta: {
+  //         title: '新闻中心',
+  //         icon: 'list-alt',
+  //         noKeepAlive: true,
+  //       },
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '/notice',
+  //   component: Layout,
+  //   redirect: '/notice',
+  //   children: [
+  //     {
+  //       path: '/notice',
+  //       name: 'Notice',
+  //       component: () => import('@/views/project/admin/interface/index'),
+  //       meta: {
+  //         title: '通知公告',
+  //         icon: 'map-signs',
+  //         noKeepAlive: true,
+  //       },
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '/downloads',
+  //   component: Layout,
+  //   redirect: '/downloads',
+  //   children: [
+  //     {
+  //       path: '/downloads',
+  //       name: 'Downloads',
+  //       component: () => import('@/views/project/admin/interface/index'),
+  //       meta: {
+  //         title: '文件下载',
+  //         icon: 'download',
+  //         noKeepAlive: true,
+  //       },
+  //     },
+  //   ],
+  // },
   {
     path: '/culture',
     name: 'Culture',
@@ -231,7 +230,7 @@ export const asyncRoutes = [
     redirect: 'noRedirect',
     alwaysShow: true,
     meta: { title: '社团文化', icon: 'synagogue' },
-    permissions: ['visitor'],
+
     children: [
       {
         path: 'campInstraction',
@@ -242,7 +241,7 @@ export const asyncRoutes = [
       {
         path: 'honor',
         name: 'Honor',
-        component: () => import('@/views/project/admin/interface/index'),
+        component: () => import('@/views/project/about/honor/index'),
         meta: { title: '荣誉展廊' },
       },
       {
@@ -271,8 +270,8 @@ export const asyncRoutes = [
     component: Layout,
     redirect: 'noRedirect',
     alwaysShow: true,
-    meta: { title: '后台管理', icon: 'cogs' },
-    permissions: ['adminak'],
+    meta: { title: '后台管理', icon: 'cogs', permissions: ['adminak'] },
+
     children: [
       {
         path: 'controlCenter',
