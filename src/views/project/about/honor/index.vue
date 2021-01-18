@@ -46,6 +46,12 @@
             show-overflow-tooltip
           ></af-table-column>
           <af-table-column
+            prop="school"
+            align="center"
+            label="参赛学校"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
             prop="price"
             align="center"
             label="奖项"
@@ -55,12 +61,6 @@
             prop="works"
             align="center"
             label="作品名称"
-            show-overflow-tooltip
-          ></af-table-column>
-          <af-table-column
-            prop="school"
-            align="center"
-            label="参赛学校"
             show-overflow-tooltip
           ></af-table-column>
           <el-table-column
@@ -315,7 +315,7 @@
               fill="#d81e06"
             ></path>
           </svg>
-          <b>&nbsp;ACM - ICPC中国（西部）大学生程序设计竞赛</b>
+          <b>&nbsp;ICPC 中国（西部）大学生程序设计竞赛</b>
         </p>
         <p style="text-indent: 2em">
           2020年10月31日，内蒙古科技大学ACM程序设计协会集训队队员参加2020年ACM -
@@ -1229,7 +1229,7 @@
         </p>
         <p style="text-indent: 2em">
           2019年6月1日，第二届中国高校计算机大赛 -
-          微信小程序开发赛比赛结果公布，内蒙古科技大学ACM程序设计协会代表队获得华北地区二等奖1项。
+          微信小程序开发赛比赛结果公布，内蒙古科技大学ACM程序设计协会代表队获得华北赛区二等奖1项。
         </p>
         <p style="text-align: center">
           <b>
@@ -1251,6 +1251,12 @@
             show-overflow-tooltip
           ></af-table-column>
           <af-table-column
+            prop="school"
+            align="center"
+            label="参赛学校"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
             prop="price"
             align="center"
             label="奖项"
@@ -1262,10 +1268,374 @@
             label="参赛作品名称"
             show-overflow-tooltip
           ></af-table-column>
+          <el-table-column
+            prop="user"
+            align="center"
+            label="作者"
+            show-overflow-tooltip
+          >
+            <el-table-column
+              prop="name"
+              align="center"
+              label="姓名"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="student"
+              align="center"
+              label="学号"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="clazz"
+              align="center"
+              label="班级"
+              show-overflow-tooltip
+            ></el-table-column>
+          </el-table-column>
+          <af-table-column
+            prop="teacher"
+            align="center"
+            label="指导教师"
+            show-overflow-tooltip
+          ></af-table-column>
+        </el-table>
+        <br />
+        <!-- 2019年中国大学生程序设计竞赛秦皇岛站 -->
+        <p style="text-indent: 2em">
+          <svg
+            t="1600184756598"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1176"
+            width="12"
+            height="12"
+          >
+            <path
+              d="M62 512c0 248.528 201.472 450 450 450s450-201.472 450-450c0-248.528-201.472-450-450-450-248.528 0-450 201.472-450 450z"
+              p-id="1177"
+              fill="#d81e06"
+            ></path>
+          </svg>
+          <b>&nbsp;CCPC 中国大学生程序设计竞赛（秦皇岛站）</b>
+        </p>
+        <p style="text-indent: 2em">
+          2019年9月22日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年第五届中国大学生程序设计竞赛（秦皇岛站）现场赛获得优胜奖1项。
+        </p>
+        <p style="text-align: center">
+          <b>
+            2019年第五届中国大学生程序设计竞赛（秦皇岛站）现场赛
+            内蒙古科技大学获奖情况
+          </b>
+        </p>
+        <el-table
+          :fit="true"
+          :data="ccpcqhd2019"
+          style="width: 85%; margin: 0 auto"
+          :span-method="spanMethod1"
+          border
+        >
+          <af-table-column
+            prop="school"
+            align="center"
+            label="学校"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="team"
+            align="center"
+            label="队名"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="rank"
+            align="center"
+            label="排名"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="price"
+            align="center"
+            label="奖项"
+            show-overflow-tooltip
+          ></af-table-column>
+          <el-table-column
+            prop="user"
+            align="center"
+            label="队员"
+            show-overflow-tooltip
+          >
+            <el-table-column
+              prop="name"
+              align="center"
+              label="姓名"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="student"
+              align="center"
+              label="学号"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="clazz"
+              align="center"
+              label="班级"
+              show-overflow-tooltip
+            ></el-table-column>
+          </el-table-column>
+          <af-table-column
+            prop="teacher"
+            align="center"
+            label="教练"
+            show-overflow-tooltip
+          ></af-table-column>
+        </el-table>
+        <br />
+        <!-- 2019年华北五省计算机应用大赛（内蒙古赛区） -->
+        <p style="text-indent: 2em">
+          <svg
+            t="1600184756598"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1176"
+            width="12"
+            height="12"
+          >
+            <path
+              d="M62 512c0 248.528 201.472 450 450 450s450-201.472 450-450c0-248.528-201.472-450-450-450-248.528 0-450 201.472-450 450z"
+              p-id="1177"
+              fill="#d81e06"
+            ></path>
+          </svg>
+          <b>
+            &nbsp;华北五省（市、自治区）及港澳台大学生计算机应用大赛（内蒙古赛区）
+          </b>
+        </p>
+        <p style="text-indent: 2em">
+          2019年10月19日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛内蒙古赛区比赛获得一等奖1项，三等奖1项。
+        </p>
+        <p style="text-align: center">
+          <b>
+            2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛
+            内蒙古赛区比赛 内蒙古科技大学ACM程序设计协会获奖情况
+          </b>
+        </p>
+        <el-table
+          :fit="true"
+          :data="hbwsnmg2019"
+          style="width: 85%; margin: 0 auto"
+          :span-method="spanMethod4"
+          border
+        >
+          <af-table-column
+            prop="province"
+            align="center"
+            label="省份"
+            show-overflow-tooltip
+          ></af-table-column>
           <af-table-column
             prop="school"
             align="center"
             label="参赛学校"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="price"
+            align="center"
+            label="奖项"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="works"
+            align="center"
+            label="作品名称"
+            show-overflow-tooltip
+          ></af-table-column>
+          <el-table-column
+            prop="user"
+            align="center"
+            label="作者"
+            show-overflow-tooltip
+          >
+            <el-table-column
+              prop="name"
+              align="center"
+              label="姓名"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="student"
+              align="center"
+              label="学号"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="clazz"
+              align="center"
+              label="班级"
+              show-overflow-tooltip
+            ></el-table-column>
+          </el-table-column>
+          <af-table-column
+            prop="teacher"
+            align="center"
+            label="指导教师"
+            show-overflow-tooltip
+          ></af-table-column>
+        </el-table>
+        <br />
+        <!-- 2019年ICPC国际大学生程序设计竞赛亚洲区域赛（银川站） -->
+        <p style="text-indent: 2em">
+          <svg
+            t="1600184756598"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1176"
+            width="12"
+            height="12"
+          >
+            <path
+              d="M62 512c0 248.528 201.472 450 450 450s450-201.472 450-450c0-248.528-201.472-450-450-450-248.528 0-450 201.472-450 450z"
+              p-id="1177"
+              fill="#d81e06"
+            ></path>
+          </svg>
+          <b>&nbsp;ICPC 国际大学生程序设计竞赛亚洲区域赛（银川站）</b>
+        </p>
+        <p style="text-indent: 2em">
+          2019年10月20日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年第44届ICPC国际大学生程序设计竞赛亚洲区域赛（银川站）现场赛获得优胜奖2项。
+        </p>
+        <p style="text-align: center">
+          <b>
+            2019年第44届ICPC国际大学生程序设计竞赛亚洲区域赛（银川站）现场赛
+            内蒙古科技大学获奖情况
+          </b>
+        </p>
+        <el-table
+          :fit="true"
+          :data="icpcyc2019"
+          style="width: 85%; margin: 0 auto"
+          :span-method="spanMethod5"
+          border
+        >
+          <af-table-column
+            prop="school"
+            align="center"
+            label="学校"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="team"
+            align="center"
+            label="队名"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="price"
+            align="center"
+            label="奖项"
+            show-overflow-tooltip
+          ></af-table-column>
+          <el-table-column
+            prop="user"
+            align="center"
+            label="队员"
+            show-overflow-tooltip
+          >
+            <el-table-column
+              prop="name"
+              align="center"
+              label="姓名"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="student"
+              align="center"
+              label="学号"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="clazz"
+              align="center"
+              label="班级"
+              show-overflow-tooltip
+            ></el-table-column>
+          </el-table-column>
+          <af-table-column
+            prop="teacher"
+            align="center"
+            label="教练"
+            show-overflow-tooltip
+          ></af-table-column>
+        </el-table>
+        <br />
+        <!-- 2019年华北五省计算机应用大赛（内蒙古赛区） -->
+        <p style="text-indent: 2em">
+          <svg
+            t="1600184756598"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="1176"
+            width="12"
+            height="12"
+          >
+            <path
+              d="M62 512c0 248.528 201.472 450 450 450s450-201.472 450-450c0-248.528-201.472-450-450-450-248.528 0-450 201.472-450 450z"
+              p-id="1177"
+              fill="#d81e06"
+            ></path>
+          </svg>
+          <b>
+            &nbsp;华北五省（市、自治区）及港澳台大学生计算机应用大赛（总决赛）
+          </b>
+        </p>
+        <p style="text-indent: 2em">
+          2019年11月16日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛总决赛获得一等奖1项。
+        </p>
+        <p style="text-align: center">
+          <b>
+            2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛 总决赛
+            内蒙古科技大学ACM程序设计协会获奖情况
+          </b>
+        </p>
+        <el-table
+          :fit="true"
+          :data="hbwszjs2019"
+          style="width: 85%; margin: 0 auto"
+          :span-method="spanMethod4"
+          border
+        >
+          <af-table-column
+            prop="province"
+            align="center"
+            label="省份"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="school"
+            align="center"
+            label="参赛学校"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="price"
+            align="center"
+            label="奖项"
+            show-overflow-tooltip
+          ></af-table-column>
+          <af-table-column
+            prop="works"
+            align="center"
+            label="作品名称"
             show-overflow-tooltip
           ></af-table-column>
           <el-table-column
@@ -1302,7 +1672,7 @@
         </el-table>
         <br />
       </el-tab-pane>
-      <el-tab-pane label="2018年">2018年</el-tab-pane>
+      <!-- <el-tab-pane label="2018年">2018年</el-tab-pane>
       <el-tab-pane label="2017年">2021年</el-tab-pane>
       <el-tab-pane label="2016年">2020年</el-tab-pane>
       <el-tab-pane label="2015年">2019年</el-tab-pane>
@@ -1314,7 +1684,7 @@
       <el-tab-pane label="2009年">2021年</el-tab-pane>
       <el-tab-pane label="2008年">2020年</el-tab-pane>
       <el-tab-pane label="2007年">2019年</el-tab-pane>
-      <el-tab-pane label="2006年">2018年</el-tab-pane>
+      <el-tab-pane label="2006年">2018年</el-tab-pane> -->
     </el-tabs>
   </div>
 </template>
@@ -1336,9 +1706,9 @@
         jsjsjds2020: [
           {
             id: '84381',
+            school: '内蒙古科技大学',
             price: '一等奖',
             works: '基于LLVM的新的可视化编程教学平台',
-            school: '内蒙古科技大学',
             name: '贾利凯',
             student: '1767159237',
             clazz: '软件17-2班',
@@ -2782,9 +3152,9 @@
         wxxcx2019: [
           {
             area: '华北赛区',
+            school: '内蒙古科技大学',
             price: '二等奖',
             works: '智冠',
-            school: '内蒙古科技大学',
             name: '贾利凯',
             student: '1767159237',
             clazz: '软件17-2班',
@@ -2799,6 +3169,174 @@
             name: '宋凯',
             student: '1767159114',
             clazz: '软件17-1班',
+          },
+        ],
+        /*
+          2019年中国大学生程序设计竞赛（秦皇岛站）
+        */
+        ccpcqhd2019: [
+          {
+            school: '内蒙古科技大学',
+            team: 'IMUST - 不想TLE',
+            rank: '待更新',
+            price: '优胜奖',
+            name: '李浩',
+            student: '1767159234',
+            clazz: '软件17-2班',
+            teacher: '兰孝文',
+          },
+          {
+            name: '王剑波',
+            student: '1767111117',
+            clazz: '计科17-1班',
+          },
+          {
+            name: '曹以诚',
+            student: '1867159134',
+            clazz: '软件18-1班',
+          },
+        ],
+        /*
+          2019年华北五省计算机应用大赛（内蒙古赛区）
+        */
+        hbwsnmg2019: [
+          {
+            province: '内蒙古自治区',
+            school: '内蒙古科技大学',
+            price: '一等奖',
+            works: '基于OpenCV的智力开发平台',
+            name: '贾利凯',
+            student: '1767159237',
+            clazz: '软件17-2班',
+            teacher: '丁雨 兰孝文',
+          },
+          {
+            name: '刘洋',
+            student: '1767111112',
+            clazz: '计科17-1班',
+          },
+          {
+            name: '宋凯',
+            student: '1767159114',
+            clazz: '软件17-1班',
+          },
+          {
+            name: '方俊',
+            student: '1767159109',
+            clazz: '软件17-1班',
+          },
+          {
+            name: '曹以诚',
+            student: '1867159134',
+            clazz: '软件18-1班',
+          },
+          {
+            province: '内蒙古自治区',
+            school: '内蒙古科技大学',
+            price: '三等奖',
+            works: '微课堂',
+            name: '张雷红',
+            student: '1767111126',
+            clazz: '计科17-1班',
+            teacher: '兰孝文 丁雨',
+          },
+          {
+            name: '聂俊',
+            student: '1767111124',
+            clazz: '计科17-1班',
+          },
+          {
+            name: '王剑波',
+            student: '1767111117',
+            clazz: '计科17-1班',
+          },
+          {
+            name: '高航',
+            student: '1867111202',
+            clazz: '计科18-2班',
+          },
+          {
+            name: '周高源',
+            student: '1767111103',
+            clazz: '计科17-1班',
+          },
+        ],
+        /*
+          2019年ICPC国际大学生程序设计竞赛亚洲区域赛（银川站）
+        */
+        icpcyc2019: [
+          {
+            school: '内蒙古科技大学',
+            team: 'WA Automaton',
+            price: '优胜奖',
+            name: '姜威',
+            student: '1667159222',
+            clazz: '软件16-2班',
+            teacher: '兰孝文',
+          },
+          {
+            name: '贾利凯',
+            student: '1767159237',
+            clazz: '软件17-2班',
+          },
+          {
+            name: '刘洋',
+            student: '1767111112',
+            clazz: '计科17-1班',
+          },
+          {
+            school: '内蒙古科技大学',
+            team: 'A_cup_of_latte_please',
+            price: '优胜奖',
+            name: '李浩',
+            student: '1767159234',
+            clazz: '软件17-2班',
+            teacher: '兰孝文',
+          },
+          {
+            name: '王剑波',
+            student: '1767111117',
+            clazz: '计科17-1班',
+          },
+          {
+            name: '曹以诚',
+            student: '1867159134',
+            clazz: '软件18-1班',
+          },
+        ],
+        /*
+          2019年华北五省计算机应用大赛（总决赛）
+        */
+        hbwszjs2019: [
+          {
+            province: '内蒙古自治区',
+            school: '内蒙古科技大学',
+            price: '一等奖',
+            works: '基于OpenCV的智力开发平台',
+            name: '贾利凯',
+            student: '1767159237',
+            clazz: '软件17-2班',
+            teacher: '丁雨 兰孝文',
+          },
+          {
+            name: '刘洋',
+            student: '1767111112',
+            clazz: '计科17-1班',
+          },
+          {
+            name: '宋凯',
+            student: '1767159114',
+            clazz: '软件17-1班',
+          },
+          {
+            name: '方俊',
+            student: '1767159109',
+            clazz: '软件17-1班',
+          },
+          {
+            name: '曹以诚',
+            student: '1867159134',
+            clazz: '软件18-1班',
           },
         ],
       }
@@ -2828,6 +3366,24 @@
         if (columnIndex < 7 || columnIndex > 10) {
           if (rowIndex % 10 == 0) {
             return [10, 1]
+          } else {
+            return [0, 0]
+          }
+        }
+      },
+      spanMethod4({ row, column, rowIndex, columnIndex }) {
+        if (columnIndex < 4 || columnIndex > 6) {
+          if (rowIndex % 5 == 0) {
+            return [5, 1]
+          } else {
+            return [0, 0]
+          }
+        }
+      },
+      spanMethod5({ row, column, rowIndex, columnIndex }) {
+        if (columnIndex < 3 || columnIndex > 5) {
+          if (rowIndex % 3 == 0) {
+            return [3, 1]
           } else {
             return [0, 0]
           }

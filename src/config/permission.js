@@ -54,7 +54,7 @@ router.beforeResolve(async (to, from, next) => {
           ) {
             await store.dispatch('user/setPermissions', [''])
           } else {
-            permissions = await store.dispatch('user/getUserInfo')
+            permissions = await store.dispatch('user/getLoginInfo')
           }
           // }
 

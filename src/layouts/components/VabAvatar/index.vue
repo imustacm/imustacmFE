@@ -73,12 +73,8 @@
                 我的文章
               </el-dropdown-item>
               <el-dropdown-item command="badgeSystem">
-                <vab-icon :icon="['fas', 'award']"></vab-icon>
-                智能签到
-              </el-dropdown-item>
-              <el-dropdown-item command="contestEnter">
                 <vab-icon :icon="['fas', 'check-square']"></vab-icon>
-                竞赛报名
+                智能签到
               </el-dropdown-item>
               <el-dropdown-item command="badgeSystem">
                 <vab-icon :icon="['fas', 'bookmark']"></vab-icon>
@@ -114,7 +110,6 @@
     data() {
       return {
         badgeValue: null,
-        //username: '1367159201',
       }
     },
     components: {
@@ -139,7 +134,7 @@
       Event.$on('toForget', () => {
         this.forget()
       })
-      this.getUserInfo()
+      this.getLoginInfo()
       let _this = this
       setTimeout(function () {
         var accessToken = getAccessToken()
@@ -155,9 +150,9 @@
       }, 1)
     },
     methods: {
-      async getUserInfo() {
+      async getLoginInfo() {
         this.$store
-          .dispatch('user/getUserInfo', getAccessToken())
+          .dispatch('user/getLoginInfo', getAccessToken())
           .then(() => {
             return false
           })
@@ -193,7 +188,7 @@
       },
       logout() {
         this.$baseConfirm(
-          '您确定要退出' + this.$baseTitle + '吗?',
+          '您确定要退出登录' + this.$baseTitle + '吗?',
           null,
           async () => {
             await this.$store.dispatch('user/logout')

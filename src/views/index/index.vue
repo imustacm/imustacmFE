@@ -12,7 +12,7 @@
       </el-carousel>
     </div>
     <div></div> -->
-    <h1>IMUSTACM首页</h1>
+    <h1>IMUSTACM测试测试测试20200117</h1>
   </div>
 </template>
 

@@ -20,9 +20,9 @@ export async function login(data) {
   })
 }
 
-export function getUserInfo(accessToken) {
+export function getLoginInfo(accessToken) {
   return request({
-    url: '/userInfo',
+    url: '/user/user/userInfo',
     method: 'post',
     data: {
       [tokenName]: accessToken,

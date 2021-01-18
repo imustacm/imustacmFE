@@ -4,7 +4,7 @@
  */
 
 import Vue from 'vue'
-import { getUserInfo, login, logout } from '@/api/user'
+import { getLoginInfo, login, logout } from '@/api/user'
 import {
   getAccessToken,
   removeAccessToken,
@@ -68,8 +68,8 @@ const actions = {
       )
     }
   },
-  async getUserInfo({ commit, state }) {
-    const { data } = await getUserInfo(state.accessToken)
+  async getLoginInfo({ commit, state }) {
+    const { data } = await getLoginInfo(state.accessToken)
     if (!data) {
       //Vue.prototype.$baseMessage('验证失败，请重新登录...', 'error')
       return false
@@ -79,7 +79,6 @@ const actions = {
       commit('setPermissions', permissions)
       commit('setUsername', username)
       commit('setAvatar', avatar)
-      console.log(permissions + ' ' + username + ' ' + avatar)
       return permissions
     } else {
       Vue.prototype.$baseMessage('用户信息接口异常', 'error')

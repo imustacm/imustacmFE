@@ -97,7 +97,7 @@
 
 <script>
   import { getCaptcha } from '@/api/login'
-  import { getUserInfo, login, logout } from '@/api/user'
+  import { getLoginInfo, login, logout } from '@/api/user'
   import { getAccessToken } from '@/utils/accessToken'
   import refresh from '@/views/refresh'
   import index from '@/views/index/index'

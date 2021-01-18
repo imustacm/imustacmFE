@@ -336,15 +336,11 @@
         //if (!this.init) return
         var clipboard = new Clipboard('.copyBtn')
         clipboard.on('success', (e) => {
-          // console.log('复制成功')
-          // this.toast('copy success')
           this.$baseMessage('一键复制成功！', 'success')
           // 释放内存
           clipboard.destroy()
         })
         clipboard.on('error', (e) => {
-          // 不支持复制
-          // console.log('该浏览器不支持自动复制')
           this.$baseMessage('浏览器不支持一键复制，请手动复制！', 'error')
           // 释放内存
           clipboard.destroy()
