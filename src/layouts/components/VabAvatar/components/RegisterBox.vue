@@ -219,9 +219,7 @@
         immediate: true,
       },
     },
-    created() {
-      this.getCaptcha()
-    },
+    created() {},
     methods: {
       toForget() {
         Event.$emit('toForget')
@@ -237,6 +235,7 @@
         this.closeClickModal = false
         this.closePressEscape = false
         this.showclose = false
+        this.getCaptcha()
         // let _this = this
         // setTimeout(function () {
         //   _this.$refs['username'].focus()
@@ -260,7 +259,7 @@
               .dispatch('user/login', this.form)
               .then(() => {
                 // const routerPath =
-                //   this.redirect === '/404' || this.redirect === '/401'
+                //   this.redirect === '/404' || this.redirect === '/403'
                 //     ? '/'
                 //     : this.redirect
                 // this.$router.push(routerPath).catch(() => {})

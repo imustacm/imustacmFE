@@ -13,16 +13,10 @@
                 style="float: right; margin-right: -8px"
               >
                 <el-form-item>
-                  <el-input
-                    v-model="queryForm.problem_id"
-                    placeholder="题目编号"
-                  />
+                  <el-input v-model="queryForm.id" placeholder="题目编号" />
                 </el-form-item>
                 <el-form-item>
-                  <el-input
-                    v-model="queryForm.problem_title"
-                    placeholder="题目名称"
-                  />
+                  <el-input v-model="queryForm.title" placeholder="题目名称" />
                 </el-form-item>
                 <el-form-item>
                   <el-button
@@ -60,14 +54,14 @@
           </el-table-column>
           <el-table-column
             align="center"
-            prop="problem_id"
+            prop="id"
             width="80px"
             label="题目编号"
           ></el-table-column>
           <el-table-column
             align="center"
             show-overflow-tooltip
-            prop="problem_title"
+            prop="title"
             label="题目名称"
           >
             <template slot-scope="scope">
@@ -75,7 +69,7 @@
                 style="cursor: pointer"
                 @click="handleAppTemplateDetail(scope.$index, scope.row)"
               >
-                {{ scope.row.problem_title }}
+                {{ scope.row.title }}
               </a>
             </template>
           </el-table-column>
@@ -88,7 +82,7 @@
           >
             <template #default="{ row }">
               <el-tag :type="row.difficulty | statusFilter">
-                {{ row.difficulty }}
+                {{ row.difficulty | difficultyFilter }}
               </el-tag>
             </template>
           </el-table-column>
@@ -102,20 +96,20 @@
             <template #default="{ row }">
               <el-row>
                 <el-col :span="6">
-                  {{ row.accepted }}
+                  {{ row.acceptedNumber }}
                 </el-col>
                 <el-col :span="12">
                   <el-progress
                     :text-inside="true"
                     :stroke-width="20"
-                    :percentage="row.percent"
+                    :percentage="row.acceptedPercent"
                     status="success"
                     :stroke-length="20"
                     :width="80"
                   ></el-progress>
                 </el-col>
                 <el-col :span="6">
-                  {{ row.submit }}
+                  {{ row.submitNumber }}
                 </el-col>
               </el-row>
             </template>
@@ -372,17 +366,25 @@
         queryForm: {
           pageNo: 1,
           pageSize: 50,
-          problem_id: '',
-          problem_title: '',
+          id: '',
+          title: '',
         },
       }
     },
     filters: {
       statusFilter(difficulty) {
         const statusMap = {
-          简单: 'success',
-          一般: 'warning',
-          困难: 'danger',
+          1: 'success',
+          2: 'warning',
+          3: 'danger',
+        }
+        return statusMap[difficulty]
+      },
+      difficultyFilter(difficulty) {
+        const statusMap = {
+          1: '简单',
+          2: '中等',
+          3: '困难',
         }
         return statusMap[difficulty]
       },
@@ -417,9 +419,9 @@
       },
       async fetchData() {
         this.listLoading = true
-        const { data, totalCount } = await getList(this.queryForm)
-        this.list = data
-        this.total = totalCount
+        const { data } = await getList(this.queryForm)
+        this.list = data.records
+        this.total = data.total
         setTimeout(() => {
           this.listLoading = false
         }, 1)

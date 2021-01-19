@@ -6,22 +6,22 @@
           <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
             <div class="pic-error">
               <img
-                alt="401"
+                alt="404"
                 class="pic-error-parent"
                 src="@/assets/error_images/404.png"
               />
               <img
-                alt="401"
+                alt="404"
                 class="pic-error-child left"
                 src="@/assets/error_images/cloud.png"
               />
               <img
-                alt="401"
+                alt="404"
                 class="pic-error-child"
                 src="@/assets/error_images/cloud.png"
               />
               <img
-                alt="401"
+                alt="404"
                 class="pic-error-child"
                 src="@/assets/error_images/cloud.png"
               />

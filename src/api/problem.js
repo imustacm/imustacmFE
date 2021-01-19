@@ -1,9 +1,10 @@
 import request from '@/utils/request'
+import { problemServiceUrl } from '@/config'
 
 export function getList(data) {
   return request({
-    url: '/problem/getList',
-    method: 'post',
+    url: problemServiceUrl + '/problem/listProblems',
+    method: 'get',
     data,
   })
 }

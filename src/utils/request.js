@@ -34,7 +34,7 @@ const handleCode = (code, msg) => {
       }
       break
     case noPermissionCode:
-      router.push({ path: '/401' }).catch(() => {})
+      router.push({ path: '/403' }).catch(() => {})
       break
     default:
       Vue.prototype.$baseMessage(msg || `后端接口${code}异常`, 'error')

@@ -56,6 +56,13 @@ module.exports = {
       warnings: true,
       errors: true,
     },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8888',
+        changeOrigin: true,
+        ws: true,
+      },
+    },
     after: mockServer(),
   },
   configureWebpack() {

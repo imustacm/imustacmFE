@@ -23,9 +23,9 @@ export const constantRoutes = [
     hidden: true,
   },
   {
-    path: '/401',
-    name: '401',
-    component: () => import('@/views/401'),
+    path: '/403',
+    name: '403',
+    component: () => import('@/views/403'),
     hidden: true,
   },
   // {
