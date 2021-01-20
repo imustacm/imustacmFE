@@ -20,14 +20,14 @@
           >
             <el-form-item>
               <el-input
-                v-model="queryForm.service_name"
+                v-model="queryForm.serviceName"
                 placeholder="服务名称"
                 style="width: 130px"
               />
             </el-form-item>
             <el-form-item>
               <el-input
-                v-model="queryForm.interface_url"
+                v-model="queryForm.interfaceUrl"
                 placeholder="接口地址"
                 style="width: 130px"
               />
@@ -84,24 +84,21 @@
       <el-table-column
         align="center"
         show-overflow-tooltip
-        label="序号"
+        prop="id"
+        label="编号"
         width="95"
-      >
-        <template #default="scope">
-          {{ scope.$index + 1 }}
-        </template>
-      </el-table-column>
+      ></el-table-column>
       <el-table-column
         align="center"
         show-overflow-tooltip
-        prop="service_name"
+        prop="serviceName"
         label="服务名称"
       ></el-table-column>
       <el-table-column
         align="center"
         show-overflow-tooltip
         label="接口地址"
-        prop="interface_url"
+        prop="interfaceUrl"
       ></el-table-column>
       <el-table-column
         align="center"
@@ -109,7 +106,12 @@
         label="中文描述"
         prop="description"
       ></el-table-column>
-      <el-table-column show-overflow-tooltip label="启用状态" align="center">
+      <el-table-column
+        show-overflow-tooltip
+        label="启用状态"
+        align="center"
+        prop="visible"
+      >
         <template #default="{ row }">
           <el-tag :type="row.visible | statusFilter">
             {{ row.visible | visibleFilter }}
@@ -130,7 +132,7 @@
     </el-table>
     <el-pagination
       :background="background"
-      :current-page="queryForm.pageNo"
+      :current-page="queryForm.pageIndex"
       :page-size="queryForm.pageSize"
       :total="total"
       @current-change="handleCurrentChange"
@@ -140,7 +142,7 @@
 </template>
 
 <script>
-  import { getList, doDelete } from '@/api/table'
+  import { getList, doDelete } from '@/api/interface'
   import TableEdit from './components/TableEdit'
   export default {
     name: 'ComprehensiveTable',
@@ -173,10 +175,10 @@
         selectRows: '',
         elementLoadingText: '正在加载',
         queryForm: {
-          pageNo: 1,
+          pageIndex: 1,
           pageSize: 50,
-          service_name: '',
-          interface_url: '',
+          serviceName: '',
+          interfaceUrl: '',
           description: '',
           options: [
             {
@@ -234,18 +236,18 @@
         }
       },
       handleCurrentChange(val) {
-        this.queryForm.pageNo = val
+        this.queryForm.pageIndex = val
         this.fetchData()
       },
       handleQuery() {
-        this.queryForm.pageNo = 1
+        this.queryForm.pageIndex = 1
         this.fetchData()
       },
       async fetchData() {
         this.listLoading = true
-        const { data, totalCount } = await getList(this.queryForm)
-        this.list = data
-        this.total = totalCount
+        const { data } = await getList(this.queryForm)
+        this.list = data.records
+        this.total = data.total
         setTimeout(() => {
           this.listLoading = false
         }, 1)

@@ -5,25 +5,35 @@
     width="500px"
     @close="close"
   >
-    <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-      <el-form-item label="服务名称" prop="service_name">
+    <el-form
+      ref="formInter"
+      :model="formInter"
+      :rules="rules"
+      label-width="80px"
+    >
+      <el-form-item label="服务名称" prop="serviceName">
         <el-input
-          v-model.trim="form.service_name"
+          v-model.trim="formInter.serviceName"
           autocomplete="off"
         ></el-input>
       </el-form-item>
-      <el-form-item label="接口地址" prop="interface_url">
+      <el-form-item label="接口地址" prop="interfaceUrl">
         <el-input
-          v-model.trim="form.interface_url"
+          v-model.trim="formInter.interfaceUrl"
           autocomplete="off"
         ></el-input>
       </el-form-item>
       <el-form-item label="中文描述" prop="description">
-        <el-input v-model.trim="form.description" autocomplete="off"></el-input>
+        <el-input
+          v-model.trim="formInter.description"
+          autocomplete="off"
+        ></el-input>
       </el-form-item>
       <el-form-item label="启用状态" prop="visible">
-        <el-radio v-model.trim="form.visible" label="true">启用</el-radio>
-        <el-radio v-model.trim="form.visible" label="false">关闭</el-radio>
+        <el-radio-group v-model.trim="formInter.visible">
+          <el-radio :label="true">启用</el-radio>
+          <el-radio :label="false">关闭</el-radio>
+        </el-radio-group>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
@@ -34,23 +44,23 @@
 </template>
 
 <script>
-  import { doEdit } from '@/api/table'
+  import { doEdit } from '@/api/interface'
 
   export default {
     name: 'TableEdit',
     data() {
       return {
-        form: {
-          service_name: '',
-          interface_url: '',
+        formInter: {
+          serviceName: '',
+          interfaceUrl: '',
           description: '',
-          visible: 'true',
+          visible: true,
         },
         rules: {
-          service_name: [
+          serviceName: [
             { required: true, trigger: 'blur', message: '请输入服务名称' },
           ],
-          interface_url: [
+          interfaceUrl: [
             { required: true, trigger: 'blur', message: '请输入接口地址' },
           ],
           description: [{ required: false }],
@@ -67,25 +77,25 @@
           this.title = '新增'
         } else {
           this.title = '编辑'
-          this.form = Object.assign({}, row)
+          this.formInter = Object.assign({}, row)
         }
         this.dialogFormVisible = true
       },
       close() {
-        this.$refs['form'].resetFields()
-        this.form = this.$options.data().form
+        this.$refs['formInter'].resetFields()
+        this.formInter = this.$options.data().formInter
         this.dialogFormVisible = false
         this.$emit('fetch-data')
       },
       save() {
-        this.$refs['form'].validate(async (valid) => {
+        this.$refs['formInter'].validate(async (valid) => {
           if (valid) {
-            const { msg } = await doEdit(this.form)
+            const { msg } = await doEdit(this.formInter)
             this.$baseMessage(msg, 'success')
-            this.$refs['form'].resetFields()
+            this.$refs['formInter'].resetFields()
             this.dialogFormVisible = false
             this.$emit('fetch-data')
-            this.form = this.$options.data().form
+            this.formInter = this.$options.data().formInter
           } else {
             return false
           }

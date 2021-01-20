@@ -1,59 +1,71 @@
 <template>
-  <div class="error-container">
-    <div class="error-content">
-      <el-row :gutter="20">
-        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <div class="pic-error">
-            <img
-              alt="403"
-              class="pic-error-parent"
-              src="@/assets/error_images/403.png"
-            />
-            <img
-              alt="403"
-              class="pic-error-child left"
-              src="@/assets/error_images/cloud.png"
-            />
-            <img
-              alt="403"
-              class="pic-error-child"
-              src="@/assets/error_images/cloud.png"
-            />
-            <img
-              alt="403"
-              class="pic-error-child"
-              src="@/assets/error_images/cloud.png"
-            />
-          </div>
-        </el-col>
+  <div>
+    <div class="error-container">
+      <div class="error-content">
+        <el-row :gutter="20">
+          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+            <div class="pic-error">
+              <img
+                alt="403"
+                class="pic-error-parent"
+                src="@/assets/error_images/403.png"
+              />
+              <img
+                alt="403"
+                class="pic-error-child left"
+                src="@/assets/error_images/cloud.png"
+              />
+              <img
+                alt="403"
+                class="pic-error-child"
+                src="@/assets/error_images/cloud.png"
+              />
+              <img
+                alt="403"
+                class="pic-error-child"
+                src="@/assets/error_images/cloud.png"
+              />
+            </div>
+          </el-col>
 
-        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <div class="bullshit">
-            <div class="bullshit-oops">{{ oops }}</div>
-            <div class="bullshit-headline">{{ headline }}</div>
-            <div class="bullshit-info">{{ info }}</div>
-            <a class="bullshit-return-home" href="#/index">
-              {{ jumpTime }}s&nbsp;{{ btn }}
-            </a>
-          </div>
-        </el-col>
-      </el-row>
+          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+            <div class="bullshit">
+              <div class="bullshit-oops">{{ oops }}</div>
+              <div class="bullshit-headline">{{ headline }}</div>
+              <div class="bullshit-info">{{ info }}</div>
+              <a class="bullshit-return-home" href="#/index">
+                {{ jumpTime }}s&nbsp;{{ btn }}
+              </a>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import path from 'path'
+  import { mapGetters } from 'vuex'
+
   export default {
     name: 'Page403',
     data() {
       return {
         jumpTime: 5,
-        oops: '抱歉!',
-        headline: '您没有操作权限...',
-        info: '当前帐号没有操作权限,请联系管理员。',
-        btn: '返回',
+        oops: '抱歉',
+        headline: '您没有访问权限',
+        info: '您没有执行此操作的权限，请联系管理员获取权限',
+        btn: '返回首页',
         timer: 0,
+        tabActive: '',
       }
+    },
+    computed: {
+      ...mapGetters({
+        visitedRoutes: 'tabsBar/visitedRoutes',
+        routes: 'routes/routes',
+      }),
     },
     mounted() {
       this.timeChange()
@@ -61,19 +73,47 @@
     beforeDestroy() {
       clearInterval(this.timer)
     },
+    watch: {
+      $route: {
+        handler(route) {
+          let tabActive = ''
+          this.visitedRoutes.forEach((item, index) => {
+            if (item.path === this.$route.path) {
+              tabActive = item.path
+            }
+          })
+          this.tabActive = tabActive
+        },
+        immediate: true,
+      },
+    },
     methods: {
+      async handleTabRemove(tabActive) {
+        let view
+        this.visitedRoutes.forEach((item, index) => {
+          if (tabActive == item.path) {
+            view = item
+          }
+        })
+        const { visitedRoutes } = await this.$store.dispatch(
+          'tabsBar/delRoute',
+          view
+        )
+      },
       timeChange() {
         this.timer = setInterval(() => {
           if (this.jumpTime) {
             this.jumpTime--
           } else {
             this.$router.push({ path: '/' })
-            this.$store.dispatch('tagsBar/delOthersRoutes', {
-              path: '/',
-            })
+            this.handleTabRemove(this.tabActive)
             clearInterval(this.timer)
           }
         }, 1000)
+      },
+      backToIndex() {
+        this.$router.push({ path: '/' })
+        this.handleTabRemove(this.tabActive)
       },
     },
   }
@@ -81,10 +121,13 @@
 
 <style lang="scss" scoped>
   .error-container {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: absolute;
+    // top: 40%;
+    // left: 50%;
+    margin: 20px;
+    width: 100%;
+    height: 100%;
+    transform: translate(10%, 10%);
 
     .error-content {
       .pic-error {
@@ -236,7 +279,7 @@
         }
 
         &-headline {
-          margin-bottom: 10px;
+          margin-bottom: 30px;
           font-size: 20px;
           font-weight: bold;
           line-height: 24px;
@@ -249,7 +292,7 @@
         }
 
         &-info {
-          margin-bottom: 30px;
+          margin-bottom: 50px;
           font-size: 13px;
           line-height: 21px;
           color: $base-color-gray;

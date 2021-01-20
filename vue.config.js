@@ -58,7 +58,8 @@ module.exports = {
     },
     proxy: {
       '/api': {
-        target: 'http://localhost:8888',
+        target: 'https://imustacm.cn/',
+        //target: 'http://localhost:8888/',
         changeOrigin: true,
         ws: true,
       },

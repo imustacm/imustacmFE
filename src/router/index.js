@@ -12,22 +12,22 @@ import { publicPath, routerMode } from '@/config'
 Vue.use(VueRouter)
 
 export const constantRoutes = [
-  {
-    path: '/login',
-    component: () => import('@/views/login/index'),
-    hidden: true,
-  },
-  {
-    path: '/register',
-    component: () => import('@/views/register/index'),
-    hidden: true,
-  },
-  {
-    path: '/403',
-    name: '403',
-    component: () => import('@/views/403'),
-    hidden: true,
-  },
+  // {
+  //   path: '/login',
+  //   component: () => import('@/views/login/index'),
+  //   hidden: true,
+  // },
+  // {
+  //   path: '/register',
+  //   component: () => import('@/views/register/index'),
+  //   hidden: true,
+  // },
+  // {
+  //   path: '/403',
+  //   name: '403',
+  //   component: () => import('@/views/403'),
+  //   hidden: true,
+  // },
   // {
   //   path: '/404',
   //   name: '404',
@@ -60,6 +60,13 @@ export const asyncRoutes = [
         component: () => import('@/views/404'),
         hidden: true,
         meta: { title: '404' },
+      },
+      {
+        path: '403',
+        name: '403',
+        component: () => import('@/views/403'),
+        hidden: true,
+        meta: { title: '403' },
       },
     ],
   },
@@ -273,12 +280,12 @@ export const asyncRoutes = [
     meta: { title: '后台管理', icon: 'cogs', permissions: ['adminak'] },
 
     children: [
-      {
-        path: 'controlCenter',
-        name: 'ControlCenter',
-        component: () => import('@/views/project/admin/interface/index'),
-        meta: { title: '控制中心' },
-      },
+      // {
+      //   path: 'controlCenter',
+      //   name: 'ControlCenter',
+      //   component: () => import('@/views/project/admin/interface/index'),
+      //   meta: { title: '控制中心' },
+      // },
       {
         path: 'system',
         name: 'System',
@@ -292,197 +299,197 @@ export const asyncRoutes = [
             component: () => import('@/views/project/admin/interface/index'),
             meta: { title: '接口管理' },
           },
-          {
-            path: 'permission',
-            name: 'Permission',
-            component: () => import('@/views/project/admin/permission/index'),
-            meta: { title: '权限管理' },
-          },
-          {
-            path: 'judger',
-            name: 'Judger',
-            component: () => import('@/views/register/index'),
-            meta: { title: '判题管理' },
-          },
-          {
-            path: 'downloadAdmin',
-            name: 'DownloadAdmin',
-            component: () => import('@/views/register/index'),
-            meta: { title: '下载文件管理' },
-          },
-          {
-            path: 'dataDictionary',
-            name: 'DataDictionary',
-            component: () => import('@/views/register/index'),
-            meta: { title: '数据字典管理' },
-          },
-          {
-            path: 'systemMail',
-            name: 'SystemMail',
-            component: () => import('@/views/register/index'),
-            meta: { title: '系统邮箱管理' },
-          },
+          // {
+          //   path: 'permission',
+          //   name: 'Permission',
+          //   component: () => import('@/views/project/admin/permission/index'),
+          //   meta: { title: '权限管理' },
+          // },
+          // {
+          //   path: 'judger',
+          //   name: 'Judger',
+          //   component: () => import('@/views/register/index'),
+          //   meta: { title: '判题管理' },
+          // },
+          // {
+          //   path: 'downloadAdmin',
+          //   name: 'DownloadAdmin',
+          //   component: () => import('@/views/register/index'),
+          //   meta: { title: '下载文件管理' },
+          // },
+          // {
+          //   path: 'dataDictionary',
+          //   name: 'DataDictionary',
+          //   component: () => import('@/views/register/index'),
+          //   meta: { title: '数据字典管理' },
+          // },
+          // {
+          //   path: 'systemMail',
+          //   name: 'SystemMail',
+          //   component: () => import('@/views/register/index'),
+          //   meta: { title: '系统邮箱管理' },
+          // },
         ],
       },
-      {
-        path: 'user',
-        name: 'User',
-        component: () => import('@/App'),
-        meta: { title: '用户管理' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'onlineUser',
-            name: 'OnlineUser',
-            component: () => import('@/views/register/index'),
-            meta: { title: '在线用户列表' },
-          },
-          {
-            path: 'loginLog',
-            name: 'LoginLog',
-            component: () => import('@/views/register/index'),
-            meta: { title: '查看登录日志' },
-          },
-          {
-            path: 'userList',
-            name: 'UserList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '用户信息管理' },
-          },
-          {
-            path: 'userPermission',
-            name: 'UserPermission',
-            component: () => import('@/views/register/index'),
-            meta: { title: '管理权限配置' },
-          },
-          {
-            path: 'mailList',
-            name: 'MailList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '站内消息管理' },
-          },
-        ],
-      },
-      {
-        path: 'problemAdmin',
-        name: 'ProblemAdmin',
-        component: () => import('@/App'),
-        meta: { title: '题目管理' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'problemList',
-            name: 'ProblemList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '所有题目列表' },
-          },
-        ],
-      },
-      {
-        path: 'practiceAdmin',
-        name: 'PracticeAdmin',
-        component: () => import('@/App'),
-        meta: { title: '练习管理' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'practiceList',
-            name: 'PracticeList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '所有练习列表' },
-          },
-        ],
-      },
-      {
-        path: 'contestAdmin',
-        name: 'ContestAdmin',
-        component: () => import('@/App'),
-        meta: { title: '竞赛管理' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'contestList',
-            name: 'ContestList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '所有竞赛列表' },
-          },
-        ],
-      },
-      {
-        path: 'experimentAdmin',
-        name: 'ExperimentAdmin',
-        component: () => import('@/App'),
-        meta: { title: '实验管理' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'experimentList',
-            name: 'ExperimentList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '所有实验列表' },
-          },
-        ],
-      },
-      {
-        path: 'articleAdmin',
-        name: 'ArticleAdmin',
-        component: () => import('@/App'),
-        meta: { title: '文章管理' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'indexImage',
-            name: 'IndexImage',
-            component: () => import('@/views/register/index'),
-            meta: { title: '首页轮播管理' },
-          },
-          {
-            path: 'problemSolution',
-            name: 'ProblemSolution',
-            component: () => import('@/views/register/index'),
-            meta: { title: '题解文章管理' },
-          },
-          {
-            path: 'problemTalk',
-            name: 'ProblemTalk',
-            component: () => import('@/views/register/index'),
-            meta: { title: '讨论文章管理' },
-          },
-          {
-            path: 'bbsList',
-            name: 'BbsList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '博客论坛管理' },
-          },
-          {
-            path: 'newsList',
-            name: 'NewsList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '新闻中心管理' },
-          },
-          {
-            path: 'noticeList',
-            name: 'NoticeList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '通知公告管理' },
-          },
-        ],
-      },
-      {
-        path: 'groupAdmin',
-        name: 'GroupAdmin',
-        component: () => import('@/App'),
-        meta: { title: '小组管理' },
-        alwaysShow: true,
-        children: [
-          {
-            path: 'groupList',
-            name: 'GroupList',
-            component: () => import('@/views/register/index'),
-            meta: { title: '所有小组列表' },
-          },
-        ],
-      },
+      // {
+      //   path: 'user',
+      //   name: 'User',
+      //   component: () => import('@/App'),
+      //   meta: { title: '用户管理' },
+      //   alwaysShow: true,
+      //   children: [
+      //     {
+      //       path: 'onlineUser',
+      //       name: 'OnlineUser',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '在线用户列表' },
+      //     },
+      //     {
+      //       path: 'loginLog',
+      //       name: 'LoginLog',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '查看登录日志' },
+      //     },
+      //     {
+      //       path: 'userList',
+      //       name: 'UserList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '用户信息管理' },
+      //     },
+      //     {
+      //       path: 'userPermission',
+      //       name: 'UserPermission',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '管理权限配置' },
+      //     },
+      //     {
+      //       path: 'mailList',
+      //       name: 'MailList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '站内消息管理' },
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: 'problemAdmin',
+      //   name: 'ProblemAdmin',
+      //   component: () => import('@/App'),
+      //   meta: { title: '题目管理' },
+      //   alwaysShow: true,
+      //   children: [
+      //     {
+      //       path: 'problemList',
+      //       name: 'ProblemList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '所有题目列表' },
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: 'practiceAdmin',
+      //   name: 'PracticeAdmin',
+      //   component: () => import('@/App'),
+      //   meta: { title: '练习管理' },
+      //   alwaysShow: true,
+      //   children: [
+      //     {
+      //       path: 'practiceList',
+      //       name: 'PracticeList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '所有练习列表' },
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: 'contestAdmin',
+      //   name: 'ContestAdmin',
+      //   component: () => import('@/App'),
+      //   meta: { title: '竞赛管理' },
+      //   alwaysShow: true,
+      //   children: [
+      //     {
+      //       path: 'contestList',
+      //       name: 'ContestList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '所有竞赛列表' },
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: 'experimentAdmin',
+      //   name: 'ExperimentAdmin',
+      //   component: () => import('@/App'),
+      //   meta: { title: '实验管理' },
+      //   alwaysShow: true,
+      //   children: [
+      //     {
+      //       path: 'experimentList',
+      //       name: 'ExperimentList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '所有实验列表' },
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: 'articleAdmin',
+      //   name: 'ArticleAdmin',
+      //   component: () => import('@/App'),
+      //   meta: { title: '文章管理' },
+      //   alwaysShow: true,
+      //   children: [
+      //     {
+      //       path: 'indexImage',
+      //       name: 'IndexImage',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '首页轮播管理' },
+      //     },
+      //     {
+      //       path: 'problemSolution',
+      //       name: 'ProblemSolution',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '题解文章管理' },
+      //     },
+      //     {
+      //       path: 'problemTalk',
+      //       name: 'ProblemTalk',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '讨论文章管理' },
+      //     },
+      //     {
+      //       path: 'bbsList',
+      //       name: 'BbsList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '博客论坛管理' },
+      //     },
+      //     {
+      //       path: 'newsList',
+      //       name: 'NewsList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '新闻中心管理' },
+      //     },
+      //     {
+      //       path: 'noticeList',
+      //       name: 'NoticeList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '通知公告管理' },
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: 'groupAdmin',
+      //   name: 'GroupAdmin',
+      //   component: () => import('@/App'),
+      //   meta: { title: '小组管理' },
+      //   alwaysShow: true,
+      //   children: [
+      //     {
+      //       path: 'groupList',
+      //       name: 'GroupList',
+      //       component: () => import('@/views/register/index'),
+      //       meta: { title: '所有小组列表' },
+      //     },
+      //   ],
+      // },
     ],
   },
   {

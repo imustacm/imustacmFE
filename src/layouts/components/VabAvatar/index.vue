@@ -21,7 +21,7 @@
             title="通知消息"
             width="200"
             trigger="hover"
-            content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+            content="暂无通知消息"
           >
             <el-button
               slot="reference"
@@ -64,7 +64,7 @@
               <el-dropdown-item command="gitee" divided>
                 码云地址
               </el-dropdown-item> -->
-              <el-dropdown-item command="userCenter">
+              <!-- <el-dropdown-item command="userCenter">
                 <vab-icon :icon="['fas', 'user']"></vab-icon>
                 个人中心
               </el-dropdown-item>
@@ -83,7 +83,7 @@
               <el-dropdown-item command="cardSystem">
                 <vab-icon :icon="['fas', 'calendar-week']"></vab-icon>
                 打卡系统
-              </el-dropdown-item>
+              </el-dropdown-item> -->
               <el-dropdown-item command="logout">
                 <vab-icon :icon="['fas', 'times-circle']"></vab-icon>
                 退出登录

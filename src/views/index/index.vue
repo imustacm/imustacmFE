@@ -12,7 +12,10 @@
       </el-carousel>
     </div>
     <div></div> -->
-    <h1>IMUSTACM测试测试测试20200117</h1>
+    <h1>
+      IMUSTACM测试20200120 测试用户账号：普通用户：string/string
+      管理员：string1/string
+    </h1>
   </div>
 </template>
 

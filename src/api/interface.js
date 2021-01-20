@@ -3,7 +3,7 @@ import { userServiceUrl } from '@/config'
 
 export function getList(data) {
   return request({
-    url: userServiceUrl + '/permission/list',
+    url: userServiceUrl + '/interface/page',
     method: 'post',
     data,
   })
@@ -11,7 +11,7 @@ export function getList(data) {
 
 export function doEdit(data) {
   return request({
-    url: '/table/doEdit',
+    url: userServiceUrl + '/interface/save/or/update',
     method: 'post',
     data,
   })
