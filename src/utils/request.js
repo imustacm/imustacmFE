@@ -56,11 +56,11 @@ instance.interceptors.request.use(
       config.headers[tokenName] = store.getters['user/accessToken']
     }
     //这里会过滤所有为空、0、false的key，如果不需要请自行注释
-    if (config.data)
-      config.data = Vue.prototype.$baseLodash.pickBy(
-        config.data,
-        Vue.prototype.$baseLodash.identity
-      )
+    // if (config.data)
+    //   config.data = Vue.prototype.$baseLodash.pickBy(
+    //     config.data,
+    //     Vue.prototype.$baseLodash.identity
+    //   )
     if (
       config.data &&
       config.headers['Content-Type'] ===
@@ -92,8 +92,7 @@ instance.interceptors.response.use(
     } else {
       handleCode(code, msg)
       return Promise.reject(
-        'IMUSTACM请求异常拦截:' +
-          JSON.stringify({ url: config.url, code, msg }) || 'Error'
+        '请求异常:' + JSON.stringify({ url: config.url, code, msg }) || 'Error'
       )
     }
   },

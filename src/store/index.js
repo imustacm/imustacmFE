@@ -7,6 +7,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import VueRouter from 'vue-router'
+import * as monaco from 'monaco-editor'
 
 Vue.use(VueRouter)
 // router文件夹-->index.js文件
@@ -29,4 +30,6 @@ Object.keys(modules).forEach((key) => {
 const store = new Vuex.Store({
   modules,
 })
+
+Vue.use(monaco)
 export default store

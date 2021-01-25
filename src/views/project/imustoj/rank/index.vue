@@ -1,12 +1,10 @@
 <template>
-  <div class="aboutUs">
-    <h1>网站开发中……</h1>
-  </div>
+  <div class="rank-container"></div>
 </template>
 
 <script>
   export default {
-    name: 'AboutUs',
+    name: 'Rank',
     components: {},
     data() {
       return {}
@@ -16,8 +14,3 @@
     methods: {},
   }
 </script>
-<style lang="scss" scoped>
-  .aboutUs {
-    margin: 1px;
-  }
-</style>

@@ -1,6 +1,64 @@
 <template>
-  <div class="table-container" style="margin: 20px">
+  <div class="judgeAdmin" style="margin: 20px">
     <el-row style="width: 100%; height: 32px">
+      <vab-query-form>
+        <el-form
+          ref="judgeForm"
+          :model="judgeForm"
+          :rules="rules"
+          :inline="true"
+          labelPosition="left"
+          label-width="130px"
+          @submit.native.prevent
+        >
+          <el-form-item label="用户提交间隔" prop="space">
+            <el-input
+              v-model.trim="judgeForm.space"
+              autocomplete="off"
+              style="width: 120px"
+            >
+              <template slot="append">秒</template>
+            </el-input>
+          </el-form-item>
+          <el-form-item
+            label="判题机标准版本"
+            prop="judgeVersion"
+            style="margin-left: 10px"
+          >
+            <el-input
+              v-model.trim="judgeForm.judgeVersion"
+              autocomplete="off"
+              style="width: 120px"
+            ></el-input>
+          </el-form-item>
+          <el-form-item
+            label="判题机回调接口"
+            prop="judgeUrl"
+            style="margin-left: 10px"
+          >
+            <el-input
+              v-model.trim="judgeForm.judgeUrl"
+              autocomplete="off"
+              style="width: 390px"
+            ></el-input>
+          </el-form-item>
+          <el-form-item style="float: right; margin-right: 0px">
+            <el-button
+              icon="el-icon-document-checked"
+              type="primary"
+              @click="save"
+            >
+              保存
+            </el-button>
+          </el-form-item>
+          <el-form-item style="float: right; margin-right: 14px">
+            <el-button icon="el-icon-refresh" @click="empty">清空</el-button>
+          </el-form-item>
+        </el-form>
+      </vab-query-form>
+    </el-row>
+    <hr style="margin-top: 15px" />
+    <el-row style="width: 100%; height: 32px; margin-top: 15px">
       <vab-query-form>
         <el-col :span="8">
           <el-button icon="el-icon-plus" type="primary" @click="handleAdd">
@@ -21,29 +79,14 @@
             <el-form-item>
               <el-input
                 v-model="queryForm.serviceName"
-                placeholder="服务名称"
-                style="width: 130px"
-              />
-            </el-form-item>
-            <el-form-item>
-              <el-input
-                v-model="queryForm.interfaceUrl"
-                placeholder="接口地址"
-                style="width: 130px"
-              />
-            </el-form-item>
-            <el-form-item>
-              <el-input
-                v-model="queryForm.description"
-                placeholder="中文描述"
-                style="width: 130px"
+                placeholder="判题机版本"
               />
             </el-form-item>
             <el-form-item>
               <el-select
                 v-model="queryForm.visible"
                 placeholder="启用状态"
-                style="width: 110px"
+                style="width: 150px"
                 clearable
               >
                 <el-option
@@ -91,20 +134,14 @@
       <el-table-column
         align="center"
         show-overflow-tooltip
-        prop="serviceName"
-        label="服务名称"
+        prop="host"
+        label="判题机地址"
       ></el-table-column>
       <el-table-column
         align="center"
         show-overflow-tooltip
-        label="接口地址"
-        prop="interfaceUrl"
-      ></el-table-column>
-      <el-table-column
-        align="center"
-        show-overflow-tooltip
-        label="中文描述"
-        prop="description"
+        label="判题机版本"
+        prop="judge_version"
       ></el-table-column>
       <el-table-column
         show-overflow-tooltip
@@ -147,7 +184,7 @@
   import Event from '@/assets/js/inter.js'
 
   export default {
-    name: 'ComprehensiveTable',
+    name: 'judgeAdmin',
     components: {
       TableEdit,
     },
@@ -169,10 +206,18 @@
     },
     data() {
       return {
-        list: [],
+        list: [
+          {
+            id: 1,
+            token: 'IMUSTACM_TOKEN',
+            host: 'https://imustacm.cn:12358/',
+            judge_version: 1,
+            visible: true,
+          },
+        ],
         listLoading: true,
         layout: 'total, sizes, prev, pager, next, jumper',
-        total: 0,
+        total: 1,
         background: true,
         selectRows: '',
         elementLoadingText: '正在加载',
@@ -194,6 +239,30 @@
           ],
           visible: '',
         },
+        judgeForm: {
+          space: '5',
+          judgeVersion: '1',
+          judgeUrl: 'https://imustacm.cn/api/problem/problem/getSubmissionInfo',
+        },
+        rules: {
+          space: [
+            { required: true, trigger: 'blur', message: '请输入用户提交间隔' },
+          ],
+          judgeVersion: [
+            {
+              required: true,
+              trigger: 'blur',
+              message: '请输入判题机标准版本',
+            },
+          ],
+          judgeUrl: [
+            {
+              required: true,
+              trigger: 'blur',
+              message: '请输入判题机回调接口',
+            },
+          ],
+        },
       }
     },
     computed: {
@@ -202,7 +271,10 @@
       },
     },
     created() {
-      this.fetchData()
+      //this.fetchData()
+      setTimeout(() => {
+        this.listLoading = false
+      }, 1)
     },
     beforeDestroy() {},
     mounted() {
@@ -211,6 +283,28 @@
       })
     },
     methods: {
+      empty() {
+        this.$baseConfirm(
+          '您确定要执行该操作?',
+          '提示',
+          () => {
+            this.judgeForm.space = ''
+            this.judgeForm.judgeVersion = ''
+            this.judgeForm.judgeUrl = ''
+          },
+          () => {}
+        )
+      },
+      save() {
+        this.$refs['judgeForm'].validate(async (valid) => {
+          if (valid) {
+            const { msg } = await doEdit(this.judgeForm)
+            this.$baseMessage(msg, 'success')
+          } else {
+            return false
+          }
+        })
+      },
       setSelectRows(val) {
         this.selectRows = val
       },
