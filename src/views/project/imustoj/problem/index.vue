@@ -3,7 +3,9 @@
     <div class="box" ref="box">
       <div class="left">
         <div class="problemInfo">
-          <span class="problemTitle"><b>12. 整数求和</b></span>
+          <span class="problemTitle">
+            <b>{{ id }}. 整数求和</b>
+          </span>
           <el-tag size="small" class="problemTag firstTag" type="danger">
             困难
           </el-tag>
@@ -173,7 +175,7 @@
             下一题
             <vab-icon :icon="['fas', 'angle-right']"></vab-icon>
           </el-button>
-          <el-button
+          <!-- <el-button
             type="primary"
             plain
             class="btn"
@@ -183,8 +185,13 @@
           </el-button>
           <el-button type="primary" plain class="btn" style="float: right">
             题解 (10)
-          </el-button>
-          <el-button type="primary" plain class="btn" style="float: right">
+          </el-button> -->
+          <el-button
+            type="primary"
+            plain
+            class="btn"
+            style="float: right; margin-right: 20px"
+          >
             数据统计
           </el-button>
           <el-button type="primary" plain class="btn" style="float: right">
@@ -234,7 +241,7 @@
       return {
         codes: '',
         editor: null,
-
+        id: this.$route.params.id,
         options: [
           {
             value: '1',

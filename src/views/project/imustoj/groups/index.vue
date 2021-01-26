@@ -72,7 +72,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
         <el-card>
           <div slot="header">
-            <b>ACM程序设计协会 - 2020级</b>
+            <b>ACM程序设计协会(2020级)</b>
             <el-button
               type="success"
               size="mini"

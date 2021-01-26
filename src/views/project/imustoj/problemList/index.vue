@@ -1,7 +1,15 @@
 <template>
   <div class="problemList">
-    <el-row :gutter="20" type="flex" justify="center">
-      <el-col :span="17" class="left-pattern">
+    <el-row :gutter="20" justify="center">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="17"
+        :xl="17"
+        class="left-pattern"
+        style="padding: 20px 30px 25px 30px"
+      >
         <el-row style="width: 100%; height: 32px">
           <vab-query-form>
             <el-col :span="24">
@@ -67,7 +75,7 @@
             <template slot-scope="scope">
               <a
                 style="cursor: pointer"
-                @click="handleAppTemplateDetail(scope.$index, scope.row)"
+                @click="handleAppTemplateDetail(scope.row)"
               >
                 {{ scope.row.title }}
               </a>
@@ -123,7 +131,7 @@
           @current-change="handleCurrentChange"
         ></el-pagination>
       </el-col>
-      <el-col :span="6" class="right-pattern">
+      <el-col :xs="24" :sm="24" :md="24" :lg="6" :xl="6" class="right-pattern">
         <div class="problemTabDiv">
           <span class="problemTabTitle">题目标签</span>
           <br />
@@ -161,12 +169,6 @@
             题目标签伊尔呀呼嘿
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集是不是
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
             题目标签
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
@@ -176,16 +178,10 @@
             题目标签哈哈哈
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦哦哦哦
+            题目标签哦
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
             题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
             题目标签
@@ -203,33 +199,6 @@
             题目标签伊尔呀呼嘿
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集是不是
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦哦哦哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
             题目标签
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
@@ -243,99 +212,6 @@
           </el-tag>
           <el-tag size="medium" effect="plain" style="margin: 5px 3px">
             题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集是不是
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦哦哦哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集是不是
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦哦哦哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集是不是
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
           </el-tag>
         </div>
       </el-col>
@@ -400,10 +276,9 @@
     beforeDestroy() {},
     mounted() {},
     methods: {
-      handleAppTemplateDetail(index, row) {
+      handleAppTemplateDetail(row) {
         this.$router.push({
-          path: '/imustoj/problem',
-          params: { appTemplateId: row.id, isAdd: false },
+          path: '/imustoj/problem/' + row.id,
         })
       },
       setSelectRows(val) {
