@@ -181,9 +181,7 @@
         return this.$baseTableHeight()
       },
     },
-    created() {
-      //this.fetchData()
-    },
+    created() {},
     beforeDestroy() {},
     mounted() {
       setTimeout(() => {
@@ -191,53 +189,53 @@
       }, 1)
     },
     methods: {
-      // setSelectRows(val) {
-      //   this.selectRows = val
-      // },
-      // handleAdd() {
-      //   //this.$refs['edit'].showEdit()
-      // },
-      // handleEdit(row) {
-      //   //this.$refs['edit'].showEdit(row)
-      // },
-      // handleDelete(row) {
-      //   if (row.id) {
-      //     this.$baseConfirm('你确定要删除当前项吗', null, async () => {
-      //       const { msg } = await doDelete({ ids: row.id })
-      //       this.$baseMessage(msg, 'success')
-      //       this.fetchData()
-      //     })
-      //   } else {
-      //     if (this.selectRows.length > 0) {
-      //       const ids = this.selectRows.map((item) => item.id).join()
-      //       this.$baseConfirm('你确定要删除选中项吗', null, async () => {
-      //         const { msg } = await doDelete({ ids: ids })
-      //         this.$baseMessage(msg, 'success')
-      //         this.fetchData()
-      //       })
-      //     } else {
-      //       this.$baseMessage('未选中任何行', 'error')
-      //       return false
-      //     }
-      //   }
-      // },
-      // handleCurrentChange(val) {
-      //   this.queryForm.pageNo = val
-      //   this.fetchData()
-      // },
-      // handleQuery() {
-      //   this.queryForm.pageNo = 1
-      //   this.fetchData()
-      // },
-      // async fetchData() {
-      //   this.listLoading = true
-      //   const { data, totalCount } = await getList(this.queryForm)
-      //   this.list = data
-      //   this.total = totalCount
-      //   setTimeout(() => {
-      //     this.listLoading = false
-      //   }, 1)
-      // },
+      setSelectRows(val) {
+        this.selectRows = val
+      },
+      handleAdd() {
+        //this.$refs['edit'].showEdit()
+      },
+      handleEdit(row) {
+        //this.$refs['edit'].showEdit(row)
+      },
+      handleDelete(row) {
+        if (row.id) {
+          this.$baseConfirm('你确定要删除当前项吗', null, async () => {
+            const { msg } = await doDelete({ ids: row.id })
+            this.$baseMessage(msg, 'success')
+            this.fetchData()
+          })
+        } else {
+          if (this.selectRows.length > 0) {
+            const ids = this.selectRows.map((item) => item.id).join()
+            this.$baseConfirm('你确定要删除选中项吗', null, async () => {
+              const { msg } = await doDelete({ ids: ids })
+              this.$baseMessage(msg, 'success')
+              this.fetchData()
+            })
+          } else {
+            this.$baseMessage('未选中任何行', 'error')
+            return false
+          }
+        }
+      },
+      handleCurrentChange(val) {
+        this.queryForm.pageNo = val
+        this.fetchData()
+      },
+      handleQuery() {
+        this.queryForm.pageNo = 1
+        this.fetchData()
+      },
+      async fetchData() {
+        this.listLoading = true
+        const { data, totalCount } = await getList(this.queryForm)
+        this.list = data
+        this.total = totalCount
+        setTimeout(() => {
+          this.listLoading = false
+        }, 1)
+      },
     },
   }
 </script>

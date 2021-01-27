@@ -352,12 +352,12 @@
             label="英文队名"
             show-overflow-tooltip
           ></af-table-column>
-          <el-table-column
+          <af-table-column
             prop="rank"
             align="center"
             label="排名"
             show-overflow-tooltip
-          ></el-table-column>
+          ></af-table-column>
           <af-table-column
             prop="price"
             align="center"

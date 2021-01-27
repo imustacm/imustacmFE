@@ -113,27 +113,46 @@ export const asyncRoutes = [
       {
         path: 'practice',
         name: 'Practice',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        component: () => import('@/views/project/imustoj/contestList/index'),
         meta: { title: '集训练习' },
       },
       {
         path: 'contest',
         name: 'Contest',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        component: () => import('@/views/project/imustoj/contestList/index'),
         meta: { title: '竞赛列表' },
       },
       {
         path: 'experiment',
         name: 'Experiment',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        component: () => import('@/views/project/imustoj/contestList/index'),
         meta: { title: '实验平台' },
       },
-      // // {
-      // //   path: 'bbs',
-      // //   name: 'Bbs',
-      // //   component: () => import('@/views/project/admin/interface/index'),
-      // //   meta: { title: '博客论坛' },
-      // // },
+      // {
+      //   path: 'bbs',
+      //   name: 'Bbs',
+      //   component: () => import('@/views/project/admin/interface/index'),
+      //   meta: { title: '博客论坛' },
+      // },
+      {
+        path: 'contest',
+        component: () => import('@/views/project/imustoj/contestView/index'),
+        name: 'ContestView',
+        alwaysShow: true,
+        hidden: true,
+        meta: {
+          title: '竞赛详情',
+        },
+        children: [
+          {
+            path: 'index/:id',
+            name: 'ContestIndex',
+            meta: { title: '竞赛详情' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestIndex/index'),
+          },
+        ],
+      },
       {
         path: 'groups',
         name: 'Groups',

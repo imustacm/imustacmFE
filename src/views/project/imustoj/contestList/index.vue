@@ -1,5 +1,5 @@
 <template>
-  <div class="solutionList" style="margin: 20px 20px 0px 20px">
+  <div class="contestList" style="margin: 20px 20px 0px 20px">
     <el-row style="width: 100%; height: 32px">
       <vab-query-form>
         <el-form
@@ -11,23 +11,23 @@
         >
           <el-form-item>
             <el-input
-              v-model="queryForm.username"
-              placeholder="用户名"
+              v-model="queryForm.contest_id"
+              :placeholder="placeholder1"
               style="width: 130px"
             />
           </el-form-item>
           <el-form-item>
             <el-input
-              v-model="queryForm.problem_id"
-              placeholder="题目编号"
-              style="width: 130px"
+              v-model="queryForm.contest_name"
+              :placeholder="placeholder2"
+              style="width: 160px"
             />
           </el-form-item>
           <el-form-item>
             <el-select
-              v-model="queryForm.result"
-              placeholder="评判结果"
-              style="width: 190px"
+              v-model="queryForm.type"
+              :placeholder="placeholder3"
+              style="width: 100px"
               clearable
             >
               <el-option
@@ -40,9 +40,24 @@
           </el-form-item>
           <el-form-item>
             <el-select
-              v-model="queryForm.language"
-              placeholder="语言"
-              style="width: 95px"
+              v-model="queryForm.permission"
+              :placeholder="placeholder4"
+              style="width: 100px"
+              clearable
+            >
+              <el-option
+                v-for="item in queryForm.options2"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item>
+            <el-select
+              v-model="queryForm.status"
+              :placeholder="placeholder5"
+              style="width: 100px"
               clearable
             >
               <el-option
@@ -72,72 +87,61 @@
       :data="list"
       :element-loading-text="elementLoadingText"
       @selection-change="setSelectRows"
+      :show-header="false"
     >
       <el-table-column
         align="center"
+        show-overflow-tooltip
         prop="id"
-        label="运行编号"
-        width="105"
+        label="竞赛编号"
+        width="70px"
       ></el-table-column>
-      <el-table-column align="center" prop="username" label="用户名">
+      <el-table-column
+        align="left"
+        show-overflow-tooltip
+        prop="title"
+        label="竞赛信息"
+        header-align="center"
+      >
         <template slot-scope="scope">
-          <a
-            style="cursor: pointer"
-            @click="handleAppTemplateDetail(scope.$index, scope.row)"
-          >
-            {{ scope.row.username }}
-          </a>
+          <p style="line-height: 12px">
+            <a style="cursor: pointer" @click="handleContestDetail(scope.row)">
+              <span style="font-size: 16px">{{ scope.row.title }}</span>
+            </a>
+          </p>
+          <p style="line-height: 5px">
+            <el-tag
+              :type="scope.row.permission_type | permissionTagFilter"
+              effect="plain"
+            >
+              {{ scope.row.permission_type | permissionFilter }}
+            </el-tag>
+            <el-tag type="info" effect="plain">
+              {{ scope.row.start_time }} ~ {{ scope.row.end_time }}
+            </el-tag>
+            <el-tag type="warning" effect="plain">
+              {{ scope.row.contest_flag }}
+            </el-tag>
+          </p>
         </template>
-      </el-table-column>
-      <el-table-column align="center" label="题目编号" prop="problem_id">
-        <template slot-scope="scope">
-          <a
-            style="cursor: pointer"
-            @click="handleAppTemplateDetail(scope.row)"
-          >
-            {{ scope.row.problem_id }}
-          </a>
-        </template>
-      </el-table-column>
-      <el-table-column align="center" label="评判结果 / 抄袭检测" prop="result">
-        <template #default="{ row }">
-          <el-tag :type="row.result | buttonFilter" effect="dark">
-            {{ row.result | resultFilter }}
-          </el-tag>
-          <a
-            style="cursor: pointer; color: #FFFFF; margin-left: 6px"
-            @click="handleSim(row)"
-            v-if="row.simPercent > 0"
-          >
-            <el-tag type="danger" effect="dark">{{ row.simPercent }}%</el-tag>
-          </a>
-        </template>
-      </el-table-column>
-      <el-table-column align="center" label="内存" prop="memory">
-        <template #default="{ row }">{{ row.memory }}KB</template>
-      </el-table-column>
-      <el-table-column align="center" label="用时" prop="time">
-        <template #default="{ row }">{{ row.time }}ms</template>
-      </el-table-column>
-      <el-table-column align="center" label="语言" prop="language">
-        <template #default="{ row }">
-          {{ row.language | languageFilter }}
-        </template>
-      </el-table-column>
-      <el-table-column align="center" label="代码长度" prop="code_length">
-        <template #default="{ row }">{{ row.code_length }}B</template>
       </el-table-column>
       <el-table-column
         align="center"
-        label="提交时间"
-        prop="submit_time"
-      ></el-table-column>
-      <!-- <el-table-column
-        align="center"
         show-overflow-tooltip
-        label="判题机"
-        prop="judger"
-      ></el-table-column> -->
+        label="竞赛状态"
+        prop="problem_id"
+        width="130px"
+      >
+        <template slot-scope="scope">
+          <el-tag
+            effect="dark"
+            :type="scope.row.status | statusTagFilter"
+            size="medium"
+          >
+            {{ scope.row.status | statusFilter }}
+          </el-tag>
+        </template>
+      </el-table-column>
     </el-table>
     <el-pagination
       :background="background"
@@ -152,98 +156,94 @@
 <script>
   import { getList, doDelete } from '@/api/table'
   export default {
-    name: 'solutionList',
+    name: 'ContestList',
     components: {},
     filters: {
-      buttonFilter(btn) {
+      permissionTagFilter(btn) {
         const buttonMap = {
           0: 'success',
-          6: 'danger',
-          1: 'warning',
-          2: 'warning',
-          3: 'warning',
-          4: 'warning',
-          5: 'warning',
+          1: 'danger',
+          2: 'danger',
         }
         return buttonMap[btn]
       },
-      resultFilter(result) {
+      permissionFilter(result) {
         const resultMap = {
-          0: 'Accepted',
-          6: 'Wrong Answer',
-          1: 'warning',
-          2: 'warning',
-          3: 'warning',
-          4: 'warning',
-          5: 'warning',
+          0: '公开',
+          1: '私有',
+          2: '私有',
         }
         return resultMap[result]
       },
-      languageFilter(language) {
-        const languageMap = {
-          c: 'C',
-          cpp: 'C++',
-          java: 'Java',
-          py3: 'Python3',
+      statusTagFilter(btn) {
+        const buttonMap = {
+          0: 'success',
+          1: 'warning',
+          2: 'danger',
         }
-        return languageMap[language]
+        return buttonMap[btn]
+      },
+      statusFilter(result) {
+        const resultMap = {
+          0: '进行中',
+          1: '未开始',
+          2: '已结束',
+        }
+        return resultMap[result]
       },
     },
     data() {
       return {
+        placeholder1: '',
+        placeholder2: '',
+        placeholder3: '',
+        placeholder4: '',
+        placeholder5: '',
         list: [
           {
-            id: 3,
-            user_id: 1,
-            username: '1767111117',
-            problem_id: 2,
-            contest_id: 0,
-            result: 0,
-            simPercent: 100,
-            simSolution: 2,
-            memory: 2,
-            time: 12,
-            language: 'cpp',
-            code_length: 322,
-            submit_time: '2021-01-26 11:52:21',
-            judger: 1,
+            id: 1490,
+            title:
+              '《C语言程序设计》- 数据&网络2019级 - 实验7（字符串与结构体）',
+            contest_flag: 'SOLO',
+            permission_type: 1,
+            start_time: '2020-12-16 08:30:00',
+            end_time: '2020-12-16 10:00:00',
+            status: 0,
           },
           {
-            id: 2,
-            user_id: 2,
-            username: 'imustacm',
-            problem_id: 2,
-            contest_id: 0,
-            result: 0,
-            simPercent: 0,
-            simSolution: 0,
-            memory: 2,
-            time: 12,
-            language: 'cpp',
-            code_length: 322,
-            submit_time: '2021-01-25 23:17:08',
-            judger: 1,
+            id: 1213,
+            title:
+              '包头师范学院 & 内蒙古科技大学 - 2020年CCPC自治区赛训练赛 真题再现',
+            contest_flag: 'ICPC',
+            permission_type: 0,
+            start_time: '2020-12-16 08:30:00',
+            end_time: '2020-12-16 10:00:00',
+            status: 0,
           },
           {
-            id: 1,
-            user_id: 1,
-            username: 'imustacm',
-            problem_id: 1,
-            contest_id: 0,
-            result: 6,
-            simPercent: 0,
-            simSolution: 0,
-            memory: 1,
-            time: 1,
-            language: 'cpp',
-            code_length: 87,
-            submit_time: '2021-01-25 19:26:44',
-            judger: 1,
+            id: 1029,
+            title:
+              '内蒙古科技大学 - 2018年第九届“蓝桥杯”大赛自治区赛队员选拔赛 真题再现',
+            contest_flag: 'OI',
+            permission_type: 0,
+            start_time: '2020-12-16 08:30:00',
+            end_time: '2020-12-16 10:00:00',
+            status: 1,
+          },
+          {
+            id: 1023,
+            title:
+              '内蒙古科技大学 - 2017年第六届团体程序设计天梯赛自治区赛队员选拔赛',
+            contest_flag: 'IOI',
+            permission_type: 1,
+            start_time: '2020-12-16 08:30:00',
+            end_time: '2020-12-16 10:00:00',
+            status: 2,
           },
         ],
         listLoading: true,
         layout: 'total, sizes, prev, pager, next, jumper',
-        total: 3,
+        total: 4,
         background: true,
         selectRows: '',
         elementLoadingText: '正在加载',
@@ -311,7 +311,25 @@
       },
     },
     created() {
-      //this.fetchData()
+      if (this.$route.path.split('/')[2] == 'practice') {
+        this.placeholder1 = '练习编号'
+        this.placeholder2 = '练习名称'
+        this.placeholder3 = '练习类型'
+        this.placeholder4 = '练习权限'
+        this.placeholder5 = '练习状态'
+      } else if (this.$route.path.split('/')[2] == 'contest') {
+        this.placeholder1 = '竞赛编号'
+        this.placeholder2 = '竞赛名称'
+        this.placeholder3 = '竞赛类型'
+        this.placeholder4 = '竞赛权限'
+        this.placeholder5 = '竞赛状态'
+      } else if (this.$route.path.split('/')[2] == 'experiment') {
+        this.placeholder1 = '实验编号'
+        this.placeholder2 = '实验名称'
+        this.placeholder3 = '实验类型'
+        this.placeholder4 = '实验权限'
+        this.placeholder5 = '实验状态'
+      }
     },
     beforeDestroy() {},
     mounted() {
@@ -326,9 +344,9 @@
           params: { appTemplateId: row.id, isAdd: false },
         })
       },
-      handleAppTemplateDetail(row) {
+      handleContestDetail(row) {
         this.$router.push({
-          path: '/imustoj/problem/' + row.id,
+          path: '/imustoj/contest/index/' + row.id,
         })
       },
       setSelectRows(val) {
