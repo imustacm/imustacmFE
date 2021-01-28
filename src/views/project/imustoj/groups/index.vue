@@ -33,7 +33,7 @@
       </vab-query-form>
     </el-row>
     <el-row :gutter="20">
-      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
             <b>计算机科学与技术2020-1班</b>
@@ -69,7 +69,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
             <b>ACM程序设计协会(2020级)</b>
@@ -106,7 +106,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
             <b>网络空间安全2020-1班</b>
@@ -142,7 +142,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
             <b>软件工程2019-2班</b>

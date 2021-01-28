@@ -120,6 +120,7 @@
       :total="total"
       @current-change="handleCurrentChange"
     ></el-pagination>
+    <br />
   </div>
 </template>
 

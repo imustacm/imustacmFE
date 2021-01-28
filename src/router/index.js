@@ -136,6 +136,7 @@ export const asyncRoutes = [
       // },
       {
         path: 'contest',
+        redirect: 'noRedirect',
         component: () => import('@/views/project/imustoj/contestView/index'),
         name: 'ContestView',
         alwaysShow: true,
@@ -147,7 +148,35 @@ export const asyncRoutes = [
           {
             path: 'index/:id',
             name: 'ContestIndex',
-            meta: { title: '竞赛详情' },
+            meta: { title: '竞赛首页' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestIndex/index'),
+          },
+          {
+            path: 'problems/:id',
+            name: 'ContestProblems',
+            meta: { title: '题目列表' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestIndex/index'),
+          },
+          {
+            path: 'status/:id',
+            name: 'ContestStatus',
+            meta: { title: '评判状态' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestIndex/index'),
+          },
+          {
+            path: 'rankList/:id',
+            name: 'ContestRankList',
+            meta: { title: '解题排名' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestIndex/index'),
+          },
+          {
+            path: 'data/:id',
+            name: 'ContestData',
+            meta: { title: '数据统计' },
             component: () =>
               import('@/views/project/imustoj/contestView/contestIndex/index'),
           },

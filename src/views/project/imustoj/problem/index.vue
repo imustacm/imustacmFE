@@ -9,19 +9,19 @@
           <el-tag size="small" class="problemTag firstTag" type="danger">
             困难
           </el-tag>
-          <el-tag size="small" effect="plain" class="problemTag">
-            基本输入输出
-          </el-tag>
-          <el-tag size="small" effect="plain" class="problemTag">
-            滑动窗口
-          </el-tag>
+          <span class="limit firstTag" style="color: red">Special Judge</span>
           <br />
           <p class="problemSub">
             <span class="limit">时间限制：1000ms</span>
             <span class="limit">内存限制：65535KB</span>
             <span class="limit">提交：1233</span>
             <span class="limit">通过：929</span>
-            <span class="limit" style="color: red">Special Judge</span>
+          </p>
+          <p class="problemSub">
+            <el-tag size="small" effect="plain">基本输入输出</el-tag>
+            <el-tag size="small" effect="plain" class="problemTag">
+              滑动窗口
+            </el-tag>
           </p>
           <hr class="hrCenter" />
           <p class="problemDesc">
@@ -449,6 +449,6 @@
     margin: 0px 0px 0px 10px;
   }
   .firstTag {
-    margin-left: 20px;
+    margin-left: 15px;
   }
 </style>
