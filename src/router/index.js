@@ -89,7 +89,7 @@ export const asyncRoutes = [
         name: 'Problem',
         component: () => import('@/views/project/imustoj/problem/index'),
         hidden: true,
-        meta: { title: '题目详情' },
+        meta: { title: '题目详情', oldTitle: '题目详情' },
       },
       {
         path: 'sim',
@@ -118,7 +118,7 @@ export const asyncRoutes = [
       },
       {
         path: 'contest',
-        name: 'Contest',
+        name: 'ContestList',
         component: () => import('@/views/project/imustoj/contestList/index'),
         meta: { title: '竞赛列表' },
       },
@@ -128,21 +128,15 @@ export const asyncRoutes = [
         component: () => import('@/views/project/imustoj/contestList/index'),
         meta: { title: '实验平台' },
       },
-      // {
-      //   path: 'bbs',
-      //   name: 'Bbs',
-      //   component: () => import('@/views/project/admin/interface/index'),
-      //   meta: { title: '博客论坛' },
-      // },
       {
-        path: 'contest',
+        path: 'contest/info',
         redirect: 'noRedirect',
         component: () => import('@/views/project/imustoj/contestView/index'),
         name: 'ContestView',
         alwaysShow: true,
         hidden: true,
         meta: {
-          title: '竞赛详情',
+          title: '竞赛列表',
         },
         children: [
           {
@@ -155,33 +149,175 @@ export const asyncRoutes = [
           {
             path: 'problems/:id',
             name: 'ContestProblems',
-            meta: { title: '题目列表' },
+            meta: { title: '竞赛题目' },
             component: () =>
-              import('@/views/project/imustoj/contestView/contestIndex/index'),
+              import(
+                '@/views/project/imustoj/contestView/contestProblems/index'
+              ),
+          },
+          {
+            path: 'problem/:id/:problemId',
+            name: 'ContestProblem',
+            meta: { title: '竞赛详情' },
+            component: () =>
+              import(
+                '@/views/project/imustoj/contestView/contestProblem/index'
+              ),
           },
           {
             path: 'status/:id',
             name: 'ContestStatus',
-            meta: { title: '评判状态' },
+            meta: { title: '竞赛状态' },
             component: () =>
-              import('@/views/project/imustoj/contestView/contestIndex/index'),
+              import('@/views/project/imustoj/contestView/contestStatus/index'),
           },
           {
             path: 'rankList/:id',
             name: 'ContestRankList',
-            meta: { title: '解题排名' },
+            meta: { title: '竞赛榜单' },
             component: () =>
-              import('@/views/project/imustoj/contestView/contestIndex/index'),
+              import(
+                '@/views/project/imustoj/contestView/contestRankList/index'
+              ),
           },
           {
             path: 'data/:id',
             name: 'ContestData',
-            meta: { title: '数据统计' },
+            meta: { title: '竞赛统计' },
             component: () =>
-              import('@/views/project/imustoj/contestView/contestIndex/index'),
+              import('@/views/project/imustoj/contestView/contestData/index'),
           },
         ],
       },
+      {
+        path: 'experiment/info',
+        redirect: 'noRedirect',
+        component: () => import('@/views/project/imustoj/contestView/index'),
+        name: 'ExperimentView',
+        alwaysShow: true,
+        hidden: true,
+        meta: {
+          title: '实验平台',
+        },
+        children: [
+          {
+            path: 'index/:id',
+            name: 'ExperimentIndex',
+            meta: { title: '实验首页' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestIndex/index'),
+          },
+          {
+            path: 'problems/:id',
+            name: 'ExperimentProblems',
+            meta: { title: '实验题目' },
+            component: () =>
+              import(
+                '@/views/project/imustoj/contestView/contestProblems/index'
+              ),
+          },
+          {
+            path: 'problem/:id/:problemId',
+            name: 'ExperimentProblem',
+            meta: { title: '实验详情' },
+            component: () =>
+              import(
+                '@/views/project/imustoj/contestView/contestProblem/index'
+              ),
+          },
+          {
+            path: 'status/:id',
+            name: 'ExperimentStatus',
+            meta: { title: '实验状态' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestStatus/index'),
+          },
+          {
+            path: 'rankList/:id',
+            name: 'ExperimentRankList',
+            meta: { title: '实验榜单' },
+            component: () =>
+              import(
+                '@/views/project/imustoj/contestView/contestRankList/index'
+              ),
+          },
+          {
+            path: 'data/:id',
+            name: 'ExperimentData',
+            meta: { title: '实验统计' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestData/index'),
+          },
+        ],
+      },
+      {
+        path: 'practice/info',
+        redirect: 'noRedirect',
+        component: () => import('@/views/project/imustoj/contestView/index'),
+        name: 'PracticeView',
+        alwaysShow: true,
+        hidden: true,
+        meta: {
+          title: '集训练习',
+        },
+        children: [
+          {
+            path: 'index/:id',
+            name: 'PracticeIndex',
+            meta: { title: '练习首页' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestIndex/index'),
+          },
+          {
+            path: 'problems/:id',
+            name: 'PracticeProblems',
+            meta: { title: '练习题目' },
+            component: () =>
+              import(
+                '@/views/project/imustoj/contestView/contestProblems/index'
+              ),
+          },
+          {
+            path: 'problem/:id/:problemId',
+            name: 'PracticeProblem',
+            meta: { title: '练习详情' },
+            component: () =>
+              import(
+                '@/views/project/imustoj/contestView/contestProblem/index'
+              ),
+          },
+          {
+            path: 'status/:id',
+            name: 'PracticeStatus',
+            meta: { title: '练习状态' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestStatus/index'),
+          },
+          {
+            path: 'rankList/:id',
+            name: 'PracticeRankList',
+            meta: { title: '练习榜单' },
+            component: () =>
+              import(
+                '@/views/project/imustoj/contestView/contestRankList/index'
+              ),
+          },
+          {
+            path: 'data/:id',
+            name: 'PracticeData',
+            meta: { title: '练习统计' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestData/index'),
+          },
+        ],
+      },
+      // {
+      //   path: 'bbs',
+      //   name: 'Bbs',
+      //   component: () => import('@/views/project/admin/interface/index'),
+      //   meta: { title: '博客论坛' },
+      // },
+
       {
         path: 'groups',
         name: 'Groups',

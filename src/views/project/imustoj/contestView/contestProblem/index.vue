@@ -1,14 +1,11 @@
 <template>
-  <div>
+  <div class="contestProblem">
     <div class="box" ref="box">
       <div class="left">
         <div class="problemInfo">
           <span class="problemTitle">
             <b>{{ id }}. 整数求和</b>
           </span>
-          <el-tag size="small" class="problemTag firstTag" type="danger">
-            困难
-          </el-tag>
           <span class="limit firstTag" style="color: red">Special Judge</span>
           <br />
           <p class="problemSub">
@@ -16,12 +13,6 @@
             <span class="limit">内存限制：65535KB</span>
             <span class="limit">提交：1233</span>
             <span class="limit">通过：929</span>
-          </p>
-          <p class="problemSub">
-            <el-tag size="small" effect="plain">基本输入输出</el-tag>
-            <el-tag size="small" effect="plain" class="problemTag">
-              滑动窗口
-            </el-tag>
           </p>
           <hr class="hrCenter" />
           <p class="problemDesc">
@@ -239,13 +230,13 @@
   import Clipboard from 'clipboard'
 
   export default {
-    name: 'Problem',
+    name: 'ContestProblem',
     components: {},
     data() {
       return {
         codes: '',
         editor: null,
-        id: this.$route.params.id,
+        id: this.$route.params.problemId,
         options: [
           {
             value: '1',
@@ -400,7 +391,7 @@
     width: 100%;
     height: calc(
       100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
-        #{$base-padding} - 162px
+        #{$base-padding} - 242px
     );
     margin: 10px 0px;
   }

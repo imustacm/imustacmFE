@@ -1,6 +1,25 @@
 <template>
   <div class="contestIndex" style="margin: 0px 20px">
-    <div><h4>竞赛须知：</h4></div>
+    <div>
+      <h4>{{ rot }}须知：</h4>
+      <p>
+        这里是{{ rot }}须知内容这里是{{ rot }}须知内容这里是{{
+          rot
+        }}须知内容这里是{{ rot }}须知内容这里是{{ rot }}须知内容这里是{{
+          rot
+        }}须知内容
+      </p>
+      <p>
+        这里是{{ rot }}须知内容这里是{{ rot }}须知内容这里是{{
+          rot
+        }}须知内容这里是{{ rot }}须知内容这里是{{ rot }}须知内容这里是{{
+          rot
+        }}须知内容这里是{{ rot }}须知内容这里是{{ rot }}须知内容这里是{{
+          rot
+        }}须知内容这里是{{ rot }}须知内容这里是{{ rot }}须知内容
+      </p>
+      <p>这里是{{ rot }}须知内容</p>
+    </div>
   </div>
 </template>
 
@@ -9,7 +28,14 @@
     name: 'ContestIndex',
     components: {},
     data() {
-      return {}
+      return {
+        rot:
+          this.$route.path.split('/')[2] == 'practice'
+            ? '练习'
+            : this.$route.path.split('/')[2] == 'contest'
+            ? '竞赛'
+            : '实验',
+      }
     },
     created() {},
     mounted() {},

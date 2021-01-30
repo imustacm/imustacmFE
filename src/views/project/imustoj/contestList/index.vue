@@ -25,7 +25,7 @@
           </el-form-item>
           <el-form-item>
             <el-select
-              v-model="queryForm.type"
+              v-model="queryForm.permission"
               :placeholder="placeholder3"
               style="width: 100px"
               clearable
@@ -40,7 +40,7 @@
           </el-form-item>
           <el-form-item>
             <el-select
-              v-model="queryForm.permission"
+              v-model="queryForm.type"
               :placeholder="placeholder4"
               style="width: 100px"
               clearable
@@ -61,7 +61,7 @@
               clearable
             >
               <el-option
-                v-for="item in queryForm.options2"
+                v-for="item in queryForm.options3"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value"
@@ -98,7 +98,6 @@
       ></el-table-column>
       <el-table-column
         align="left"
-        show-overflow-tooltip
         prop="title"
         label="竞赛信息"
         header-align="center"
@@ -195,6 +194,7 @@
     },
     data() {
       return {
+        rot: this.$route.path.split('/')[2],
         placeholder1: '',
         placeholder2: '',
         placeholder3: '',
@@ -255,50 +255,44 @@
           problem_id: '',
           options1: [
             {
+              value: '0',
+              label: '公开',
+            },
+            {
               value: '1',
-              label: 'Accepted',
-            },
-            {
-              value: '2',
-              label: 'Wrong Answer',
-            },
-            {
-              value: '3',
-              label: 'Time Limit Exceeded',
-            },
-            {
-              value: '4',
-              label: 'Memory Limit Exceeded',
-            },
-            {
-              value: '5',
-              label: 'Output Limit Exceeded',
-            },
-            {
-              value: '6',
-              label: 'Runtime Error',
-            },
-            {
-              value: '7',
-              label: 'Compile Error',
+              label: '私有',
             },
           ],
           options2: [
             {
-              value: 'c',
-              label: 'C',
+              value: '0',
+              label: 'SOLO',
             },
             {
-              value: 'cpp',
-              label: 'C++',
+              value: '1',
+              label: 'ICPC',
             },
             {
-              value: 'java',
-              label: 'Java',
+              value: '2',
+              label: 'OI',
             },
             {
-              value: 'python',
-              label: 'Python3',
+              value: '3',
+              label: 'IOI',
+            },
+          ],
+          options3: [
+            {
+              value: '0',
+              label: '未开始',
+            },
+            {
+              value: '1',
+              label: '进行中',
+            },
+            {
+              value: '2',
+              label: '已结束',
             },
           ],
           result: '',
@@ -315,20 +309,20 @@
       if (this.$route.path.split('/')[2] == 'practice') {
         this.placeholder1 = '练习编号'
         this.placeholder2 = '练习名称'
-        this.placeholder3 = '练习类型'
-        this.placeholder4 = '练习权限'
+        this.placeholder3 = '练习权限'
+        this.placeholder4 = '练习类型'
         this.placeholder5 = '练习状态'
       } else if (this.$route.path.split('/')[2] == 'contest') {
         this.placeholder1 = '竞赛编号'
         this.placeholder2 = '竞赛名称'
-        this.placeholder3 = '竞赛类型'
-        this.placeholder4 = '竞赛权限'
+        this.placeholder3 = '竞赛权限'
+        this.placeholder4 = '竞赛类型'
         this.placeholder5 = '竞赛状态'
       } else if (this.$route.path.split('/')[2] == 'experiment') {
         this.placeholder1 = '实验编号'
         this.placeholder2 = '实验名称'
-        this.placeholder3 = '实验类型'
-        this.placeholder4 = '实验权限'
+        this.placeholder3 = '实验权限'
+        this.placeholder4 = '实验类型'
         this.placeholder5 = '实验状态'
       }
     },
@@ -347,7 +341,7 @@
       },
       handleContestDetail(row) {
         this.$router.push({
-          path: '/imustoj/contest/index/' + row.id,
+          path: '/imustoj/' + this.rot + '/info/index/' + row.id,
         })
       },
       setSelectRows(val) {

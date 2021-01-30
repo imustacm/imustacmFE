@@ -36,7 +36,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <b>计算机科学与技术2020-1班</b>
+            <a><b>计算机科学与技术2020-1班</b></a>
             <el-button
               type="primary"
               size="mini"
@@ -72,7 +72,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <b>ACM程序设计协会(2020级)</b>
+            <a><b>ACM程序设计协会(2020级)</b></a>
             <el-button
               type="success"
               size="mini"
@@ -109,7 +109,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <b>网络空间安全2020-1班</b>
+            <a><b>网络空间安全2020-1班</b></a>
             <el-button
               type="primary"
               size="mini"
@@ -145,7 +145,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <b>软件工程2019-2班</b>
+            <a><b>软件工程2019-2班</b></a>
             <el-button
               type="warning"
               size="mini"

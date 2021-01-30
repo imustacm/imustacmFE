@@ -104,20 +104,20 @@
             <template #default="{ row }">
               <el-row>
                 <el-col :span="6">
-                  {{ row.acceptedNumber }}
+                  <a>{{ row.acceptedNumber }}</a>
                 </el-col>
                 <el-col :span="12">
                   <el-progress
                     :text-inside="true"
                     :stroke-width="20"
-                    :percentage="row.acceptedPercent"
+                    :percentage="parseFloat(row.acceptedPercent)"
                     status="success"
                     :stroke-length="20"
                     :width="80"
                   ></el-progress>
                 </el-col>
                 <el-col :span="6">
-                  {{ row.submitNumber }}
+                  <a>{{ row.submitNumber }}</a>
                 </el-col>
               </el-row>
             </template>

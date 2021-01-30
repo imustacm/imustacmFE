@@ -11,7 +11,7 @@ const getters = {
 }
 const mutations = {
   addVisitedRoute(state, route) {
-    let target = state.visitedRoutes.find((item) => item.path === route.path)
+    let target = state.visitedRoutes.find((item) => item.name === route.name)
     if (target) {
       if (route.fullPath !== target.fullPath) Object.assign(target, route)
       return

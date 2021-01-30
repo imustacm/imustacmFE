@@ -1,7 +1,7 @@
 <template>
   <div class="contestView">
     <el-row style="margin: 20px 20px -6px 20px">
-      <el-col :xs="24" :sm="24" :md="24" :lg="13" :xl="13">
+      <el-col :xs="24" :sm="24" :md="24" :lg="16" :xl="16">
         <h3 style="margin-top: -5px">
           {{ id }}.《C语言程序设计》- 数据&网络2019级 - 实验7（字符串与结构体）
         </h3>
@@ -14,7 +14,7 @@
           <el-tag type="warning" effect="plain">ICPC</el-tag>
         </p>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="11" :xl="11">
+      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
         <div style="margin-top: 5px">
           <el-button
             type="primary"
@@ -23,7 +23,7 @@
             style="float: right"
             @click="handleData()"
           >
-            数据统计
+            统计
           </el-button>
           <el-button
             type="primary"
@@ -32,7 +32,7 @@
             style="float: right; margin-right: 10px"
             @click="handleRankList()"
           >
-            解题排名
+            榜单
           </el-button>
           <el-button
             type="primary"
@@ -41,7 +41,7 @@
             style="float: right"
             @click="handleStatus()"
           >
-            评判状态
+            状态
           </el-button>
           <el-button
             type="primary"
@@ -50,7 +50,7 @@
             style="float: right"
             @click="handleProblems()"
           >
-            题目列表
+            题目
           </el-button>
           <el-button
             type="primary"
@@ -59,7 +59,7 @@
             style="float: right"
             @click="handleIndex()"
           >
-            竞赛首页
+            首页
           </el-button>
         </div>
       </el-col>
@@ -74,6 +74,7 @@
     components: {},
     data() {
       return {
+        rot: this.$route.path.split('/')[2],
         id: this.$route.params.id,
         plain1: true,
         plain2: true,
@@ -83,15 +84,15 @@
       }
     },
     created() {
-      if (this.$route.path.split('/')[3] == 'index') {
+      if (this.$route.path.split('/')[4] == 'index') {
         this.plain5 = false
-      } else if (this.$route.path.split('/')[3] == 'problems') {
+      } else if (this.$route.path.split('/')[4] == 'problems') {
         this.plain4 = false
-      } else if (this.$route.path.split('/')[3] == 'status') {
+      } else if (this.$route.path.split('/')[4] == 'status') {
         this.plain3 = false
-      } else if (this.$route.path.split('/')[3] == 'rankList') {
+      } else if (this.$route.path.split('/')[4] == 'rankList') {
         this.plain2 = false
-      } else if (this.$route.path.split('/')[3] == 'data') {
+      } else if (this.$route.path.split('/')[4] == 'data') {
         this.plain1 = false
       }
     },
@@ -99,27 +100,27 @@
     methods: {
       handleIndex() {
         this.$router.push({
-          path: '/imustoj/contest/index/' + this.id,
+          path: '/imustoj/' + this.rot + '/info/index/' + this.id,
         })
       },
       handleProblems() {
         this.$router.push({
-          path: '/imustoj/contest/problems/' + this.id,
+          path: '/imustoj/' + this.rot + '/info/problems/' + this.id,
         })
       },
       handleStatus() {
         this.$router.push({
-          path: '/imustoj/contest/status/' + this.id,
+          path: '/imustoj/' + this.rot + '/info/status/' + this.id,
         })
       },
       handleRankList() {
         this.$router.push({
-          path: '/imustoj/contest/rankList/' + this.id,
+          path: '/imustoj/' + this.rot + '/info/rankList/' + this.id,
         })
       },
       handleData() {
         this.$router.push({
-          path: '/imustoj/contest/data/' + this.id,
+          path: '/imustoj/' + this.rot + '/info/data/' + this.id,
         })
       },
     },
