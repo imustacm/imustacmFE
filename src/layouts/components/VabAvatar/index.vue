@@ -13,7 +13,7 @@
         <forget-box ref="for"></forget-box>
       </el-row>
     </div>
-    <div ref="afterLogin" style="display: none">
+    <div ref="afterLogin" style="display: none; background: rgba(0, 0, 0, 0.6)">
       <el-row style="min-width: 160px" type="flex" justify="end">
         <el-col :span="5" style="">
           <el-popover
@@ -31,6 +31,7 @@
                 margin-top: 15.1px;
                 text-align: center;
                 padding: 2px;
+                background: rgba(0, 0, 0, 0);
               "
             >
               <el-badge :value="badgeValue" :max="99" class="item">
@@ -100,7 +101,7 @@
   import { mapGetters } from 'vuex'
   import { recordRoute, tokenName } from '@/config'
   import { getAccessToken } from '@/utils/accessToken'
-  import Ring from '@/assets/images/ring.png'
+  import { getFreshTime, setFreshTime } from '@/utils/freshTime'
   import LoginBox from './components/LoginBox'
   import RegisterBox from './components/RegisterBox'
   import ForgetBox from './components/ForgetBox'
@@ -146,6 +147,11 @@
           _this.$refs['beforeLogin'].style.display = 'inline'
         } else {
           _this.$refs['afterLogin'].style.display = 'inline'
+        }
+
+        var freshTime = getFreshTime()
+        if (freshTime == null || freshTime == '' || freshTime == undefined) {
+          setFreshTime(0)
         }
       }, 1)
     },

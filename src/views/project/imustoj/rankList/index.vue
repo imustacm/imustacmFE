@@ -48,7 +48,7 @@
         prop="username"
         label="用户名"
         header-align="center"
-        width="260px"
+        width="240px"
       >
         <template slot-scope="scope">
           <a>

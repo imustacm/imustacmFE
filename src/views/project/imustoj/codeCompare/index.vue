@@ -1,6 +1,37 @@
 <template>
-  <div class="codeCompare" ref="diffContainer"></div>
-  <!-- <div class="the-code-diff-editor-container" ref="diffContainer"></div> -->
+  <div class="codeCompare" style="margin: 20px 20px 0px 20px">
+    <h3>4.整数求和</h3>
+    <el-row>
+      <el-col :span="11">
+        <el-tag type="success" effect="dark" style="margin-right: 15px">
+          10123
+        </el-tag>
+        <a>1367159201 (王健力)</a>
+        <el-tag
+          type="warning"
+          effect="dark"
+          style="float: right; margin-right: 15px"
+        >
+          <vab-icon :icon="['fas', 'angle-left']"></vab-icon>
+          主检方
+        </el-tag>
+      </el-col>
+      <el-col :span="2" style="text-align: center">
+        <el-tag type="danger" effect="dark">100%</el-tag>
+      </el-col>
+      <el-col :span="11">
+        <el-tag type="warning" effect="dark" style="margin-left: 15px">
+          被检方
+          <vab-icon :icon="['fas', 'angle-right']"></vab-icon>
+        </el-tag>
+        <el-tag type="success" effect="dark" style="float: right">9981</el-tag>
+        <a style="float: right; margin-top: 3px; margin-right: 5px">
+          imustacm (王剑波)
+        </a>
+      </el-col>
+    </el-row>
+    <div class="codeCompareDiv" ref="diffContainer"></div>
+  </div>
 </template>
 
 <script>
@@ -454,10 +485,15 @@
 </script>
 
 <style lang="scss" scoped>
-  .codeCompare {
-    margin: 10px;
-    width: calc(100% - 20px);
-    height: 0px;
+  .codeCompareDiv {
+    margin-top: 10px;
+    width: calc(100% - 0px);
+    height: calc(
+      100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
+        #{$base-padding} - 182px
+    );
+    resize: vertical;
+    overflow: auto;
     // .monaco-editor .scroll-decoration {
     //   box-shadow: none;
     // }

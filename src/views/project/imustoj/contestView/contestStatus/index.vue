@@ -77,7 +77,7 @@
         align="center"
         prop="id"
         label="运行编号"
-        width="105"
+        width="95px"
       ></el-table-column>
       <el-table-column align="center" prop="username" label="用户名">
         <template slot-scope="scope">
@@ -89,7 +89,12 @@
           </a>
         </template>
       </el-table-column>
-      <el-table-column align="center" label="题目编号" prop="problem_id">
+      <el-table-column
+        align="center"
+        label="题目编号"
+        prop="problem_id"
+        width="95px"
+      >
         <template slot-scope="scope">
           <a
             style="cursor: pointer"
@@ -113,18 +118,23 @@
           </a>
         </template>
       </el-table-column>
-      <el-table-column align="center" label="内存" prop="memory">
+      <el-table-column align="center" label="内存" prop="memory" width="80px">
         <template #default="{ row }">{{ row.memory }}KB</template>
       </el-table-column>
-      <el-table-column align="center" label="用时" prop="time">
+      <el-table-column align="center" label="用时" prop="time" width="80px">
         <template #default="{ row }">{{ row.time }}ms</template>
       </el-table-column>
-      <el-table-column align="center" label="语言" prop="language">
+      <el-table-column align="center" label="语言" prop="language" width="80px">
         <template #default="{ row }">
           {{ row.language | languageFilter }}
         </template>
       </el-table-column>
-      <el-table-column align="center" label="代码长度" prop="code_length">
+      <el-table-column
+        align="center"
+        label="代码长度"
+        prop="code_length"
+        width="95px"
+      >
         <template #default="{ row }">{{ row.code_length }}B</template>
       </el-table-column>
       <el-table-column
