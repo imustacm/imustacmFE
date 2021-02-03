@@ -1,37 +1,50 @@
 <template>
-  <div class="codeCompare" style="margin: 20px 20px 0px 20px">
-    <h3>4.整数求和</h3>
-    <el-row>
-      <el-col :span="11">
-        <el-tag type="success" effect="dark" style="margin-right: 15px">
-          10123
-        </el-tag>
-        <a>1367159201 (王健力)</a>
-        <el-tag
-          type="warning"
-          effect="dark"
-          style="float: right; margin-right: 15px"
-        >
-          <vab-icon :icon="['fas', 'angle-left']"></vab-icon>
-          主检方
-        </el-tag>
-      </el-col>
-      <el-col :span="2" style="text-align: center">
-        <el-tag type="danger" effect="dark">100%</el-tag>
-      </el-col>
-      <el-col :span="11">
-        <el-tag type="warning" effect="dark" style="margin-left: 15px">
-          被检方
-          <vab-icon :icon="['fas', 'angle-right']"></vab-icon>
-        </el-tag>
-        <el-tag type="success" effect="dark" style="float: right">9981</el-tag>
-        <a style="float: right; margin-top: 3px; margin-right: 5px">
-          imustacm (王剑波)
-        </a>
-      </el-col>
-    </el-row>
-    <div class="codeCompareDiv" ref="diffContainer"></div>
-  </div>
+  <el-dialog
+    :title="title"
+    :visible.sync="dialogFormVisible"
+    width="96%"
+    top="40px"
+    :fullscreen="false"
+    :close-on-click-modal="false"
+    :close-on-press-escape="false"
+    :show-close="false"
+    @close="close"
+  >
+    <div class="codeCompare">
+      <h3 style="margin-top: -5px">4.整数求和</h3>
+      <el-row>
+        <el-col :span="11">
+          <el-tag effect="dark" style="margin-right: 15px">10123</el-tag>
+          <a>1367159201 (王健力)</a>
+          <el-tag
+            type="warning"
+            effect="dark"
+            style="float: right; margin-right: 15px"
+          >
+            <vab-icon :icon="['fas', 'angle-left']"></vab-icon>
+            疑似抄袭
+          </el-tag>
+        </el-col>
+        <el-col :span="2" style="text-align: center">
+          <el-tag type="danger" effect="dark">100%</el-tag>
+        </el-col>
+        <el-col :span="11">
+          <el-tag type="warning" effect="dark" style="margin-left: 15px">
+            被抄袭者
+            <vab-icon :icon="['fas', 'angle-right']"></vab-icon>
+          </el-tag>
+          <el-tag effect="dark" style="float: right">9981</el-tag>
+          <a style="float: right; margin-top: 3px; margin-right: 5px">
+            imustacm (王剑波)
+          </a>
+        </el-col>
+      </el-row>
+      <div class="codeCompareDiv" ref="diffContainer"></div>
+    </div>
+    <div slot="footer" class="dialog-footer">
+      <el-button @click="close">关 闭</el-button>
+    </div>
+  </el-dialog>
 </template>
 
 <script>
@@ -46,21 +59,23 @@
     },
     data() {
       return {
+        title: '',
+        dialogFormVisible: false,
         monacoDiffInstance: null,
       }
     },
-    mounted() {
-      this.init()
-    },
+    mounted() {},
     methods: {
       init() {
-        this.monacoDiffInstance = monaco.editor.createDiffEditor(
-          this.$refs['diffContainer'],
-          {
-            theme: 'vs-dark', // vs, hc-black, or vs-dark
-            readOnly: true,
-          }
-        )
+        if (!this.monacoDiffInstance) {
+          this.monacoDiffInstance = monaco.editor.createDiffEditor(
+            this.$refs['diffContainer'],
+            {
+              theme: 'vs-dark', // vs, hc-black, or vs-dark
+              readOnly: true,
+            }
+          )
+        }
         this.monacoDiffInstance.setModel({
           original: monaco.editor.createModel(
             [
@@ -480,6 +495,18 @@
           ),
         })
       },
+      showModule(row) {
+        this.title = '抄袭检测'
+        let _this = this
+        setTimeout(function () {
+          _this.init()
+        }, 1)
+        this.dialogFormVisible = true
+      },
+      close() {
+        //this.monacoDiffInstance.dispose()
+        this.dialogFormVisible = false
+      },
     },
   }
 </script>
@@ -487,10 +514,10 @@
 <style lang="scss" scoped>
   .codeCompareDiv {
     margin-top: 10px;
-    width: calc(100% - 0px);
+    width: 100%;
     height: calc(
       100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
-        #{$base-padding} - 182px
+        #{$base-padding} - 243px
     );
     resize: vertical;
     overflow: auto;

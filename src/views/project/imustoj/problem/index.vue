@@ -79,8 +79,9 @@
             <span class="">
               <pre class="sample" id="input1">
 1 2 3 4 5 6
-                11
-              </pre>
+11
+</pre
+              >
             </span>
           </p>
           <p class="problemSiO">
@@ -103,7 +104,8 @@
             <span class="">
               <pre class="sample" id="output1">
 5 6
-              </pre>
+</pre
+              >
             </span>
           </p>
           <p class="problemSiI">
@@ -126,8 +128,9 @@
             <span class="">
               <pre class="sample" id="input2">
 -1 0 -8 10 2
-                1
-              </pre>
+1
+</pre
+              >
             </span>
           </p>
           <p class="problemSiO">
@@ -150,7 +153,8 @@
             <span class="">
               <pre class="sample" id="output2">
 -1 2
-              </pre>
+</pre
+              >
             </span>
           </p>
           <p class="problemInp">
@@ -222,25 +226,33 @@
           </el-button>
           <el-tooltip effect="dark" placement="top">
             <div slot="content" style="text-align: center">
-              点击查看详细评判信息
+              点击查看评判详情
             </div>
-            <el-button type="warning" class="btn" style="float: right">
+            <el-button
+              type="warning"
+              class="btn"
+              style="float: right"
+              @click="handleDetail(1023)"
+            >
               Compile Error
             </el-button>
           </el-tooltip>
         </el-col>
       </el-row>
     </div>
+    <code-source ref="codeSource"></code-source>
   </div>
 </template>
 
 <script>
-  import * as monaco from 'monaco-editor'
   import Clipboard from 'clipboard'
+  import CodeSource from '@/views/project/imustoj/codeSource/index'
 
   export default {
     name: 'Problem',
-    components: {},
+    components: {
+      CodeSource,
+    },
     data() {
       return {
         codes: '',
@@ -276,6 +288,9 @@
       }, 1)
     },
     methods: {
+      handleDetail(row) {
+        this.$refs['codeSource'].showModule(row)
+      },
       dragControllerDiv() {
         var resize = document.getElementsByClassName('resize')
         var left = document.getElementsByClassName('left')
@@ -439,15 +454,15 @@
     margin-bottom: 15px;
   }
   .sample {
-    overflow: hidden;
+    overflow: auto;
     border: 1px solid #dedede;
     background: #f8f8f8;
     padding: 6px 12px;
     color: #444;
     margin: 12px 0;
-    word-wrap: break-word;
-    word-break: break-all;
-    white-space: pre-line;
+    // word-wrap: break-word;
+    // word-break: break-all;
+    // white-space: pre-line;
   }
   .problemTag {
     margin: 0px 0px 0px 10px;

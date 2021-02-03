@@ -89,14 +89,7 @@ export const asyncRoutes = [
         name: 'Problem',
         component: () => import('@/views/project/imustoj/problem/index'),
         hidden: true,
-        meta: { title: '题目详情', oldTitle: '题目详情' },
-      },
-      {
-        path: 'sim',
-        name: 'Sim',
-        component: () => import('@/views/project/imustoj/codeCompare/index'),
-        hidden: true,
-        meta: { title: '抄袭检测' },
+        meta: { title: '题目详情' },
       },
       {
         path: 'status',
@@ -317,12 +310,18 @@ export const asyncRoutes = [
       //   component: () => import('@/views/project/admin/interface/index'),
       //   meta: { title: '博客论坛' },
       // },
-
       {
-        path: 'groups',
+        path: 'groupList',
         name: 'Groups',
         component: () => import('@/views/project/imustoj/groups/index'),
         meta: { title: '小组列表' },
+      },
+      {
+        path: 'groupInfo',
+        name: 'GroupUsers',
+        component: () => import('@/views/project/imustoj/groupUsers/index'),
+        hidden: true,
+        meta: { title: '小组详情' },
       },
       {
         path: 'help',

@@ -106,9 +106,11 @@
       </el-table-column>
       <el-table-column align="center" label="评判结果 / 抄袭检测" prop="result">
         <template #default="{ row }">
-          <el-tag :type="row.result | buttonFilter" effect="dark">
-            {{ row.result | resultFilter }}
-          </el-tag>
+          <a style="cursor: pointer; color: #FFFFF" @click="handleDetail(row)">
+            <el-tag :type="row.result | buttonFilter" effect="dark">
+              {{ row.result | resultFilter }}
+            </el-tag>
+          </a>
           <a
             style="cursor: pointer; color: #FFFFF; margin-left: 6px"
             @click="handleSim(row)"
@@ -157,14 +159,22 @@
       @current-change="handleCurrentChange"
     ></el-pagination>
     <br />
+    <code-source ref="codeSource"></code-source>
+    <code-compare ref="codeCompare"></code-compare>
   </div>
 </template>
 
 <script>
   import { getList, doDelete } from '@/api/table'
+  import CodeSource from '@/views/project/imustoj/codeSource/index'
+  import CodeCompare from '@/views/project/imustoj/codeCompare/index'
+
   export default {
     name: 'solutionList',
-    components: {},
+    components: {
+      CodeSource,
+      CodeCompare,
+    },
     filters: {
       buttonFilter(btn) {
         const buttonMap = {
@@ -331,11 +341,21 @@
       }, 1)
     },
     methods: {
+      handleDetail(row) {
+        this.$refs['codeSource'].showModule(row)
+      },
+      // handleDetail(row) {
+      //   // this.$router.push({
+      //   //   path: '/imustoj/codesource',
+      //   //   params: { appTemplateId: row.id, isAdd: false },
+      //   // })
+      // },
       handleSim(row) {
-        this.$router.push({
-          path: '/imustoj/sim',
-          params: { appTemplateId: row.id, isAdd: false },
-        })
+        // this.$router.push({
+        //   path: '/imustoj/sim',
+        //   params: { appTemplateId: row.id, isAdd: false },
+        // })
+        this.$refs['codeCompare'].showModule(row)
       },
       handleAppTemplateDetail(row) {
         this.$router.push({

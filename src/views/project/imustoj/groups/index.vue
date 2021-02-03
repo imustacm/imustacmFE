@@ -37,7 +37,7 @@
         <el-card>
           <div slot="header">
             <a><b>计算机科学与技术2020-1班</b></a>
-            <el-button
+            <!-- <el-button
               type="primary"
               size="mini"
               plain
@@ -45,6 +45,16 @@
             >
               <vab-icon :icon="['fas', 'plus-circle']"></vab-icon>
               申请加入
+            </el-button> -->
+            <el-button
+              type="info"
+              size="mini"
+              plain
+              style="float: right; margin-top: -5px"
+              disabled
+            >
+              <vab-icon :icon="['fas', 'minus-circle']"></vab-icon>
+              暂未加入
             </el-button>
           </div>
           <div>
@@ -111,13 +121,14 @@
           <div slot="header">
             <a><b>网络空间安全2020-1班</b></a>
             <el-button
-              type="primary"
+              type="info"
               size="mini"
               plain
               style="float: right; margin-top: -5px"
+              disabled
             >
-              <vab-icon :icon="['fas', 'plus-circle']"></vab-icon>
-              申请加入
+              <vab-icon :icon="['fas', 'minus-circle']"></vab-icon>
+              暂未加入
             </el-button>
           </div>
           <div>
