@@ -48,7 +48,7 @@
         <template #default="{ row }">
           <el-row>
             <el-col :span="6">
-              <a>{{ row.acceptedNumber }}</a>
+              <a @click="handleStatus()">{{ row.acceptedNumber }}</a>
             </el-col>
             <el-col :span="12">
               <el-progress
@@ -61,7 +61,7 @@
               ></el-progress>
             </el-col>
             <el-col :span="6">
-              <a>{{ row.submitNumber }}</a>
+              <a @click="handleStatus()">{{ row.submitNumber }}</a>
             </el-col>
           </el-row>
         </template>
@@ -134,6 +134,11 @@
       handleToProblem(row) {
         this.$router.push({
           path: '/imustoj/' + this.rot + '/info/problem/1490/' + row.id,
+        })
+      },
+      handleStatus() {
+        this.$router.push({
+          path: '/imustoj/' + this.rot + '/info/status/1490',
         })
       },
     },

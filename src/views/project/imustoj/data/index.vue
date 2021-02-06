@@ -3,15 +3,13 @@
     <el-row style="width: 100%; height: 32px">
       <vab-query-form>
         <el-col :span="12">
-          <h3 style="margin-top: 10px; margin-bottom: 22px">
-            {{ id }}.整数求和
-          </h3>
+          <h3 style="margin-top: 10px; margin-bottom: 22px">4.整数求和</h3>
         </el-col>
         <el-col :span="12">
           <el-button
             type="primary"
             style="float: right"
-            @click="handleProblem()"
+            @click="handleProblem(4)"
           >
             <vab-icon :icon="['fas', 'angle-left']"></vab-icon>
             返回题目
@@ -164,14 +162,12 @@
   import VabChart from '@/plugins/echarts'
 
   export default {
-    name: 'ContestData',
+    name: 'Data',
     components: {
       VabChart,
     },
     data() {
       return {
-        rot: this.$route.path.split('/')[2],
-        id: this.$route.params.problemId,
         dataTable: [
           {
             problem_id: 4,
@@ -247,12 +243,12 @@
     methods: {
       handleProblem(id) {
         this.$router.push({
-          path: '/imustoj/' + this.rot + '/info/problem/1490/' + this.id,
+          path: '/imustoj/problem/' + id,
         })
       },
       handleStatus(row) {
         this.$router.push({
-          path: '/imustoj/' + this.rot + '/info/status/1490',
+          path: '/imustoj/status/',
         })
       },
     },

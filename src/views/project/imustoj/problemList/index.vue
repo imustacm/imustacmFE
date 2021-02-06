@@ -1,6 +1,6 @@
 <template>
   <div class="problemList">
-    <el-row :gutter="20" justify="center">
+    <el-row>
       <el-col
         :xs="24"
         :sm="24"
@@ -104,7 +104,7 @@
             <template #default="{ row }">
               <el-row>
                 <el-col :span="6">
-                  <a>{{ row.acceptedNumber }}</a>
+                  <a @click="handleStatus(row)">{{ row.acceptedNumber }}</a>
                 </el-col>
                 <el-col :span="12">
                   <el-progress
@@ -117,7 +117,7 @@
                   ></el-progress>
                 </el-col>
                 <el-col :span="6">
-                  <a>{{ row.submitNumber }}</a>
+                  <a @click="handleStatus(row)">{{ row.submitNumber }}</a>
                 </el-col>
               </el-row>
             </template>
@@ -131,88 +131,143 @@
           @current-change="handleCurrentChange"
         ></el-pagination>
       </el-col>
+      <el-col :xs="24" :sm="24" :md="24" :lg="1" :xl="1" class="ctn">
+        <span style="display: inline-block"></span>
+      </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="6" :xl="6" class="right-pattern">
         <div class="problemTabDiv">
           <span class="problemTabTitle">题目标签</span>
           <br />
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦哦哦哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签并查集
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哈哈哈
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签哦
-          </el-tag>
-          <el-tag size="medium" effect="plain" style="margin: 5px 3px">
-            题目标签伊尔呀呼嘿
-          </el-tag>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哈哈哈
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哦哦哦哦
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签伊尔呀呼嘿
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签并查集
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哈哈哈
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哦
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签伊尔呀呼嘿
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哈哈哈
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哦
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签伊尔呀呼嘿
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哈哈哈
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哦
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签伊尔呀呼嘿
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哈哈哈
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签哦
+            </el-tag>
+          </a>
+          <a>
+            <el-tag size="medium" effect="plain" style="margin: 5px 3px">
+              题目标签伊尔呀呼嘿
+            </el-tag>
+          </a>
         </div>
       </el-col>
     </el-row>
@@ -276,6 +331,11 @@
     beforeDestroy() {},
     mounted() {},
     methods: {
+      handleStatus(row) {
+        this.$router.push({
+          path: '/imustoj/status/',
+        })
+      },
       handleAppTemplateDetail(row) {
         this.$router.push({
           path: '/imustoj/problem/' + row.id,
@@ -322,14 +382,14 @@
   .left-pattern {
     padding: 20px;
     background: #ffffff !important;
-    margin-right: 15px;
+    // margin-right: 15px;
     margin-bottom: 20px;
   }
 
   .right-pattern {
     padding: 20px;
     background: #ffffff !important;
-    margin-left: 15px;
+    // margin-left: 15px;
     margin-bottom: 20px;
   }
 

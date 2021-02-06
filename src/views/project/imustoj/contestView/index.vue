@@ -120,7 +120,7 @@
       },
       handleData() {
         this.$router.push({
-          path: '/imustoj/' + this.rot + '/info/data/' + this.id,
+          path: '/imustoj/' + this.rot + '/info/datas/' + this.id,
         })
       },
     },

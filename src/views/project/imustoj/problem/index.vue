@@ -18,10 +18,12 @@
             <span class="limit">通过：929</span>
           </p>
           <p class="problemSub">
-            <el-tag size="small" effect="plain">基本输入输出</el-tag>
-            <el-tag size="small" effect="plain" class="problemTag">
-              滑动窗口
-            </el-tag>
+            <a><el-tag size="small" effect="plain">基本输入输出</el-tag></a>
+            <a>
+              <el-tag size="small" effect="plain" class="problemTag">
+                滑动窗口
+              </el-tag>
+            </a>
           </p>
           <hr class="hrCenter" />
           <p class="problemDesc">
@@ -57,6 +59,14 @@
           <p class="problemOupCon">
             <span class="">
               输出一行，为满足题目要求的两个整数。请按从小到大的顺序返回答案。用空格分隔开。
+            </span>
+          </p>
+          <p class="problemOup">
+            <span class="infoTitle"><b>数据范围</b></span>
+          </p>
+          <p class="problemOupCon">
+            <span class="">
+              0 ≤ target ≤ 10,000， 0 ≤ nums.length ≤ 10,000。
             </span>
           </p>
           <p class="problemSiI">
@@ -161,7 +171,7 @@
             <span class="infoTitle"><b>提示</b></span>
           </p>
           <p class="problemInpCon">
-            <span class="">随便写，这题还过不了那你写个JB的代码。</span>
+            <span class="">随便写，这题还过不了那你写个**的代码。</span>
           </p>
         </div>
       </div>
@@ -195,10 +205,17 @@
             plain
             class="btn"
             style="float: right; margin-right: 20px"
+            @click="handleData()"
           >
             数据统计
           </el-button>
-          <el-button type="primary" plain class="btn" style="float: right">
+          <el-button
+            type="primary"
+            plain
+            class="btn"
+            style="float: right"
+            @click="handleStatus()"
+          >
             评判状态
           </el-button>
         </el-col>
@@ -288,6 +305,16 @@
       }, 1)
     },
     methods: {
+      handleStatus() {
+        this.$router.push({
+          path: '/imustoj/status/',
+        })
+      },
+      handleData() {
+        this.$router.push({
+          path: '/imustoj/data/' + this.$route.params.id,
+        })
+      },
       handleDetail(row) {
         this.$refs['codeSource'].showModule(row)
       },

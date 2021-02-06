@@ -89,7 +89,7 @@
         width="70px"
       >
         <template #default="{ row }">
-          <a>{{ row.accepted }}</a>
+          <a @click="handleStatus(row)">{{ row.accepted }}</a>
         </template>
       </el-table-column>
       <el-table-column
@@ -100,7 +100,7 @@
         width="70px"
       >
         <template #default="{ row }">
-          <a>{{ row.submit }}</a>
+          <a @click="handleStatus(row)">{{ row.submit }}</a>
         </template>
       </el-table-column>
       <el-table-column
@@ -190,6 +190,11 @@
       }, 1)
     },
     methods: {
+      handleStatus(row) {
+        this.$router.push({
+          path: '/imustoj/status/',
+        })
+      },
       setSelectRows(val) {
         this.selectRows = val
       },

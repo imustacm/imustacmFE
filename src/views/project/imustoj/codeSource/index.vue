@@ -49,7 +49,32 @@
                 show-overflow-tooltip
                 prop="value"
                 label="数据"
-              ></el-table-column>
+              >
+                <template #default="{ row }">
+                  <el-tag
+                    v-if="row.eng == 'result'"
+                    :type="row.value | buttonFilter"
+                    effect="dark"
+                  >
+                    {{ row.value | resultFilter }}
+                  </el-tag>
+                  <a v-if="row.eng == 'problem'" @click="handleToProblem(4)">
+                    {{ row.value }}
+                  </a>
+                  <a v-if="row.eng == 'user'" @click="">
+                    {{ row.value }}
+                  </a>
+                  <span
+                    v-if="
+                      row.eng != 'result' &&
+                      row.eng != 'problem' &&
+                      row.eng != 'user'
+                    "
+                  >
+                    {{ row.value }}
+                  </span>
+                </template>
+              </el-table-column>
             </el-table>
             <br />
             <h3 style="text-align: left">测试点信息</h3>
@@ -142,42 +167,52 @@
         editor: null,
         list1: [
           {
+            eng: 'user',
             key: '用户',
             value: '1367159201 (王健力)',
           },
           {
+            eng: 'problem',
             key: '题目',
-            value: '1002. 这是一个/* 悲伤的 */笑话',
+            value: '4. 整数求和',
           },
           {
+            eng: 'result',
             key: '评判状态',
-            value: 'Accepted',
+            value: 0,
           },
           {
+            eng: 'memory',
             key: '内存',
             value: '1712KB',
           },
           {
+            eng: 'time',
             key: '耗时',
             value: '1ms',
           },
           {
+            eng: 'language',
             key: '语言',
             value: 'Python3',
           },
           {
+            eng: 'length',
             key: '代码长度',
             value: '1045B',
           },
           {
+            eng: 'submitTime',
             key: '提交时间',
             value: '2021-02-02 16:43:19',
           },
           {
+            eng: 'judger',
             key: '判题机',
             value: '1',
           },
           {
+            eng: 'judgeTime',
             key: '评判时间',
             value: '2021-02-02 16:43:20',
           },
@@ -453,6 +488,12 @@
       }, 1)
     },
     methods: {
+      handleToProblem(row) {
+        this.close()
+        this.$router.push({
+          path: '/imustoj/problem/4',
+        })
+      },
       dragControllerDiv() {
         var resize = document.getElementsByClassName('resizeInner')
         var left = document.getElementsByClassName('leftInner')

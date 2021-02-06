@@ -50,6 +50,14 @@
               输出一行，为满足题目要求的两个整数。请按从小到大的顺序返回答案。用空格分隔开。
             </span>
           </p>
+          <p class="problemOup">
+            <span class="infoTitle"><b>数据范围</b></span>
+          </p>
+          <p class="problemOupCon">
+            <span class="">
+              0 ≤ target ≤ 10,000， 0 ≤ nums.length ≤ 10,000。
+            </span>
+          </p>
           <p class="problemSiI">
             <span class="infoTitle">
               <b class="limit">样例输入1</b>
@@ -148,7 +156,7 @@
             <span class="infoTitle"><b>提示</b></span>
           </p>
           <p class="problemInpCon">
-            <span class="">随便写，这题还过不了那你写个JB的代码。</span>
+            <span class="">随便写，这题还过不了那你写个**的代码。</span>
           </p>
         </div>
       </div>
@@ -182,10 +190,17 @@
             plain
             class="btn"
             style="float: right; margin-right: 20px"
+            @click="handleData()"
           >
             数据统计
           </el-button>
-          <el-button type="primary" plain class="btn" style="float: right">
+          <el-button
+            type="primary"
+            plain
+            class="btn"
+            style="float: right"
+            @click="handleStatus()"
+          >
             评判状态
           </el-button>
         </el-col>
@@ -213,27 +228,36 @@
           </el-button>
           <el-tooltip effect="dark" placement="top">
             <div slot="content" style="text-align: center">
-              点击查看详细评判信息
+              点击查看评判详情
             </div>
-            <el-button type="warning" class="btn" style="float: right">
+            <el-button
+              type="warning"
+              class="btn"
+              style="float: right"
+              @click="handleDetail(1023)"
+            >
               Compile Error
             </el-button>
           </el-tooltip>
         </el-col>
       </el-row>
     </div>
+    <code-source ref="codeSource"></code-source>
   </div>
 </template>
 
 <script>
-  import * as monaco from 'monaco-editor'
   import Clipboard from 'clipboard'
+  import CodeSource from '@/views/project/imustoj/codeSource/index'
 
   export default {
     name: 'ContestProblem',
-    components: {},
+    components: {
+      CodeSource,
+    },
     data() {
       return {
+        rot: this.$route.path.split('/')[2],
         codes: '',
         editor: null,
         id: this.$route.params.problemId,
@@ -267,6 +291,19 @@
       }, 1)
     },
     methods: {
+      handleStatus() {
+        this.$router.push({
+          path: '/imustoj/' + this.rot + '/info/status/1490',
+        })
+      },
+      handleData() {
+        this.$router.push({
+          path: '/imustoj/' + this.rot + '/info/data/1490/' + this.id,
+        })
+      },
+      handleDetail(row) {
+        this.$refs['codeSource'].showModule(row)
+      },
       dragControllerDiv() {
         var resize = document.getElementsByClassName('resize')
         var left = document.getElementsByClassName('left')

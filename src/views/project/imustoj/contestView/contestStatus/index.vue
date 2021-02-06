@@ -81,10 +81,7 @@
       ></el-table-column>
       <el-table-column align="center" prop="username" label="用户名">
         <template slot-scope="scope">
-          <a
-            style="cursor: pointer"
-            @click="handleAppTemplateDetail(scope.$index, scope.row)"
-          >
+          <a style="cursor: pointer" @click="">
             {{ scope.row.username }}
           </a>
         </template>
@@ -96,19 +93,18 @@
         width="95px"
       >
         <template slot-scope="scope">
-          <a
-            style="cursor: pointer"
-            @click="handleAppTemplateDetail(scope.row)"
-          >
+          <a style="cursor: pointer" @click="handleToProblem(scope.row)">
             {{ scope.row.problem_id }}
           </a>
         </template>
       </el-table-column>
       <el-table-column align="center" label="评判结果 / 抄袭检测" prop="result">
         <template #default="{ row }">
-          <el-tag :type="row.result | buttonFilter" effect="dark">
-            {{ row.result | resultFilter }}
-          </el-tag>
+          <a style="cursor: pointer; color: #FFFFF" @click="handleDetail(row)">
+            <el-tag :type="row.result | buttonFilter" effect="dark">
+              {{ row.result | resultFilter }}
+            </el-tag>
+          </a>
           <a
             style="cursor: pointer; color: #FFFFF; margin-left: 6px"
             @click="handleSim(row)"
@@ -141,6 +137,7 @@
         align="center"
         label="提交时间"
         prop="submit_time"
+        width="170px"
       ></el-table-column>
       <!-- <el-table-column
         align="center"
@@ -157,13 +154,21 @@
       @current-change="handleCurrentChange"
     ></el-pagination>
     <br />
+    <code-source ref="codeSource"></code-source>
+    <code-compare ref="codeCompare"></code-compare>
   </div>
 </template>
 
 <script>
+  import CodeSource from '@/views/project/imustoj/codeSource/index'
+  import CodeCompare from '@/views/project/imustoj/codeCompare/index'
+
   export default {
     name: 'ContestStatus',
-    components: {},
+    components: {
+      CodeSource,
+      CodeCompare,
+    },
     filters: {
       buttonFilter(btn) {
         const buttonMap = {
@@ -201,12 +206,13 @@
     },
     data() {
       return {
+        rot: this.$route.path.split('/')[2],
         list: [
           {
             id: 3,
             user_id: 1,
             username: '1767111117',
-            problem_id: 2,
+            problem_id: 'B',
             contest_id: 0,
             result: 0,
             simPercent: 100,
@@ -222,7 +228,7 @@
             id: 2,
             user_id: 2,
             username: 'imustacm',
-            problem_id: 2,
+            problem_id: 'B',
             contest_id: 0,
             result: 0,
             simPercent: 0,
@@ -238,7 +244,7 @@
             id: 1,
             user_id: 1,
             username: 'imustacm',
-            problem_id: 1,
+            problem_id: 'A',
             contest_id: 0,
             result: 6,
             simPercent: 0,
@@ -321,6 +327,28 @@
         this.listLoading = false
       }, 1)
     },
-    methods: {},
+    methods: {
+      handleDetail(row) {
+        this.$refs['codeSource'].showModule(row)
+      },
+      // handleDetail(row) {
+      //   // this.$router.push({
+      //   //   path: '/imustoj/codesource',
+      //   //   params: { appTemplateId: row.id, isAdd: false },
+      //   // })
+      // },
+      handleSim(row) {
+        // this.$router.push({
+        //   path: '/imustoj/sim',
+        //   params: { appTemplateId: row.id, isAdd: false },
+        // })
+        this.$refs['codeCompare'].showModule(row)
+      },
+      handleToProblem(row) {
+        this.$router.push({
+          path: '/imustoj/' + this.rot + '/info/problem/1490/' + row.problem_id,
+        })
+      },
+    },
   }
 </script>

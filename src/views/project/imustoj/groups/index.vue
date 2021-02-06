@@ -36,26 +36,17 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <a><b>计算机科学与技术2020-1班</b></a>
-            <!-- <el-button
-              type="primary"
-              size="mini"
-              plain
-              style="float: right; margin-top: -5px"
-            >
-              <vab-icon :icon="['fas', 'plus-circle']"></vab-icon>
-              申请加入
-            </el-button> -->
-            <el-button
+            <a @click="handleInfo(1)"><b>计算机科学与技术2020-1班</b></a>
+            <el-tag
               type="info"
-              size="mini"
+              size="medium"
               plain
-              style="float: right; margin-top: -5px"
+              style="float: right; margin-top: -5px; padding: 0px 17px"
               disabled
             >
               <vab-icon :icon="['fas', 'minus-circle']"></vab-icon>
               暂未加入
-            </el-button>
+            </el-tag>
           </div>
           <div>
             <el-table
@@ -82,17 +73,17 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <a><b>ACM程序设计协会(2020级)</b></a>
-            <el-button
+            <a @click="handleInfo(1)"><b>ACM程序设计协会(2020级)</b></a>
+            <el-tag
               type="success"
-              size="mini"
+              size="medium"
               plain
-              style="float: right; margin-top: -5px"
+              style="float: right; margin-top: -5px; padding: 0px 17px"
               disabled
             >
               <vab-icon :icon="['fas', 'check-circle']"></vab-icon>
               小组成员
-            </el-button>
+            </el-tag>
           </div>
           <div>
             <el-table
@@ -119,17 +110,17 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <a><b>网络空间安全2020-1班</b></a>
-            <el-button
+            <a @click="handleInfo(1)"><b>网络空间安全2020-1班</b></a>
+            <el-tag
               type="info"
-              size="mini"
+              size="medium"
               plain
-              style="float: right; margin-top: -5px"
+              style="float: right; margin-top: -5px; padding: 0px 17px"
               disabled
             >
               <vab-icon :icon="['fas', 'minus-circle']"></vab-icon>
               暂未加入
-            </el-button>
+            </el-tag>
           </div>
           <div>
             <el-table
@@ -156,17 +147,17 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="8">
         <el-card>
           <div slot="header">
-            <a><b>软件工程2019-2班</b></a>
-            <el-button
+            <a @click="handleInfo(1)"><b>软件工程2019-2班</b></a>
+            <el-tag
               type="warning"
-              size="mini"
+              size="medium"
               plain
-              style="float: right; margin-top: -5px"
+              style="float: right; margin-top: -5px; padding: 0px 17px"
               disabled
             >
               <vab-icon :icon="['fas', 'exclamation-circle']"></vab-icon>
               等待验证
-            </el-button>
+            </el-tag>
           </div>
           <div>
             <el-table
@@ -210,7 +201,7 @@
             tb2: '2021-01-25 17:16:29',
           },
           {
-            tb1: '正式成员数',
+            tb1: '小组成员数',
             tb2: '41人',
           },
           {
@@ -225,7 +216,13 @@
     },
     created() {},
     mounted() {},
-    methods: {},
+    methods: {
+      handleInfo(id) {
+        this.$router.push({
+          path: '/imustoj/groupInfo',
+        })
+      },
+    },
   }
 </script>
 <style lang="scss" scoped>

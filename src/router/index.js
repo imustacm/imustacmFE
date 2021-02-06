@@ -158,6 +158,13 @@ export const asyncRoutes = [
               ),
           },
           {
+            path: 'data/:id/:problemId',
+            name: 'ContestData',
+            meta: { title: '竞赛数据' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestData/index'),
+          },
+          {
             path: 'status/:id',
             name: 'ContestStatus',
             meta: { title: '竞赛状态' },
@@ -174,11 +181,11 @@ export const asyncRoutes = [
               ),
           },
           {
-            path: 'data/:id',
+            path: 'datas/:id',
             name: 'ContestData',
             meta: { title: '竞赛统计' },
             component: () =>
-              import('@/views/project/imustoj/contestView/contestData/index'),
+              import('@/views/project/imustoj/contestView/contestDatas/index'),
           },
         ],
       },
@@ -219,6 +226,13 @@ export const asyncRoutes = [
               ),
           },
           {
+            path: 'data/:id/:problemId',
+            name: 'ExperimentData',
+            meta: { title: '实验数据' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestData/index'),
+          },
+          {
             path: 'status/:id',
             name: 'ExperimentStatus',
             meta: { title: '实验状态' },
@@ -235,11 +249,11 @@ export const asyncRoutes = [
               ),
           },
           {
-            path: 'data/:id',
+            path: 'datas/:id',
             name: 'ExperimentData',
             meta: { title: '实验统计' },
             component: () =>
-              import('@/views/project/imustoj/contestView/contestData/index'),
+              import('@/views/project/imustoj/contestView/contestDatas/index'),
           },
         ],
       },
@@ -280,6 +294,13 @@ export const asyncRoutes = [
               ),
           },
           {
+            path: 'data/:id/:problemId',
+            name: 'PracticeData',
+            meta: { title: '练习数据' },
+            component: () =>
+              import('@/views/project/imustoj/contestView/contestData/index'),
+          },
+          {
             path: 'status/:id',
             name: 'PracticeStatus',
             meta: { title: '练习状态' },
@@ -296,11 +317,11 @@ export const asyncRoutes = [
               ),
           },
           {
-            path: 'data/:id',
+            path: 'datas/:id',
             name: 'PracticeData',
             meta: { title: '练习统计' },
             component: () =>
-              import('@/views/project/imustoj/contestView/contestData/index'),
+              import('@/views/project/imustoj/contestView/contestDatas/index'),
           },
         ],
       },
@@ -322,6 +343,13 @@ export const asyncRoutes = [
         component: () => import('@/views/project/imustoj/groupUsers/index'),
         hidden: true,
         meta: { title: '小组详情' },
+      },
+      {
+        path: 'data/:id',
+        name: 'Data',
+        component: () => import('@/views/project/imustoj/data/index'),
+        hidden: true,
+        meta: { title: '数据统计' },
       },
       {
         path: 'help',

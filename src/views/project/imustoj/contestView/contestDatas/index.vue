@@ -1,31 +1,23 @@
 <template>
   <div class="data">
-    <el-row style="width: 100%; height: 32px">
-      <vab-query-form>
-        <el-col :span="12">
-          <h3 style="margin-top: 10px; margin-bottom: 22px">
-            {{ id }}.整数求和
-          </h3>
-        </el-col>
-        <el-col :span="12">
-          <el-button
-            type="primary"
-            style="float: right"
-            @click="handleProblem()"
-          >
-            <vab-icon :icon="['fas', 'angle-left']"></vab-icon>
-            返回题目
-          </el-button>
-        </el-col>
-      </vab-query-form>
-    </el-row>
-
     <el-table
       :fit="true"
       :data="dataTable"
       style="width: 100%; margin: 0 auto"
       border
     >
+      <el-table-column
+        prop="problem_id"
+        align="center"
+        label="题目编号"
+        show-overflow-tooltip
+      >
+        <template slot-scope="scope">
+          <a style="cursor: pointer" @click="handleToProblem(scope.row)">
+            {{ scope.row.problem_id }}
+          </a>
+        </template>
+      </el-table-column>
       <el-table-column
         prop="language"
         align="center"
@@ -157,6 +149,7 @@
         </el-card>
       </el-col>
     </el-row>
+    <br />
   </div>
 </template>
 
@@ -164,17 +157,128 @@
   import VabChart from '@/plugins/echarts'
 
   export default {
-    name: 'ContestData',
+    name: 'ContestDatas',
     components: {
       VabChart,
     },
     data() {
       return {
         rot: this.$route.path.split('/')[2],
-        id: this.$route.params.problemId,
         dataTable: [
           {
-            problem_id: 4,
+            problem_id: 'A',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: 'B',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: 'C',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: 'D',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: 'E',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: 'F',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: 'G',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: 'H',
+            c: 580,
+            cpp: 1048,
+            java: 735,
+            python3: 484,
+            total: 2888,
+            ac: 10,
+            wa: 52,
+            tle: 20,
+            mle: 33,
+            re: 39,
+            ce: 33,
+          },
+          {
+            problem_id: '所有题目',
             c: 580,
             cpp: 1048,
             java: 735,
@@ -245,12 +349,12 @@
     created() {},
     mounted() {},
     methods: {
-      handleProblem(id) {
+      handleToProblem(row) {
         this.$router.push({
-          path: '/imustoj/' + this.rot + '/info/problem/1490/' + this.id,
+          path: '/imustoj/' + this.rot + '/info/problem/1490/' + row.problem_id,
         })
       },
-      handleStatus(row) {
+      handleStatus() {
         this.$router.push({
           path: '/imustoj/' + this.rot + '/info/status/1490',
         })

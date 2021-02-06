@@ -66,7 +66,6 @@
         </el-form>
       </vab-query-form>
     </el-row>
-
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -81,10 +80,7 @@
       ></el-table-column>
       <el-table-column align="center" prop="username" label="用户名">
         <template slot-scope="scope">
-          <a
-            style="cursor: pointer"
-            @click="handleAppTemplateDetail(scope.$index, scope.row)"
-          >
+          <a style="cursor: pointer" @click="">
             {{ scope.row.username }}
           </a>
         </template>
@@ -143,6 +139,7 @@
         align="center"
         label="提交时间"
         prop="submit_time"
+        width="170px"
       ></el-table-column>
       <!-- <el-table-column
         align="center"
