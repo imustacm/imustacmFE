@@ -23,7 +23,7 @@
           <div slot="content" style="text-align: center">
             6~20位数字、大写字母、小写字母的组合
             <br />
-            在校生请使用学号作为用户名进行注册
+            在校生建议使用学号作为用户名进行注册
           </div>
           <vab-icon
             :icon="['fas', 'question-circle']"

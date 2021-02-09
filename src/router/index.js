@@ -182,7 +182,7 @@ export const asyncRoutes = [
           },
           {
             path: 'datas/:id',
-            name: 'ContestData',
+            name: 'ContestDatas',
             meta: { title: '竞赛统计' },
             component: () =>
               import('@/views/project/imustoj/contestView/contestDatas/index'),
@@ -250,7 +250,7 @@ export const asyncRoutes = [
           },
           {
             path: 'datas/:id',
-            name: 'ExperimentData',
+            name: 'ExperimentDatas',
             meta: { title: '实验统计' },
             component: () =>
               import('@/views/project/imustoj/contestView/contestDatas/index'),
@@ -318,7 +318,7 @@ export const asyncRoutes = [
           },
           {
             path: 'datas/:id',
-            name: 'PracticeData',
+            name: 'PracticeDatas',
             meta: { title: '练习统计' },
             component: () =>
               import('@/views/project/imustoj/contestView/contestDatas/index'),

@@ -14,6 +14,9 @@
       </el-col>
       <el-col :xs="20" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="right-panel">
+          <span style="margin-right: 20px; color: #83888c">
+            前端当前版本：{{ updateTime | updateTimeFilter }} - Alpha
+          </span>
           <vab-error-log />
           <vab-full-screen-bar @refresh="refreshRoute" />
           <vab-theme-bar class="hidden-xs-only" />
@@ -24,11 +27,11 @@
             @click="refreshRoute"
           />
           <vab-avatar />
-          <!--  <vab-icon
+          <!-- <vab-icon
             title="退出系统"
             :icon="['fas', 'sign-out-alt']"
             @click="logout"
-          />-->
+          /> -->
         </div>
       </el-col>
     </el-row>
@@ -42,8 +45,26 @@
     name: 'VabNavBar',
     data() {
       return {
+        updateTime: process.env.VUE_APP_UPDATE_TIME,
         pulse: false,
       }
+    },
+    filters: {
+      updateTimeFilter: function (value) {
+        let date = new Date(process.env.VUE_APP_UPDATE_TIME)
+        let y = date.getFullYear()
+        let MM = date.getMonth() + 1
+        MM = MM < 10 ? '0' + MM : MM
+        let d = date.getDate()
+        d = d < 10 ? '0' + d : d
+        let h = date.getHours()
+        h = h < 10 ? '0' + h : h
+        let m = date.getMinutes()
+        m = m < 10 ? '0' + m : m
+        let s = date.getSeconds()
+        s = s < 10 ? '0' + s : s
+        return y + MM + d + '.' + h + m + s
+      },
     },
     computed: {
       ...mapGetters({

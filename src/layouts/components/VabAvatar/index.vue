@@ -1,7 +1,7 @@
 <template>
   <div>
     <div ref="beforeLogin" style="display: none">
-      <el-row>
+      <el-row style="width: 130px">
         <el-button size="small" type="primary" @click="login()" plain round>
           登 录
         </el-button>
