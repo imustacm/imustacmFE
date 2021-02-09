@@ -55,7 +55,7 @@
       <el-table
         :fit="true"
         :data="languageTable"
-        style="width: 85%; margin: 0 auto"
+        style="width: 90%; margin: 0 auto"
         border
       >
         <af-table-column
@@ -103,7 +103,7 @@
       <el-table
         :fit="true"
         :data="resultTable"
-        style="width: 85%; margin: 0 auto"
+        style="width: 90%; margin: 0 auto"
         border
       >
         <el-table-column
@@ -155,13 +155,13 @@
           为了方便解释，下面给出“题目1005：输入入门（1）”的示例源码以供参考：
         </span>
       </p>
-      <div style="width: 85%; margin: 0 auto"><p>C：</p></div>
+      <div style="width: 90%; margin: 0 auto"><p>C：</p></div>
       <div v-html="sampleC" class="sample"></div>
-      <div style="width: 85%; margin: 0 auto"><p>C++：</p></div>
+      <div style="width: 90%; margin: 0 auto"><p>C++：</p></div>
       <div v-html="sampleCpp" class="sample"></div>
-      <div style="width: 85%; margin: 0 auto"><p>Java：</p></div>
+      <div style="width: 90%; margin: 0 auto"><p>Java：</p></div>
       <div v-html="sampleJava" class="sample"></div>
-      <div style="width: 85%; margin: 0 auto"><p>Python3：</p></div>
+      <div style="width: 90%; margin: 0 auto"><p>Python3：</p></div>
       <div v-html="samplePython3" class="sample"></div>
       <br />
       <p style="text-indent: 2em">
@@ -189,7 +189,7 @@
       <el-table
         :fit="true"
         :data="contestTable"
-        style="width: 85%; margin: 0 auto"
+        style="width: 90%; margin: 0 auto"
         border
       >
         <el-table-column
@@ -340,7 +340,7 @@
     border-radius: 4px;
   }
   .sample {
-    width: 84%;
+    width: 89%;
     margin: 0 auto;
     overflow: hidden;
     border: 1px solid #dedede;

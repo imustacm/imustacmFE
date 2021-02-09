@@ -13,7 +13,7 @@
       </el-carousel>
     </div>
     <div class="imustojIndex">
-      <h2 style="text-align: center; margin: 45px 0px 35px">IMUSTOJ信息板</h2>
+      <h2 style="text-align: center; margin: 45px 0px 40px">IMUSTOJ信息板</h2>
       <el-row
         :gutter="20"
         style="padding: 20px 20px 10px; background-color: #ffffff"
@@ -82,7 +82,7 @@
               </template>
             </el-table-column>
           </el-table>
-          <div style="text-align: center; margin-top: 15px">
+          <div style="text-align: center; margin-top: 20px">
             <el-button type="primary" style="padding: 10px 30px" plain>
               解题排名
             </el-button>
@@ -148,7 +148,7 @@
               width="120px"
             ></el-table-column>
           </el-table>
-          <div style="text-align: center; margin-top: 15px">
+          <div style="text-align: center; margin-top: 20px">
             <el-button type="primary" style="padding: 10px 30px" plain>
               打卡排名
             </el-button>
@@ -270,7 +270,7 @@
           :xl="24"
           style="padding: 0px 10px 10px"
         >
-          <div style="text-align: center; margin-top: 5px">
+          <div style="text-align: center; margin-top: 10px">
             <el-button type="primary" style="padding: 10px 30px" plain>
               题目列表
             </el-button>
@@ -308,7 +308,7 @@
           :xl="24"
           style="padding: 0px 10px 30px"
         >
-          <div style="text-align: center; margin-top: 5px">
+          <div style="text-align: center; margin-top: 10px">
             <el-button type="primary" style="padding: 10px 30px" plain>
               评判状态
             </el-button>
@@ -317,34 +317,75 @@
       </el-row>
     </div>
     <div class="aboutIndex">
-      <h2 style="text-align: center; margin: 45px 0px 35px">关于我们</h2>
+      <h2 style="text-align: center; margin: 45px 0px 40px">关于我们</h2>
       <el-row :gutter="20" style="background-color: #ffffff">
+        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+          <div
+            style="
+              background: url(https://www.imustacm.cn/imustacm/2015BY.JPG)
+                no-repeat center center;
+              background-size: cover;
+              filter: grayscale(30%);
+              opacity: 0.7;
+            "
+            id="aboutImg"
+          ></div>
+        </el-col>
         <el-col
           :xs="24"
           :sm="24"
           :md="24"
           :lg="12"
           :xl="12"
-          style="
-            background: url(https://www.imustacm.cn/imustacm/2015BY.JPG)
-              no-repeat center center;
-            background-size: cover;
-            height: 450px;
-            filter: grayscale(30%);
-            opacity: 0.7;
-          "
-        ></el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12" style="">
-          <p style="margin: 50px; font-size: 15px; line-height: 25px">
+          style="display: block"
+          id="aboutTxt"
+        >
+          <p
+            style="
+              margin: 50px 50px 0px;
+              font-size: 15px;
+              line-height: 27px;
+              text-indent: 2em;
+            "
+          >
             内蒙古科技大学ACM程序设计协会成立于2009年9月6日，是基于国际大学生ACM程序设计竞赛而成立的实践类学习型的学生社团。协会指导老师是兰孝文老师、丁雨老师、郝斌老师和胡伟健老师，ACM竞赛集训队现有成员20余人。
+          </p>
+          <p
+            style="
+              margin: 10px 50px;
+              font-size: 15px;
+              line-height: 27px;
+              text-indent: 2em;
+            "
+          >
             协会在积极组织集训队的同时，也调动更广大同学学习计算机知识的积极性、主动性，全面提高同学们算法与程序设计能力，突出编程能力和思维的训练，营造浓厚的学习氛围，增强同学们的总体素质和竞争力。ACM程序设计协会将依靠师生共同的力量，热诚为学生的全面成长服务，以培养会员的编程创新能力为核心，兼顾低年级大学生计算机基础知识学习组织与帮扶的目标，创造性地开展工作。
             内蒙古科技大学ACM程序设计协会热忱欢迎对编程有兴趣或想学好编程的同学的加入！
           </p>
+          <p
+            style="
+              margin: 10px 50px;
+              font-size: 15px;
+              line-height: 27px;
+              text-indent: 2em;
+            "
+          >
+            内蒙古科技大学ACM程序设计协会热忱欢迎对编程有兴趣或想学好编程的同学的加入！
+          </p>
+          <div style="text-align: center; margin: 20px 50px 50px">
+            <el-button
+              type="primary"
+              style="padding: 10px 30px"
+              plain
+              @click=""
+            >
+              了解更多
+            </el-button>
+          </div>
         </el-col>
       </el-row>
     </div>
     <div class="raceIndex">
-      <h2 style="text-align: center; margin: 45px 0px 35px">主要参加赛事</h2>
+      <h2 style="text-align: center; margin: 45px 0px 40px">主要参加赛事</h2>
       <el-row
         :gutter="20"
         style="padding: 10px 20px; background-color: #ffffff"
@@ -368,6 +409,11 @@
               ICPC：国际大学生程序设计竞赛，由国际计算机协会（ACM）主办，目前已经发展成为全球最具影响力的大学生程序设计竞赛。
             </p>
           </div>
+          <div style="text-align: center; margin: 20px 0px">
+            <el-button type="primary" style="padding: 10px 30px" plain>
+              查看详情
+            </el-button>
+          </div>
         </el-col>
         <el-col
           :xs="24"
@@ -388,6 +434,11 @@
               CCPC：中国大学生程序设计竞赛，由中国大学生程序设计竞赛协会主办，是采用ACM赛制的面向世界大学生的国际性年度赛事。
             </p>
           </div>
+          <div style="text-align: center; margin: 20px 0px">
+            <el-button type="primary" style="padding: 10px 30px" plain>
+              查看详情
+            </el-button>
+          </div>
         </el-col>
         <el-col
           :xs="24"
@@ -405,8 +456,13 @@
             ></el-image>
             <h3>CCCC</h3>
             <p style="text-align: left; line-height: 20px">
-              CCCC：中国高校计算机大赛，分为团体程序设计天梯赛、大数据挑战赛、移动应用创新赛、网络技术挑战赛、人工智能创意赛等分赛事。
+              CCCC：中国高校计算机大赛，分为团体程序设计天梯赛、大数据挑战赛、移动应用创新赛、网络技术挑战赛、人工智能创意赛等赛事。
             </p>
+          </div>
+          <div style="text-align: center; margin: 20px 0px">
+            <el-button type="primary" style="padding: 10px 30px" plain>
+              查看详情
+            </el-button>
           </div>
         </el-col>
         <el-col
@@ -428,9 +484,125 @@
               “蓝桥杯”大赛：由工信部人才交流中心、教育部就业指导中心联合举办，旨在促进软件信息领域专业人才培养，提升毕业生就业竞争力。
             </p>
           </div>
+          <div style="text-align: center; margin: 20px 0px">
+            <el-button type="primary" style="padding: 10px 30px" plain>
+              查看详情
+            </el-button>
+          </div>
         </el-col>
       </el-row>
     </div>
+    <div class="container-fluid">
+      <h2 style="text-align: center; margin: 45px 0px 40px">荣誉时刻</h2>
+      <el-row class="row no-gutter pics" style="background-color: #ffffff">
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/2020ICPCW.jpg" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">2020年ICPC中国（西部）赛</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/IMCPC2020.jpeg" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">2020年CCPC内蒙古自治区赛</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/2019NE.jpeg" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">2019年CCPC东北地区赛</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/2019NMG.jpeg" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">2019年CCPC内蒙古自治区赛</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/2019TTS.JPG" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">2019年团体程序设计天梯赛</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/2019LQB.JPG" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">
+                    2019年“蓝桥杯”内蒙古自治区赛
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/2018NMG.jpg" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">2018年CCPC内蒙古自治区赛</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
+          <div class="work-box">
+            <img src="https://www.imustacm.cn/imustacm/2018NE.jpg" alt="" />
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p>
+                  <span style="font-size: 16px">2019年CCPC东北地区赛</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+          <div style="text-align: center; margin: 20px 0px 40px">
+            <el-button type="primary" style="padding: 10px 30px" plain>
+              查看更多荣誉时刻
+            </el-button>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+    <!-- <div style="height: 20px"></div> -->
   </div>
 </template>
 
@@ -447,6 +619,7 @@
     },
     data() {
       return {
+        scrollerHeight: '200px',
         listLoading: true,
         elementLoadingText: '正在加载',
         option: {
@@ -699,6 +872,14 @@
       changeWidth() {
         let carouselItem = document.getElementById('carousel')
         carouselItem.style.height = document.body.clientWidth / 3.6 + 'px'
+        let aboutImg = document.getElementById('aboutImg')
+        let aboutTxt = document.getElementById('aboutTxt')
+        aboutImg.style.height = aboutTxt.offsetHeight + 'px'
+
+        let workBox = document.getElementsByClassName('work-box')
+        for (var i = 0; i < workBox.length; i++) {
+          workBox[i].style.height = document.body.clientWidth / 6.5 + 'px'
+        }
       },
     },
   }
@@ -707,5 +888,98 @@
   .el-carousel__container {
     width: 100%;
     height: 100% !important;
+  }
+  .work {
+    -moz-box-shadow: 0 0 0 1px #fff;
+    -webkit-box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #fff;
+    overflow: hidden;
+    position: relative;
+    background: #666666;
+  }
+  .work img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+  .work .overlay {
+    background: rgba(56, 56, 56, 0.58);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -moz-transition: opacity, 0.3s;
+    -o-transition: opacity, 0.3s;
+    -webkit-transition: opacity, 0.3s;
+    transition: opacity, 0.3s;
+  }
+  .work .overlay-caption {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .work h5,
+  .work p,
+  .work img {
+    -moz-transition: all, 0.5s;
+    -o-transition: all, 0.5s;
+    -webkit-transition: all, 0.5s;
+    transition: all, 0.5s;
+  }
+  .work h5,
+  .work p {
+    color: #fff;
+    margin: 0;
+    opacity: 0;
+  }
+  .work span {
+    font-size: 45px;
+  }
+  .work h5 {
+    margin-bottom: 5px;
+    -moz-transform: translate3d(0, -200%, 0);
+    -ms-transform: translate3d(0, -200%, 0);
+    -webkit-transform: translate3d(0, -200%, 0);
+    transform: translate3d(0, -200%, 0);
+  }
+  .work p {
+    -moz-transform: translate3d(0, 200%, 0);
+    -ms-transform: translate3d(0, 200%, 0);
+    -webkit-transform: translate3d(0, 200%, 0);
+    transform: translate3d(0, 200%, 0);
+  }
+  .work-box:hover img {
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  .work-box:hover .overlay {
+    opacity: 1;
+  }
+  .work-box:hover .overlay h5,
+  .work-box:hover .overlay p {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .services-content h5 {
+    margin: 20px;
+  }
+  .video-section {
+    padding: 88px 0 20px;
+  }
+  address {
+    line-height: 1.42857143;
+    color: #b5b5b5 !important;
   }
 </style>

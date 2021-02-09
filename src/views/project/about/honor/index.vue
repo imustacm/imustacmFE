@@ -35,7 +35,7 @@
         <el-table
           :fit="true"
           :data="jsjsjds2020"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod1"
           border
         >
@@ -45,12 +45,12 @@
             label="作品编号"
             show-overflow-tooltip
           ></af-table-column>
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="参赛学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="price"
             align="center"
@@ -139,16 +139,16 @@
         <el-table
           :fit="true"
           :data="dbccpc2020"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod1"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="team"
             align="center"
@@ -232,10 +232,10 @@
         <el-table
           :fit="true"
           :data="lqbnmg2020"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="province"
             align="center"
             label="省份"
@@ -246,7 +246,7 @@
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="examid"
             align="center"
@@ -330,16 +330,16 @@
         <el-table
           :fit="true"
           :data="icpcxb2020"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod2"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="team"
             align="center"
@@ -437,10 +437,10 @@
         <el-table
           :fit="true"
           :data="lqbgs2020"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="province"
             align="center"
             label="省份"
@@ -451,7 +451,7 @@
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="examid"
             align="center"
@@ -526,16 +526,16 @@
         <el-table
           :fit="true"
           :data="nmgccpc2020"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod1"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="team"
             align="center"
@@ -635,10 +635,10 @@
         <el-table
           :fit="true"
           :data="lqbnmg2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="province"
             align="center"
             label="省份"
@@ -649,7 +649,7 @@
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="examid"
             align="center"
@@ -743,7 +743,7 @@
         <el-table
           :fit="true"
           :data="tts2019gx"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           border
         >
           <af-table-column
@@ -810,7 +810,7 @@
         <el-table
           :fit="true"
           :data="tts2019td"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod3"
           border
         >
@@ -843,12 +843,12 @@
             label="级别"
             show-overflow-tooltip
           ></af-table-column>
-          <af-table-column
+          <!-- <af-table-column
             prop="price1"
             align="center"
             label="国奖"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="price2"
             align="center"
@@ -932,16 +932,16 @@
         <el-table
           :fit="true"
           :data="nmgccpc2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod2"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="team"
             align="center"
@@ -1041,16 +1041,16 @@
         <el-table
           :fit="true"
           :data="dbccpc2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod1"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="team"
             align="center"
@@ -1148,10 +1148,10 @@
         <el-table
           :fit="true"
           :data="lqbgs2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="province"
             align="center"
             label="省份"
@@ -1162,7 +1162,7 @@
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="examid"
             align="center"
@@ -1240,7 +1240,7 @@
         <el-table
           :fit="true"
           :data="wxxcx2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod1"
           border
         >
@@ -1250,12 +1250,12 @@
             label="大区"
             show-overflow-tooltip
           ></af-table-column>
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="参赛学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="price"
             align="center"
@@ -1333,16 +1333,16 @@
         <el-table
           :fit="true"
           :data="ccpcqhd2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod1"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="team"
             align="center"
@@ -1428,7 +1428,7 @@
         <el-table
           :fit="true"
           :data="hbwsnmg2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod4"
           border
         >
@@ -1438,12 +1438,12 @@
             label="省份"
             show-overflow-tooltip
           ></af-table-column>
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="参赛学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="price"
             align="center"
@@ -1521,16 +1521,16 @@
         <el-table
           :fit="true"
           :data="icpcyc2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod5"
           border
         >
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="team"
             align="center"
@@ -1610,7 +1610,7 @@
         <el-table
           :fit="true"
           :data="hbwszjs2019"
-          style="width: 85%; margin: 0 auto"
+          style="width: 90%; margin: 0 auto"
           :span-method="spanMethod4"
           border
         >
@@ -1620,12 +1620,12 @@
             label="省份"
             show-overflow-tooltip
           ></af-table-column>
-          <af-table-column
+          <!-- <af-table-column
             prop="school"
             align="center"
             label="参赛学校"
             show-overflow-tooltip
-          ></af-table-column>
+          ></af-table-column> -->
           <af-table-column
             prop="price"
             align="center"
@@ -3345,7 +3345,7 @@
     mounted() {},
     methods: {
       spanMethod1({ row, column, rowIndex, columnIndex }) {
-        if (columnIndex < 4 || columnIndex > 6) {
+        if (columnIndex < 3 || columnIndex > 5) {
           if (rowIndex % 3 == 0) {
             return [3, 1]
           } else {
@@ -3354,7 +3354,7 @@
         }
       },
       spanMethod2({ row, column, rowIndex, columnIndex }) {
-        if (columnIndex < 5 || columnIndex > 7) {
+        if (columnIndex < 4 || columnIndex > 6) {
           if (rowIndex % 3 == 0) {
             return [3, 1]
           } else {
@@ -3363,7 +3363,7 @@
         }
       },
       spanMethod3({ row, column, rowIndex, columnIndex }) {
-        if (columnIndex < 7 || columnIndex > 10) {
+        if (columnIndex < 6 || columnIndex > 9) {
           if (rowIndex % 10 == 0) {
             return [10, 1]
           } else {
@@ -3372,7 +3372,7 @@
         }
       },
       spanMethod4({ row, column, rowIndex, columnIndex }) {
-        if (columnIndex < 4 || columnIndex > 6) {
+        if (columnIndex < 3 || columnIndex > 5) {
           if (rowIndex % 5 == 0) {
             return [5, 1]
           } else {
@@ -3381,7 +3381,7 @@
         }
       },
       spanMethod5({ row, column, rowIndex, columnIndex }) {
-        if (columnIndex < 3 || columnIndex > 5) {
+        if (columnIndex < 2 || columnIndex > 4) {
           if (rowIndex % 3 == 0) {
             return [3, 1]
           } else {

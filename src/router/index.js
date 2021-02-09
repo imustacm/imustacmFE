@@ -470,6 +470,12 @@ export const asyncRoutes = [
         meta: { title: '历届会长' },
       },
       {
+        path: 'activity',
+        name: 'Activity',
+        component: () => import('@/views/project/about/aboutUs/index'),
+        meta: { title: '社团活动' },
+      },
+      {
         path: 'gooders',
         name: 'gooders',
         component: () => import('@/views/project/about/aboutUs/index'),
