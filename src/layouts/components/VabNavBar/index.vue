@@ -51,19 +51,32 @@
     },
     filters: {
       updateTimeFilter: function (value) {
-        let date = new Date(process.env.VUE_APP_UPDATE_TIME)
-        let y = date.getFullYear()
-        let MM = date.getMonth() + 1
-        MM = MM < 10 ? '0' + MM : MM
-        let d = date.getDate()
-        d = d < 10 ? '0' + d : d
-        let h = date.getHours()
-        h = h < 10 ? '0' + h : h
-        let m = date.getMinutes()
-        m = m < 10 ? '0' + m : m
-        let s = date.getSeconds()
-        s = s < 10 ? '0' + s : s
-        return y + MM + d + '.' + h + m + s
+        let year = process.env.VUE_APP_UPDATE_TIME.split('-')[0]
+        let month =
+          parseInt(process.env.VUE_APP_UPDATE_TIME.split('-')[1]) > 9
+            ? process.env.VUE_APP_UPDATE_TIME.split('-')[1]
+            : '0' + process.env.VUE_APP_UPDATE_TIME.split('-')[1]
+        let day =
+          parseInt(
+            process.env.VUE_APP_UPDATE_TIME.split('-')[2].split(' ')[0]
+          ) > 9
+            ? process.env.VUE_APP_UPDATE_TIME.split('-')[2].split(' ')[0]
+            : '0' + process.env.VUE_APP_UPDATE_TIME.split('-')[2].split(' ')[0]
+        let hour =
+          parseInt(
+            process.env.VUE_APP_UPDATE_TIME.split(' ')[1].split(':')[0]
+          ) > 9
+            ? process.env.VUE_APP_UPDATE_TIME.split(' ')[1].split(':')[0]
+            : '0' + process.env.VUE_APP_UPDATE_TIME.split(' ')[1].split(':')[0]
+        let minute =
+          parseInt(process.env.VUE_APP_UPDATE_TIME.split(':')[1]) > 9
+            ? process.env.VUE_APP_UPDATE_TIME.split(':')[1]
+            : '0' + process.env.VUE_APP_UPDATE_TIME.split(':')[1]
+        let second =
+          parseInt(process.env.VUE_APP_UPDATE_TIME.split(':')[2]) > 9
+            ? process.env.VUE_APP_UPDATE_TIME.split(':')[2]
+            : '0' + process.env.VUE_APP_UPDATE_TIME.split(':')[2]
+        return year + month + day + '.' + hour + minute + second
       },
     },
     computed: {

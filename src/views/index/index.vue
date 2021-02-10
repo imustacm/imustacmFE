@@ -492,7 +492,7 @@
         </el-col>
       </el-row>
     </div>
-    <div class="container-fluid">
+    <div class="honorIndex">
       <h2 style="text-align: center; margin: 45px 0px 40px">荣誉时刻</h2>
       <el-row class="row no-gutter pics" style="background-color: #ffffff">
         <el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" class="work">
@@ -602,12 +602,189 @@
         </el-col>
       </el-row>
     </div>
+
+    <div class="connectIndex">
+      <h2 style="text-align: center; margin: 45px 0px 40px">常用链接</h2>
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <el-row>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://www.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://aao.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学教务处
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://library.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学图书馆
+                </a>
+              </el-col>
+
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://i.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学信息门户
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://ykt.imust.cn/web/guest/home" target="_blank">
+                  内蒙古科技大学一卡通中心
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://yx.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学迎新网
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://sit.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学信息工程学院
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://nic.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学信息办与网络中心
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://mail.stu.imust.edu.cn/" target="_blank">
+                  内蒙古科技大学学生邮箱系统
+                </a>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://www.jisuanke.com/" target="_blank">计蒜客</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://www.luogu.com.cn/" target="_blank">洛谷</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://pintia.cn/" target="_blank">PTA</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://www.nowcoder.com/" target="_blank">牛客网</a>
+                /
+                <a href="https://ac.nowcoder.com/acm/home" target="_blank">
+                  牛客竞赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://vijos.org/" target="_blank">Vijos</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://vjudge.net/" target="_blank">VJudge</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://leetcode-cn.com/" target="_blank">力扣中国</a>
+                /
+                <a href="https://leetcode.com/" target="_blank">Leetcode</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://loj.ac/" target="_blank">LibreOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://codeforces.com/" target="_blank">Codeforces</a>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://poj.org/" target="_blank">POJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://zoj.pintia.cn/" target="_blank">ZOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://acm.hdu.edu.cn/" target="_blank">HDOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://tzcoder.cn/" target="_blank">TZOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://qduoj.com/" target="_blank">QDUOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://www.bttcacm.cn/" target="_blank">BTTCOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://hustoj.com/oj/" target="_blank">HUSTOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://acm.ustc.edu.cn/" target="_blank">USTCOJ</a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://acm.swust.edu.cn/" target="_blank">SWUSTOJ</a>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://www.c4best.cn/" target="_blank">
+                  CCCC 中国高校计算机大赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://icpc.global/" target="_blank">
+                  ICPC 国际大学生程序设计竞赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://www.fwwb.org.cn/" target="_blank">
+                  中国大学生服务外包创新创业大赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://gplt.patest.cn/" target="_blank">
+                  GPLT 团体程序设计天梯赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://ccpc.io/" target="_blank">
+                  CCPC 中国大学生程序设计竞赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://www.tiaozhanbei.net/" target="_blank">
+                  “挑战杯”全国大学生课外学术科技作品竞赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="https://cy.ncss.cn/" target="_blank">
+                  “互联网+”大学生创新创业大赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://www.cnsoftbei.com/" target="_blank">
+                  “中国软件杯”大学生软件设计大赛
+                </a>
+              </el-col>
+              <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8" class="aaa">
+                <a href="http://dasai.lanqiao.cn/" target="_blank">
+                  “蓝桥杯”全国软件专业人才设计与创业大赛
+                </a>
+              </el-col>
+            </el-row>
+          </li>
+        </ul>
+      </div>
+    </div>
     <!-- <div style="height: 20px"></div> -->
   </div>
 </template>
 
 <script>
   import VabChart from '@/plugins/echarts'
+  import flexslider from 'flexslider'
+  import $ from 'jquery'
   import no1 from '@/assets/images/no1.png'
   import no2 from '@/assets/images/no2.png'
   import no3 from '@/assets/images/no3.png'
@@ -616,6 +793,7 @@
     name: 'Index',
     components: {
       VabChart,
+      flexslider,
     },
     data() {
       return {
@@ -867,6 +1045,11 @@
       setTimeout(() => {
         this.listLoading = false
       }, 1)
+
+      $('.flexslider').flexslider({
+        animation: 'slide',
+        directionNav: false,
+      })
     },
     methods: {
       changeWidth() {
@@ -978,8 +1161,295 @@
   .video-section {
     padding: 88px 0 20px;
   }
-  address {
-    line-height: 1.42857143;
-    color: #b5b5b5 !important;
+  .testimonials {
+    background-color: #f6f6f6;
+    position: relative;
+    text-align: center;
+  }
+  .testimonials blockquote {
+    border: 0;
+    margin: 0;
+    padding: 80px 15%;
+  }
+  .testimonials h1 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .testimonials p {
+    color: #000;
+    display: block;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 30px;
+    text-transform: uppercase;
+    margin: 30px 15%;
+  }
+  .flex-control-nav {
+    margin-top: 2%;
+    bottom: none !important;
+    position: relative !important;
+    right: 0;
+    text-align: center;
+    width: 100% !important;
+    z-index: 100;
+  }
+  .aaa {
+    text-align: center;
+    font-size: 15px;
+    height: 50px;
+  }
+
+  /*
+ * jQuery FlexSlider v2.5.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ * 
+ */
+
+  .flex-container a:hover,
+  .flex-slider a:hover,
+  .flex-container a:focus,
+  .flex-slider a:focus {
+    outline: none;
+  }
+  .slides,
+  .slides > li,
+  .flex-control-nav,
+  .flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .flex-pauseplay span {
+    text-transform: capitalize;
+  }
+  /* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+  .flexslider {
+    margin: 0;
+    padding: 0;
+  }
+  .flexslider .slides > li {
+    display: none;
+  }
+  .flexslider .slides img {
+    width: 100%;
+    display: block;
+  }
+  .flexslider .slides:after {
+    content: '\0020';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  html[xmlns] .flexslider .slides {
+    display: block;
+  }
+  * html .flexslider .slides {
+    height: 1%;
+  }
+  .no-js .flexslider .slides > li:first-child {
+    display: block;
+  }
+  /* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+  .flexslider {
+    position: relative;
+    zoom: 1;
+    padding: 50px 0px;
+    background-color: #ffffff;
+  }
+  .flexslider .slides {
+    zoom: 1;
+  }
+  .flexslider .slides img {
+    height: auto;
+  }
+  .flex-viewport {
+    max-height: 2000px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .loading .flex-viewport {
+    max-height: 300px;
+  }
+  .carousel li {
+    margin-right: 5px;
+  }
+  .flex-direction-nav {
+    *height: 0;
+  }
+  .flex-direction-nav a {
+    text-decoration: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .flex-direction-nav a:before {
+    font-family: 'flexslider-icon';
+    font-size: 40px;
+    display: inline-block;
+    content: '\f001';
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  .flex-direction-nav a.flex-next:before {
+    content: '\f002';
+  }
+  .flex-direction-nav .flex-prev {
+    left: -50px;
+  }
+  .flex-direction-nav .flex-next {
+    right: -50px;
+    text-align: right;
+  }
+  .flexslider:hover .flex-direction-nav .flex-prev {
+    opacity: 0.7;
+    left: 10px;
+  }
+  .flexslider:hover .flex-direction-nav .flex-prev:hover {
+    opacity: 1;
+  }
+  .flexslider:hover .flex-direction-nav .flex-next {
+    opacity: 0.7;
+    right: 10px;
+  }
+  .flexslider:hover .flex-direction-nav .flex-next:hover {
+    opacity: 1;
+  }
+  .flex-direction-nav .flex-disabled {
+    opacity: 0 !important;
+    filter: alpha(opacity=0);
+    cursor: default;
+  }
+  .flex-pauseplay a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    opacity: 0.8;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+    color: #000;
+  }
+  .flex-pauseplay a:before {
+    font-family: 'flexslider-icon';
+    font-size: 20px;
+    display: inline-block;
+    content: '\f004';
+  }
+  .flex-pauseplay a:hover {
+    opacity: 1;
+  }
+  .flex-pauseplay a.flex-play:before {
+    content: '\f003';
+  }
+  .flex-control-nav {
+    width: 50%;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    text-align: center;
+    z-index: 100;
+  }
+  .flex-control-nav li {
+    margin: 0 6px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+  }
+  .flex-control-paging li a {
+    width: 11px;
+    height: 11px;
+    display: block;
+    background: #fff;
+    background: rgba(128, 128, 128, 0.2);
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+  .flex-control-paging li a:hover {
+    background: #fff;
+    background: rgba(20, 20, 20, 1);
+  }
+  .flex-control-paging li a.flex-active {
+    background: #fff;
+    background: rgba(120, 120, 120, 1);
+    cursor: default;
+  }
+  .flex-control-thumbs {
+    margin: 5px 0 0;
+    position: static;
+    overflow: hidden;
+  }
+  .flex-control-thumbs li {
+    width: 25%;
+    float: left;
+    margin: 0;
+  }
+  .flex-control-thumbs img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.7;
+    cursor: pointer;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .flex-control-thumbs img:hover {
+    opacity: 1;
+  }
+  .flex-control-thumbs .flex-active {
+    opacity: 1;
+    cursor: default;
+  }
+  /* ====================================================================================================================
+ * RESPONSIVE
+ * ====================================================================================================================*/
+  @media screen and (max-width: 860px) {
+    .flex-direction-nav .flex-prev {
+      opacity: 1;
+      left: 10px;
+    }
+    .flex-direction-nav .flex-next {
+      opacity: 1;
+      right: 10px;
+    }
   }
 </style>

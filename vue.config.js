@@ -71,6 +71,7 @@ module.exports = {
       resolve: {
         alias: {
           '@': resolve('src'),
+          jquery: 'jquery',
         },
       },
       plugins: [
