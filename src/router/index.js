@@ -369,9 +369,9 @@ export const asyncRoutes = [
     permissions: ['visitor'],
     children: [
       {
-        path: 'currentcpc',
-        name: 'Currentcpc',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        path: 'current',
+        name: 'Current',
+        component: () => import('@/views/project/imustcpc/current/index'),
         meta: { title: '本届大赛' },
       },
       {

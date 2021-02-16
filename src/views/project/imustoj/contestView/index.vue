@@ -92,7 +92,7 @@
         this.plain3 = false
       } else if (this.$route.path.split('/')[4] == 'rankList') {
         this.plain2 = false
-      } else if (this.$route.path.split('/')[4] == 'data') {
+      } else if (this.$route.path.split('/')[4] == 'datas') {
         this.plain1 = false
       }
     },
