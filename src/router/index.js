@@ -507,7 +507,7 @@ export const asyncRoutes = [
       {
         path: 'webInstruction',
         name: 'webInstruction',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        component: () => import('@/views/project/about/aboutWeb/index'),
         meta: { title: '网站简介' },
       },
       {
