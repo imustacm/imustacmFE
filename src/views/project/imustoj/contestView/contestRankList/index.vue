@@ -1,5 +1,5 @@
 <template>
-  <div class="contestRankList" style="margin: 20px 20px 0px 20px">
+  <div class="contestRankList">
     <el-row style="width: 100%; height: 32px">
       <vab-query-form>
         <el-col :span="14" style="margin-top: 6px">
@@ -38,10 +38,10 @@
             "
           ></span>
           尝试解答
-          <el-tag type="success" effect="plain" style="margin-left: 20px">
+          <el-tag type="success" effect="plain" style="margin-left: 15px">
             尚未封榜
           </el-tag>
-          <el-tag type="info" effect="plain" style="margin-left: 10px">
+          <el-tag type="info" effect="plain" style="margin-left: -1px">
             2021-01-01 00:00:00
           </el-tag>
         </el-col>
@@ -94,7 +94,7 @@
         show-overflow-tooltip
         prop="rank"
         label="排名"
-        width="70px"
+        width="60px"
       >
         <template #default="scope">
           {{ scope.$index + 1 }}
@@ -105,18 +105,18 @@
         prop="username"
         label="用户名"
         header-align="center"
-        width="240px"
+        width="200px"
       >
         <template slot-scope="scope">
           <a>
             <el-row style="margin-top: 6px; display: block">
-              <el-col :span="6" style="text-align: right">
+              <el-col :span="5" style="text-align: right">
                 <el-avatar
                   class="user-avatar"
                   :src="scope.row.avatar"
                 ></el-avatar>
               </el-col>
-              <el-col :span="18" style="text-align: left">
+              <el-col :span="19" style="text-align: left">
                 <span style="margin: 8px 0px 0px 10px; display: block">
                   {{ scope.row.username }}
                 </span>
@@ -129,14 +129,16 @@
         align="center"
         label="姓名"
         prop="name"
+        width="90px"
       ></el-table-column>
       <el-table-column
         :label="item.propName"
-        :property="item.prop"
+        :prop="item.prop"
         v-for="item in tableColumnList"
         :key="item.prop"
         :render-header="renderHeader"
         align="center"
+        min-width="59px"
       >
         <template slot-scope="scope">
           <span
@@ -181,7 +183,7 @@
         // 这里为了简便我就没有调用后台接口获取数据，直接写的假数据  你要用的话可以调用后台接口获取tableColumnList，注意数据格式
         tableColumnList: [
           { prop: 'totalProblem', propName: '解决' },
-          { prop: 'totalTime', propName: '总用时' },
+          { prop: 'totalTime', propName: '用时' },
           { prop: 'a', propName: 'A' },
           { prop: 'b', propName: 'B' },
           { prop: 'c', propName: 'C' },
@@ -192,17 +194,19 @@
           { prop: 'h', propName: 'H' },
           { prop: 'i', propName: 'I' },
           { prop: 'j', propName: 'J' },
+          { prop: 'k', propName: 'K' },
+          { prop: 'l', propName: 'L' },
         ],
         // 这里为了简便我就没有调用后台接口获取数据，直接写的假数据
         dataList: [
           {
             user_id: 1,
-            username: '17671591121767',
+            username: '1767159112176715',
             avatar: 'https://imustacm.cn/front/images/head/194.gif',
             name: '刘洋',
             totalProblem: 5,
-            totalTime: '01:09:23',
-            a: '00:03:23',
+            totalTime: '69',
+            a: '3',
             aWrong: '1',
             aFast: true,
             b: '',
@@ -211,16 +215,16 @@
             c: '',
             cWrong: '8',
             cFast: false,
-            d: '01:20:11',
+            d: '42',
             dWrong: '',
             dFast: false,
-            e: '01:20:11',
+            e: '24',
             eWrong: '2',
             eFast: false,
-            f: '01:20:11',
+            f: '69',
             fWrong: '',
             fFast: false,
-            h: '00:20:34',
+            h: '112',
             hWrong: '1',
             hFast: true,
           },
@@ -230,8 +234,8 @@
             avatar: 'https://imustacm.cn/front/images/head/179.gif',
             name: '姜威',
             totalProblem: 4,
-            totalTime: '01:09:23',
-            a: '00:03:23',
+            totalTime: '112',
+            a: '6',
             aWrong: '1',
             aFast: false,
             b: '',
@@ -240,13 +244,13 @@
             c: '',
             cWrong: '2',
             cFast: false,
-            e: '00:59:11',
+            e: '11',
             eWrong: '5',
             eFast: true,
-            f: '01:20:11',
+            f: '44',
             fWrong: '',
             fFast: true,
-            j: '01:20:11',
+            j: '61',
             jWrong: '',
             jFast: true,
           },
@@ -254,28 +258,28 @@
             user_id: 3,
             username: 'admin',
             avatar: 'https://imustacm.cn/front/images/head/182.jpg',
-            name: '王剑波',
+            name: '王剑波王剑波王剑波王',
             totalProblem: 4,
-            totalTime: '01:09:23',
+            totalTime: '154',
             a: '',
             aWrong: '1',
             aFast: false,
-            b: '01:23:44',
+            b: '20192',
             bWrong: '12',
             bFast: true,
             c: '',
             cWrong: '',
             cFast: false,
-            d: '01:20:11',
+            d: '40',
             dWrong: '',
             dFast: true,
             e: '',
             eWrong: '2',
             eFast: false,
-            f: '01:20:11',
+            f: '211',
             fWrong: '7',
             fFast: false,
-            h: '01:20:11',
+            h: '183',
             hWrong: '7',
             hFast: false,
           },

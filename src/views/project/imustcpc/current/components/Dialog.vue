@@ -386,7 +386,7 @@
           },
         ],
         teamTable: [],
-        istLoading: true,
+        listLoading: true,
         elementLoadingText: '正在加载',
       }
     },

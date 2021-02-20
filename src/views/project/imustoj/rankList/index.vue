@@ -1,5 +1,5 @@
 <template>
-  <div class="rankList" style="margin: 20px 20px 0px 20px">
+  <div class="rankList" style="margin: 20px">
     <el-row style="width: 100%; height: 32px">
       <vab-query-form>
         <el-form

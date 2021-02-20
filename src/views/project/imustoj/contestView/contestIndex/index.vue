@@ -1,5 +1,5 @@
 <template>
-  <div class="contestIndex" style="margin: 0px 20px">
+  <div class="contestIndex">
     <div>
       <h4>{{ rot }}须知：</h4>
       <p>

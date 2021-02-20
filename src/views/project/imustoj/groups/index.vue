@@ -227,7 +227,7 @@
 </script>
 <style lang="scss" scoped>
   .group {
-    margin: 20px 20px 0px 20px;
+    margin: 20px 20px 20px 20px;
     ::v-deep {
       .el-card__body {
         > div {

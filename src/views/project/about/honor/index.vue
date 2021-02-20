@@ -1,6 +1,6 @@
 <template>
-  <div class="honor" style="margin: 10px">
-    <el-tabs :tab-position="tabPosition" style="padding: 10px">
+  <div class="honor" style="margin: 20px 20px 20px 10px">
+    <el-tabs :tab-position="tabPosition">
       <!-- <el-tab-pane label="2021年">2021年</el-tab-pane> -->
       <el-tab-pane label="2020年">
         <!-- 2020年中国大学生计算机设计大赛 -->
@@ -23,10 +23,10 @@
           </svg>
           <b>&nbsp;中国大学生计算机设计大赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2020年9月5日，第十三届中国大学生计算机设计大赛比赛结果公布，内蒙古科技大学ACM程序设计协会代表队获得一等奖1项。这也是在本项赛事当中，我校获得的历史最好成绩。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             第十三届中国大学生计算机设计大赛
             内蒙古科技大学ACM程序设计协会获奖情况
@@ -101,7 +101,7 @@
             style="height: 460px; text-align: center"
           />
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           第十三届中国大学生计算机设计大赛
           内蒙古科技大学ACM程序设计协会获奖作品作者及指导教师合影
         </p>
@@ -126,11 +126,11 @@
           </svg>
           <b>&nbsp;CCPC 中国 &middot; 东北地区大学生程序设计竞赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2020年10月11日，内蒙古科技大学ACM程序设计协会集训队队员参加中国
           &middot; 东北地区第十四届大学生程序设计竞赛获得优胜奖3项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             中国 &middot; 东北地区第十四届大学生程序设计竞赛
             内蒙古科技大学获奖情况
@@ -217,13 +217,13 @@
             &ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛（内蒙古赛区）
           </b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2020年10月17日，内蒙古科技大学ACM程序设计协会集训队队员参加第十一届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛内蒙古赛区比赛获得一等奖6项、二等奖8项、三等奖3项。
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px; margin-top: -10px">
           同时，我校还荣获优胜学校奖和优秀组织单位奖。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             第十一届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛
             内蒙古赛区比赛 内蒙古科技大学ACM程序设计协会获奖情况
@@ -317,11 +317,11 @@
           </svg>
           <b>&nbsp;ICPC 中国（西部）大学生程序设计竞赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2020年10月31日，内蒙古科技大学ACM程序设计协会集训队队员参加2020年ACM -
           ICPC中国（西部）大学生程序设计竞赛获得银牌3项、铜牌3项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             2020年ACM - ICPC中国（西部）大学生程序设计竞赛
             内蒙古科技大学ACM程序设计协会获奖情况
@@ -396,7 +396,7 @@
             style="height: 460px; text-align: center"
           />
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           2020年ACM - ICPC中国（西部）大学生程序设计竞赛
           内蒙古科技大学ACM程序设计协会参赛队员合影
         </p>
@@ -424,11 +424,13 @@
             &ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛（全国总决赛）
           </b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2020年11月14日，内蒙古科技大学ACM程序设计协会集训队队员参加第十一届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛全国总决赛获得二等奖2项，三等奖2项，优秀奖1项。
         </p>
-        <p style="text-indent: 2em">同时，我校还荣获优秀组织单位奖。</p>
-        <p style="text-align: center">
+        <p style="text-indent: 2em; line-height: 25px; margin-top: -10px">
+          同时，我校还荣获优秀组织单位奖。
+        </p>
+        <p style="text-align: center; line-height: 25px">
           <b>
             第十一届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛
             全国总决赛 内蒙古科技大学ACM程序设计协会获奖情况
@@ -516,11 +518,13 @@
           </svg>
           <b>&nbsp;CCPC 内蒙古自治区大学生程序设计竞赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2020年11月22日，内蒙古科技大学ACM程序设计协会集训队队员参加内蒙古自治区第十五届大学生程序设计竞赛获得一等奖1项，二等奖3项，三等奖3项，最佳女队奖1项。
         </p>
-        <p style="text-indent: 2em">同时，我校还荣获团体二等奖。</p>
-        <p style="text-align: center">
+        <p style="text-indent: 2em; line-height: 25px; margin-top: -10px">
+          同时，我校还荣获团体二等奖。
+        </p>
+        <p style="text-align: center; line-height: 25px">
           <b>内蒙古自治区第十五届大学生程序设计竞赛 内蒙古科技大学获奖情况</b>
         </p>
         <el-table
@@ -592,7 +596,7 @@
             style="height: 465px; text-align: center"
           />
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           内蒙古自治区第十五届大学生程序设计竞赛 内蒙古科技大学参赛队员合影
         </p>
       </el-tab-pane>
@@ -620,13 +624,13 @@
             &ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛（内蒙古赛区）
           </b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年3月24日，内蒙古科技大学ACM程序设计协会集训队队员参加第十届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛内蒙古赛区比赛获得一等奖9项、二等奖12项、三等奖8项。
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px; margin-top: -10px">
           同时，我校还荣获优胜学校奖和优秀组织单位奖。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             第十届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛
             内蒙古赛区比赛 内蒙古科技大学ACM程序设计协会获奖情况
@@ -705,7 +709,7 @@
             style="height: 460px; text-align: center"
           />
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           第十届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛内蒙古赛区比赛参赛队员合影
         </p>
         <br />
@@ -729,12 +733,12 @@
           </svg>
           <b>&nbsp;CCCC 中国高校计算机大赛 - 团体程序设计天梯赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年3月30日，内蒙古科技大学ACM程序设计协会集训队队员参加第四届中国高校计算机大赛
           -
           团体程序设计天梯赛获得高校奖珠峰争鼎组省级一等奖1项，团队奖珠峰争鼎组省级一等奖1项、华山论剑组省级三等奖1项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             第四届中国高校计算机大赛 - 团体程序设计天梯赛 高校奖
             内蒙古科技大学获奖情况
@@ -801,7 +805,7 @@
             show-overflow-tooltip
           ></af-table-column>
         </el-table>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             第四届中国高校计算机大赛 - 团体程序设计天梯赛 团队奖
             内蒙古科技大学获奖情况
@@ -898,7 +902,7 @@
             style="height: 460px; text-align: center"
           />
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           第四届中国高校计算机大赛 - 团体程序设计天梯赛参赛队员合影
         </p>
         <br />
@@ -922,11 +926,13 @@
           </svg>
           <b>&nbsp;CCPC 内蒙古自治区大学生程序设计竞赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年5月12日，内蒙古科技大学ACM程序设计协会集训队队员参加内蒙古自治区第十四届大学生程序设计竞赛获得一等奖3项，二等奖2项，三等奖2项。
         </p>
-        <p style="text-indent: 2em">同时，我校还荣获团体二等奖。</p>
-        <p style="text-align: center">
+        <p style="text-indent: 2em; line-height: 25px; margin-top: -10px">
+          同时，我校还荣获团体二等奖。
+        </p>
+        <p style="text-align: center; line-height: 25px">
           <b>内蒙古自治区第十四届大学生程序设计竞赛 内蒙古科技大学获奖情况</b>
         </p>
         <el-table
@@ -1004,7 +1010,7 @@
             style="height: 460px; text-align: center"
           />
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           内蒙古自治区第十四届大学生程序设计竞赛参赛队员及指导教师合影
         </p>
         <br />
@@ -1028,11 +1034,11 @@
           </svg>
           <b>&nbsp;CCPC 中国 &middot; 东北地区大学生程序设计竞赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年5月22日，内蒙古科技大学ACM程序设计协会集训队队员参加中国
           &middot; 东北地区第十三届大学生程序设计竞赛获得三等奖2项，优胜奖1项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             中国 &middot; 东北地区第十三届大学生程序设计竞赛
             内蒙古科技大学获奖情况
@@ -1107,7 +1113,7 @@
             style="height: 460px; text-align: center"
           />
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           中国 &middot; 东北地区第十三届大学生程序设计竞赛参赛队员合影
         </p>
         <br />
@@ -1135,11 +1141,13 @@
             &ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛（全国总决赛）
           </b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年5月25日，内蒙古科技大学ACM程序设计协会集训队队员参加第十届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛全国总决赛获得二等奖1项，三等奖4项，优秀奖3项。
         </p>
-        <p style="text-indent: 2em">同时，我校还荣获优秀组织单位奖。</p>
-        <p style="text-align: center">
+        <p style="text-indent: 2em; line-height: 25px; margin-top: -10px">
+          同时，我校还荣获优秀组织单位奖。
+        </p>
+        <p style="text-align: center; line-height: 25px">
           <b>
             第十届&ldquo;蓝桥杯&rdquo;全国软件和信息技术专业人才大赛 全国总决赛
             内蒙古科技大学ACM程序设计协会获奖情况
@@ -1227,11 +1235,11 @@
           </svg>
           <b>&nbsp;CCCC 中国高校计算机大赛 - 微信小程序开发赛</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年6月1日，第二届中国高校计算机大赛 -
           微信小程序开发赛比赛结果公布，内蒙古科技大学ACM程序设计协会代表队获得华北赛区二等奖1项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             第二届中国高校计算机大赛 - 微信小程序开发赛
             内蒙古科技大学ACM程序设计协会获奖情况
@@ -1321,10 +1329,10 @@
           </svg>
           <b>&nbsp;CCPC 中国大学生程序设计竞赛（秦皇岛站）</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年9月22日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年第五届中国大学生程序设计竞赛（秦皇岛站）现场赛获得优胜奖1项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             2019年第五届中国大学生程序设计竞赛（秦皇岛站）现场赛
             内蒙古科技大学获奖情况
@@ -1416,10 +1424,10 @@
             &nbsp;华北五省（市、自治区）及港澳台大学生计算机应用大赛（内蒙古赛区）
           </b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年10月19日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛内蒙古赛区比赛获得一等奖1项，三等奖1项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛
             内蒙古赛区比赛 内蒙古科技大学ACM程序设计协会获奖情况
@@ -1509,10 +1517,10 @@
           </svg>
           <b>&nbsp;ICPC 国际大学生程序设计竞赛亚洲区域赛（银川站）</b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年10月20日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年第44届ICPC国际大学生程序设计竞赛亚洲区域赛（银川站）现场赛获得优胜奖2项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             2019年第44届ICPC国际大学生程序设计竞赛亚洲区域赛（银川站）现场赛
             内蒙古科技大学获奖情况
@@ -1598,10 +1606,10 @@
             &nbsp;华北五省（市、自治区）及港澳台大学生计算机应用大赛（总决赛）
           </b>
         </p>
-        <p style="text-indent: 2em">
+        <p style="text-indent: 2em; line-height: 25px">
           2019年11月16日，内蒙古科技大学ACM程序设计协会集训队队员参加2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛总决赛获得一等奖1项。
         </p>
-        <p style="text-align: center">
+        <p style="text-align: center; line-height: 25px">
           <b>
             2019年华北五省（市、自治区）及港澳台大学生计算机应用大赛 总决赛
             内蒙古科技大学ACM程序设计协会获奖情况

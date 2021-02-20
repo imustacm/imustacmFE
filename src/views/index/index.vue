@@ -324,7 +324,7 @@
             style="
               background: url(https://www.imustacm.cn/imustacm/2015BY.JPG)
                 no-repeat center center;
-              background-size: cover;
+              background-size: 100% 100%;
               filter: grayscale(30%);
               opacity: 0.7;
             "
@@ -348,7 +348,7 @@
               text-indent: 2em;
             "
           >
-            内蒙古科技大学ACM程序设计协会成立于2009年9月6日，是基于国际大学生ACM程序设计竞赛而成立的实践类学习型的学生社团。协会指导老师是兰孝文老师、丁雨老师、郝斌老师和胡伟健老师，ACM竞赛集训队现有成员20余人。
+            内蒙古科技大学ACM程序设计协会成立于2009年9月6日，是基于国际大学生ACM程序设计竞赛而成立的实践类学习型的学生社团。协会指导老师是兰孝文老师、丁雨老师和胡伟健老师，ACM竞赛集训队现有成员20余人。
           </p>
           <p
             style="
@@ -359,7 +359,6 @@
             "
           >
             协会在积极组织集训队的同时，也调动更广大同学学习计算机知识的积极性、主动性，全面提高同学们算法与程序设计能力，突出编程能力和思维的训练，营造浓厚的学习氛围，增强同学们的总体素质和竞争力。ACM程序设计协会将依靠师生共同的力量，热诚为学生的全面成长服务，以培养会员的编程创新能力为核心，兼顾低年级大学生计算机基础知识学习组织与帮扶的目标，创造性地开展工作。
-            内蒙古科技大学ACM程序设计协会热忱欢迎对编程有兴趣或想学好编程的同学的加入！
           </p>
           <p
             style="
@@ -456,7 +455,7 @@
             ></el-image>
             <h3>CCCC</h3>
             <p style="text-align: left; line-height: 20px">
-              CCCC：中国高校计算机大赛，分为团体程序设计天梯赛、大数据挑战赛、移动应用创新赛、网络技术挑战赛、人工智能创意赛等赛事。
+              CCCC：中国高校计算机大赛，分为团体程序设计天梯赛、大数据挑战赛、移动应用创新赛、网络技术挑战赛、人工智能创意赛等。
             </p>
           </div>
           <div style="text-align: center; margin: 20px 0px">
@@ -1067,10 +1066,10 @@
     },
   }
 </script>
-<style>
+<style lang="scss">
   .el-carousel__container {
     width: 100%;
-    height: 100% !important;
+    height: 100%;
   }
   .work {
     -moz-box-shadow: 0 0 0 1px #fff;

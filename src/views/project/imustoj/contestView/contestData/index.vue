@@ -262,7 +262,6 @@
 <style lang="scss" scoped>
   .data {
     padding: 0 !important;
-    margin: 20px 20px 0px 20px !important;
 
     ::v-deep {
       .el-card__body {

@@ -154,8 +154,7 @@
         this.drawerVisible = false
       },
       handleGetCode() {
-        const url =
-          'https://github.com/chuzhixin/vue-admin-beautiful/tree/master/src/views'
+        const url = 'https://github.com/imustacm'
         let path = this.$route.path + '/index.vue'
         if (path === '/vab/menu1/menu1-1/menu1-1-1/index.vue') {
           path = '/vab/nested/menu1/menu1-1/menu1-1-1/index.vue'

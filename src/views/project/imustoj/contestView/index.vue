@@ -1,6 +1,6 @@
 <template>
-  <div class="contestView">
-    <el-row style="margin: 20px 20px -6px 20px">
+  <div class="contestView" style="margin: 20px">
+    <el-row style="margin: 0px 0px -6px">
       <el-col :xs="24" :sm="24" :md="24" :lg="16" :xl="16">
         <h3 style="margin-top: -5px">
           {{ id }}.《C语言程序设计》- 数据&网络2019级 - 实验7（字符串与结构体）

@@ -370,7 +370,7 @@
     .app-main-height {
       min-height: calc(
         100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
-          #{$base-padding} - 90px
+          #{$base-padding} - 61px
       );
     }
   }

@@ -177,6 +177,9 @@ module.exports = {
   runtimeCompiler: true,
   productionSourceMap: false,
   css: {
+    extract: {
+      ignoreOrder: true,
+    },
     requireModuleExtension: true,
     sourceMap: true,
     loaderOptions: {

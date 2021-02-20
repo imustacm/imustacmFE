@@ -15,7 +15,7 @@
       <el-col :xs="20" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="right-panel">
           <span style="margin-right: 20px; color: #83888c">
-            前端当前版本：{{ updateTime | updateTimeFilter }} - Alpha
+            Version: {{ updateTime | updateTimeFilter }} - Alpha
           </span>
           <vab-error-log />
           <vab-full-screen-bar @refresh="refreshRoute" />

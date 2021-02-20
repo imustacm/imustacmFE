@@ -597,6 +597,13 @@
 </script>
 
 <style lang="scss" scoped>
+  .boxInner {
+    width: 100%;
+    height: calc(
+      100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
+        #{$base-padding} - 180px
+    );
+  }
   .rightInner {
     width: 30.2%;
     height: 100%;
@@ -631,14 +638,6 @@
     width: 69%;
     border-right: 1px dotted #aba1a1;
   }
-  .boxInner {
-    width: 100%;
-    height: calc(
-      100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
-        #{$base-padding} - 180px
-    );
-    //margin: 10px 0px;
-  }
   .judgeInfo {
     margin: 10px 15px 20px 20px;
   }
@@ -649,8 +648,5 @@
     padding: 6px 12px;
     color: #444;
     margin: 12px 0;
-    // word-wrap: break-word;
-    // word-break: break-all;
-    //white-space: pre-line;
   }
 </style>

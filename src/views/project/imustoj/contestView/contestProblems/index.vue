@@ -1,5 +1,5 @@
 <template>
-  <div class="contestProblems" style="margin: 20px">
+  <div class="contestProblems">
     <el-table
       v-loading="listLoading"
       :data="list"

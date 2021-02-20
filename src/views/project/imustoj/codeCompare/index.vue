@@ -521,8 +521,5 @@
     );
     resize: vertical;
     overflow: auto;
-    // .monaco-editor .scroll-decoration {
-    //   box-shadow: none;
-    // }
   }
 </style>

@@ -10,6 +10,15 @@
             困难
           </el-tag>
           <span class="limit firstTag" style="color: red">Special Judge</span>
+          <el-button
+            type="primary"
+            style="float: right"
+            @click="handleProblemList()"
+            size="small"
+          >
+            <vab-icon :icon="['fas', 'angle-left']"></vab-icon>
+            返回列表
+          </el-button>
           <br />
           <p class="problemSub">
             <span class="limit">时间限制：1000ms</span>
@@ -305,6 +314,11 @@
       }, 1)
     },
     methods: {
+      handleProblemList() {
+        this.$router.push({
+          path: '/imustoj/problems/',
+        })
+      },
       handleStatus() {
         this.$router.push({
           path: '/imustoj/status/',
@@ -442,7 +456,7 @@
     width: 100%;
     height: calc(
       100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
-        #{$base-padding} - 162px
+        #{$base-padding} - 133px
     );
     margin: 10px 0px;
   }

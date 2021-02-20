@@ -384,7 +384,7 @@ export const asyncRoutes = [
           {
             path: 'cpc1',
             name: 'cpc1',
-            component: () => import('@/views/project/about/aboutUs/index'),
+            component: () => import('@/views/project/imustcpc/imustcpc1/index'),
             meta: { title: '2019 IMUSTCPC 1' },
           },
         ],
@@ -452,9 +452,9 @@ export const asyncRoutes = [
 
     children: [
       {
-        path: 'campInstraction',
-        name: 'CampInstraction',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        path: 'aboutUs',
+        name: 'aboutUs',
+        component: () => import('@/views/project/about/aboutUs1/index'),
         meta: { title: '协会简介' },
       },
       {
@@ -466,33 +466,33 @@ export const asyncRoutes = [
       {
         path: 'master',
         name: 'Master',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        component: () => import('@/views/project/about/teamHead/index'),
         meta: { title: '历届会长' },
       },
       {
         path: 'activity',
         name: 'Activity',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        component: () => import('@/views/project/about/activity/index'),
         meta: { title: '社团活动' },
       },
       {
-        path: 'gooders',
-        name: 'gooders',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        path: 'gooder',
+        name: 'Gooder',
+        component: () => import('@/views/project/about/gooder/index'),
         meta: { title: '优秀会员' },
       },
       {
         path: 'connection',
         name: 'Connection',
-        component: () => import('@/views/project/about/aboutUs/index'),
+        component: () => import('@/views/project/about/connect/index'),
         meta: { title: '联系我们' },
       },
-      {
-        path: 'congratulationACM',
-        name: 'congratulationACM',
-        component: () => import('@/views/project/about/aboutUs/index'),
-        meta: { title: '寄语ACM' },
-      },
+      // {
+      //   path: 'congratulationACM',
+      //   name: 'congratulationACM',
+      //   component: () => import('@/views/project/about/guestbook/index'),
+      //   meta: { title: '寄语ACM' },
+      // },
     ],
   },
   {

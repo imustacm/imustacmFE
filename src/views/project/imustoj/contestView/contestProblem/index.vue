@@ -1,24 +1,26 @@
 <template>
   <div class="contestProblem">
-    <div class="box" ref="box">
-      <div class="left">
-        <div class="problemInfo">
-          <span class="problemTitle">
+    <div class="boxContest" ref="boxContest">
+      <div class="leftContest">
+        <div class="problemInfoContest">
+          <span class="problemTitleContest">
             <b>{{ id }}. 整数求和</b>
           </span>
-          <span class="limit firstTag" style="color: red">Special Judge</span>
+          <span class="limitContest firstTagContest" style="color: red">
+            Special Judge
+          </span>
           <br />
-          <p class="problemSub">
-            <span class="limit">时间限制：1000ms</span>
-            <span class="limit">内存限制：65535KB</span>
-            <span class="limit">提交：1233</span>
-            <span class="limit">通过：929</span>
+          <p class="problemSubContest">
+            <span class="limitContest">时间限制：1000ms</span>
+            <span class="limitContest">内存限制：65535KB</span>
+            <span class="limitContest">提交：1233</span>
+            <span class="limitContest">通过：929</span>
           </p>
-          <hr class="hrCenter" />
-          <p class="problemDesc">
-            <span class="infoTitle"><b>题目描述</b></span>
+          <hr class="hrCenterContest" />
+          <p class="problemDescContest">
+            <span class="infoTitleContest"><b>题目描述</b></span>
           </p>
-          <p class="problemDescCon">
+          <p class="problemDescConContest">
             <span class="">
               给定一个整数数组
               <code>nums</code>
@@ -30,10 +32,10 @@
               你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两次。
             </span>
           </p>
-          <p class="problemInp">
-            <span class="infoTitle"><b>输入</b></span>
+          <p class="problemInpContest">
+            <span class="infoTitleContest"><b>输入</b></span>
           </p>
-          <p class="problemInpCon">
+          <p class="problemInpConContest">
             <span class="">
               输入有两行。第一行为一个整数数组
               <code>nums</code>
@@ -42,27 +44,27 @@
               。
             </span>
           </p>
-          <p class="problemOup">
-            <span class="infoTitle"><b>输出</b></span>
+          <p class="problemOupContest">
+            <span class="infoTitleContest"><b>输出</b></span>
           </p>
-          <p class="problemOupCon">
+          <p class="problemOupConContest">
             <span class="">
               输出一行，为满足题目要求的两个整数。请按从小到大的顺序返回答案。用空格分隔开。
             </span>
           </p>
-          <p class="problemOup">
-            <span class="infoTitle"><b>数据范围</b></span>
+          <p class="problemOupContest">
+            <span class="infoTitleContest"><b>数据范围</b></span>
           </p>
-          <p class="problemOupCon">
+          <p class="problemOupConContest">
             <span class="">
               0 ≤ target ≤ 10,000， 0 ≤ nums.length ≤ 10,000。
             </span>
           </p>
-          <p class="problemSiI">
-            <span class="infoTitle">
-              <b class="limit">样例输入1</b>
+          <p class="problemSiIContest">
+            <span class="infoTitleContest">
+              <b class="limitContest">样例输入1</b>
               <el-button
-                class="copyBtn"
+                class="copyBtnContest"
                 size="mini"
                 plain
                 style="padding: 3px 10px"
@@ -74,19 +76,19 @@
               </el-button>
             </span>
           </p>
-          <p class="problemOupCon">
+          <p class="problemOupConContest">
             <span class="">
-              <pre class="sample" id="input1">
+              <pre class="sampleContest" id="input1">
 1 2 3 4 5 6
                 11
               </pre>
             </span>
           </p>
-          <p class="problemSiO">
-            <span class="infoTitle">
-              <b class="limit">样例输出1</b>
+          <p class="problemSiOContest">
+            <span class="infoTitleContest">
+              <b class="limitContest">样例输出1</b>
               <el-button
-                class="copyBtn"
+                class="copyBtnContest"
                 size="mini"
                 plain
                 style="padding: 3px 10px"
@@ -98,18 +100,18 @@
               </el-button>
             </span>
           </p>
-          <p class="problemOupCon">
+          <p class="problemOupConContest">
             <span class="">
-              <pre class="sample" id="output1">
+              <pre class="sampleContest" id="output1">
 5 6
               </pre>
             </span>
           </p>
-          <p class="problemSiI">
-            <span class="infoTitle">
-              <b class="limit">样例输入2</b>
+          <p class="problemSiIContest">
+            <span class="infoTitleContest">
+              <b class="limitContest">样例输入2</b>
               <el-button
-                class="copyBtn"
+                class="copyBtnContest"
                 size="mini"
                 plain
                 style="padding: 3px 10px"
@@ -121,19 +123,19 @@
               </el-button>
             </span>
           </p>
-          <p class="problemOupCon">
+          <p class="problemOupConContest">
             <span class="">
-              <pre class="sample" id="input2">
+              <pre class="sampleContest" id="input2">
 -1 0 -8 10 2
                 1
               </pre>
             </span>
           </p>
-          <p class="problemSiO">
-            <span class="infoTitle">
-              <b class="limit">样例输出2</b>
+          <p class="problemSiOContest">
+            <span class="infoTitleContest">
+              <b class="limitContest">样例输出2</b>
               <el-button
-                class="copyBtn"
+                class="copyBtnContest"
                 size="mini"
                 plain
                 style="padding: 3px 10px"
@@ -145,32 +147,34 @@
               </el-button>
             </span>
           </p>
-          <p class="problemOupCon">
+          <p class="problemOupConContest">
             <span class="">
-              <pre class="sample" id="output2">
+              <pre class="sampleContest" id="output2">
 -1 2
               </pre>
             </span>
           </p>
-          <p class="problemInp">
-            <span class="infoTitle"><b>提示</b></span>
+          <p class="problemInpContest">
+            <span class="infoTitleContest"><b>提示</b></span>
           </p>
-          <p class="problemInpCon">
-            <span class="">随便写，这题还过不了那你写个**的代码。</span>
+          <p class="problemInpConContest">
+            <span class="tipsContest">
+              随便写，这题还过不了那你写个**的代码。
+            </span>
           </p>
         </div>
       </div>
-      <div class="resize" title="收缩侧边栏">⋮</div>
-      <div class="right" id="right"></div>
+      <div class="resizeContest" title="收缩侧边栏">⋮</div>
+      <div class="rightContest" id="rightContest"></div>
     </div>
-    <div class="problemBottom">
+    <div class="problemBottomContest">
       <el-row>
         <el-col :span="12">
-          <el-button type="primary" plain class="btn">
+          <el-button type="primary" plain class="btnContest">
             <vab-icon :icon="['fas', 'angle-left']"></vab-icon>
             上一题
           </el-button>
-          <el-button type="primary" plain class="btn">
+          <el-button type="primary" plain class="btnContest">
             下一题
             <vab-icon :icon="['fas', 'angle-right']"></vab-icon>
           </el-button>
@@ -188,7 +192,7 @@
           <el-button
             type="primary"
             plain
-            class="btn"
+            class="btnContest"
             style="float: right; margin-right: 20px"
             @click="handleData()"
           >
@@ -197,7 +201,7 @@
           <el-button
             type="primary"
             plain
-            class="btn"
+            class="btnContest"
             style="float: right"
             @click="handleStatus()"
           >
@@ -205,11 +209,11 @@
           </el-button>
         </el-col>
         <el-col :span="12">
-          <span class="btn">提交语言：</span>
+          <span class="btnContest">提交语言：</span>
           <el-select
             v-model="value"
             placeholder="请选择"
-            class="btn"
+            class="btnContest"
             style="width: 100px"
           >
             <el-option
@@ -221,7 +225,7 @@
           </el-select>
           <el-button
             type="primary"
-            class="btn"
+            class="btnContest"
             style="float: right; margin-left: 10px"
           >
             提交
@@ -232,7 +236,7 @@
             </div>
             <el-button
               type="warning"
-              class="btn"
+              class="btnContest"
               style="float: right"
               @click="handleDetail(1023)"
             >
@@ -305,10 +309,10 @@
         this.$refs['codeSource'].showModule(row)
       },
       dragControllerDiv() {
-        var resize = document.getElementsByClassName('resize')
-        var left = document.getElementsByClassName('left')
-        var mid = document.getElementsByClassName('right')
-        var box = document.getElementsByClassName('box')
+        var resize = document.getElementsByClassName('resizeContest')
+        var left = document.getElementsByClassName('leftContest')
+        var mid = document.getElementsByClassName('rightContest')
+        var box = document.getElementsByClassName('boxContest')
         for (let i = 0; i < resize.length; i++) {
           // 鼠标按下事件
           resize[i].onmousedown = function (e) {
@@ -347,12 +351,15 @@
       },
       iniEditor() {
         // 初始化编辑器，确保dom已经渲染
-        this.editor = monaco.editor.create(document.getElementById('right'), {
-          value: '', //编辑器初始显示文字
-          language: 'c', //语言支持自行查阅demo
-          automaticLayout: true, //自动布局
-          theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
-        })
+        this.editor = monaco.editor.create(
+          document.getElementById('rightContest'),
+          {
+            value: '', //编辑器初始显示文字
+            language: 'c', //语言支持自行查阅demo
+            automaticLayout: true, //自动布局
+            theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
+          }
+        )
       },
       getValue() {
         this.editor.getValue() //获取编辑器中的文本
@@ -373,7 +380,7 @@
       },
       copy() {
         //if (!this.init) return
-        var clipboard = new Clipboard('.copyBtn')
+        var clipboard = new Clipboard('.copyBtnContest')
         clipboard.on('success', (e) => {
           this.$baseMessage('一键复制成功！', 'success')
           // 释放内存
@@ -390,15 +397,16 @@
 </script>
 
 <style lang="scss" scoped>
-  .left {
-    width: 49.2%;
+  .leftContest {
+    width: 50.1%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     float: left;
+    margin-left: -20px;
     border-right: 1px dotted #aba1a1;
   }
-  .resize {
+  .resizeContest {
     cursor: col-resize;
     float: left;
     position: relative;
@@ -415,41 +423,41 @@
     color: white;
   }
   /*拖拽区鼠标悬停样式*/
-  .resize:hover {
+  .resizeContest:hover {
     color: #444444;
   }
-  .right {
+  .rightContest {
     height: 100%;
     float: left;
-    width: 49.9%;
+    width: 50.4%;
     border-left: 1px dotted #aba1a1;
   }
-  .box {
+  .boxContest {
     width: 100%;
     height: calc(
       100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} -
-        #{$base-padding} - 242px
+        #{$base-padding} - 229px
     );
     margin: 10px 0px;
   }
-  .problemBottom {
+  .problemBottomContest {
     width: 100%;
     height: 52px;
     background-color: #f6f8f9;
   }
-  .btn {
+  .btnContest {
     margin-top: 10px;
   }
-  .problemInfo {
+  .problemInfoContest {
     margin: 10px 15px 20px 20px;
   }
-  .problemTitle {
+  .problemTitleContest {
     font-size: 16px;
   }
-  .limit {
+  .limitContest {
     margin-right: 20px;
   }
-  .hrCenter {
+  .hrCenterContest {
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -461,12 +469,12 @@
     background-color: #f9f2f4;
     border-radius: 4px;
   }
-  .infoTitle {
+  .infoTitleContest {
     display: block;
     margin-top: 25px;
     margin-bottom: 15px;
   }
-  .sample {
+  .sampleContest {
     overflow: hidden;
     border: 1px solid #dedede;
     background: #f8f8f8;
@@ -477,10 +485,10 @@
     word-break: break-all;
     white-space: pre-line;
   }
-  .problemTag {
+  .problemTagContest {
     margin: 0px 0px 0px 10px;
   }
-  .firstTag {
+  .firstTagContest {
     margin-left: 15px;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="current" style="margin: 20px 20px 0px 20px">
+  <div class="current" style="margin: 20px">
     <div :style="divStyle">
       <div class="divImg">
         <el-image
@@ -382,7 +382,7 @@
     },
   }
 </script>
-<style>
+<style lang="scss" scoped>
   .divImg {
     width: 100%;
     height: 400px;
@@ -479,5 +479,8 @@
     border: 3px solid #fda74a;
     content: '';
     display: inline-block;
+  }
+  h2 {
+    text-align: center;
   }
 </style>

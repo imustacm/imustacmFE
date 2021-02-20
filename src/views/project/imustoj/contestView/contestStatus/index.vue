@@ -1,5 +1,5 @@
 <template>
-  <div class="contestStatus" style="margin: 20px">
+  <div class="contestStatus">
     <el-row style="width: 100%; height: 32px">
       <vab-query-form>
         <el-form
